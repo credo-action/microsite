@@ -1,7 +1,7 @@
 body {
     background-color: #f9f9f9;
     margin: 0;
-    font-family: "proxima-nova", sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
 }
 
 button,
@@ -199,6 +199,7 @@ input {
 }
 
 .wrapper > .meat form .disclaimer input {
+    -webkit-appearance: checkbox;
     float: left;
     margin: 2px 8px 8px 2px;
 }
