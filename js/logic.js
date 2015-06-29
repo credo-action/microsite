@@ -26,7 +26,7 @@ var events = {
 var EmailForm = React.createClass({displayName: "EmailForm",
     render: function() {
         return (
-            React.createElement("form", {id: "petition", onSubmit:  this.onSubmit}, 
+            React.createElement("form", {onSubmit:  this.onSubmit}, 
                 React.createElement("h2", null, "Add your name"), 
 
                 React.createElement("div", {className: "text-fields"}, 
@@ -96,7 +96,7 @@ var App = React.createClass({displayName: "App",
             React.createElement("div", {className: "description"}, 
                 React.createElement("h2", null, "Don't let Republicans start another Mideast war."), 
 
-                "Sed sit amet ipsum mauris. ", React.createElement("a", {href: "#"}, "Maecenas"), " congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.", 
+                "Sed sit amet ipsum mauris. ", React.createElement("a", {href: "#petition"}, "Maecenas"), " congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.", 
 
                 React.createElement("div", {className: "spacer"}), 
 
@@ -118,15 +118,17 @@ var App = React.createClass({displayName: "App",
                     ), 
 
                     React.createElement("div", {className: "social"}, 
-                        React.createElement("a", {className: "facebook", href: "#"}), 
-                        React.createElement("a", {className: "twitter", href: "#"}), 
-                        React.createElement("a", {className: "email", href: "#"})
+                        React.createElement("a", {className: "facebook", href: "#facebook"}), 
+                        React.createElement("a", {className: "twitter", href: "#twitter"}), 
+                        React.createElement("a", {className: "email", href: "#email"})
                     )
                 ), 
 
                 React.createElement("div", {className: "meat"}, 
 
                     React.createElement("section", {className: "description-mobile"},  this.renderDescription() ), 
+
+                    React.createElement("div", {id: "petition"}), 
 
                     React.createElement(EmailForm, null), 
 

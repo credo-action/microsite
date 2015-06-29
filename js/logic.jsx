@@ -26,7 +26,7 @@ var events = {
 var EmailForm = React.createClass({
     render: function() {
         return (
-            <form id="petition" onSubmit={ this.onSubmit }>
+            <form onSubmit={ this.onSubmit }>
                 <h2>Add your name</h2>
 
                 <div className="text-fields">
@@ -96,7 +96,7 @@ var App = React.createClass({
             <div className="description">
                 <h2>Don&apos;t let Republicans start another Mideast war.</h2>
 
-                Sed sit amet ipsum mauris. <a href="#">Maecenas</a> congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.
+                Sed sit amet ipsum mauris. <a href="#petition">Maecenas</a> congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.
 
                 <div className="spacer" />
 
@@ -118,15 +118,17 @@ var App = React.createClass({
                     </h1>
 
                     <div className="social">
-                        <a className="facebook" href="#"></a>
-                        <a className="twitter" href="#"></a>
-                        <a className="email" href="#"></a>
+                        <a className="facebook" href="#facebook"></a>
+                        <a className="twitter" href="#twitter"></a>
+                        <a className="email" href="#email"></a>
                     </div>
                 </header>
 
                 <div className="meat">
 
                     <section className="description-mobile">{ this.renderDescription() }</section>
+
+                    <div id="petition" />
 
                     <EmailForm />
 
