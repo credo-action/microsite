@@ -1,0 +1,225 @@
+body {
+    background-color: #f9f9f9;
+    margin: 0;
+    font-family: "proxima-nova", sans-serif;
+}
+
+button,
+form,
+input {
+    -webkit-appearance: none;
+    border-radius: 0;
+    border: none;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#app > .please-wait {
+    color: #ccc;
+    padding: 32px;
+    text-align: center;
+}
+
+.wrapper {
+
+}
+
+.wrapper > header {
+    background-image: url(images/hero-image-1200x312.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 312px;
+}
+
+.wrapper > header .flag {
+    background-image: url(images/flag-sign-petition-208x36.png);
+    background-size: cover;
+    height: 36px;
+    width: 208px;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    z-index: 1;
+
+    -webkit-transition: opacity 0.3s;
+            transition: opacity 0.3s;
+}
+
+.wrapper > header .flag:hover {
+    opacity: 0.919;
+}
+
+.wrapper > header h1 {
+    color: #fdfbe1;
+    font-size: 64px;
+    line-height: 56px;
+    margin: 0;
+    padding: 100px 0;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+}
+
+.wrapper > header .social {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 1;
+}
+
+.wrapper > header .social a {
+    background-size: cover;
+    float: left;
+    margin: 0 0 0 20px;
+    width: 42px;
+    height: 42px;
+
+    -webkit-transition: opacity 0.3s;
+            transition: opacity 0.3s;
+}
+
+.wrapper > header .social a.facebook {
+    background-image: url(images/social-icon-FB-42x42.png);
+}
+
+.wrapper > header .social a.twitter {
+    background-image: url(images/social-icon-Twitter-42x42.png);
+}
+
+.wrapper > header .social a.email {
+    background-image: url(images/social-icon-Email-42x42.png);
+}
+
+.wrapper > header .social a:hover {
+    opacity: 0.919;
+}
+
+.wrapper > .meat {
+    margin: 0 auto;
+    max-width: 1200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.wrapper > .meat section.description {
+    color: #4d4d4d;
+    font-size: 13px;
+    line-height: 21px;
+    padding: 30px 20px 20px 30px;
+}
+
+.wrapper > .meat section.description h2 {
+    color: #000;
+    font-size: 24px;
+    font-weight: 400;
+    margin: 0 0 30px;
+    line-height: 1;
+}
+
+.wrapper > .meat section.description a {
+    color: #0051b6;
+    font-weight: 700;
+    text-decoration: none;
+
+    -webkit-transition: color 0.3s;
+            transition: color 0.3s;
+}
+
+.wrapper > .meat section.description a:hover {
+    color: #1684cc;
+}
+
+.wrapper > .meat section.description .spacer {
+    height: 24px;
+}
+
+.wrapper > .meat form {
+    background-color: rgba(0, 0, 0, 0.45);
+    border-radius: 4px;
+    float: right;
+    height: 428px;
+    margin: 20px 20px 20px 40px;
+    padding: 20px 12px 20px;
+    width: 291px;
+}
+
+.wrapper > .meat form h2 {
+    color: #fff;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 1;
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+}
+
+.wrapper > .meat form button {
+    background-color: #0051b6;
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 21px;
+    font-weight: bold;
+    width: 100%;
+
+    -webkit-transition: background-color 0.3s;
+            transition: background-color 0.3s;
+}
+
+.wrapper > .meat form button:hover {
+    background-color: #005dd0;
+}
+
+.wrapper > .logos {
+    background-color: #f2f2f2;
+    height: 176px;
+    padding: 0 60px 22px 0;
+}
+
+.wrapper > footer {
+    color: #666;
+    font-size: 13px;
+    line-height: 21px;
+    padding: 22px 32px;
+    text-align: center;
+}
+
+.wrapper > footer a {
+    color: #000;
+
+    -webkit-transition: opacity 0.3s;
+            transition: opacity 0.3s;
+}
+
+.wrapper > footer a:hover {
+    opacity: 0.919;
+}
+
+/* Retina */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+    .wrapper > header {
+        background-image: url(images/hero-image-1200x312@2x.jpg);
+    }
+
+    .wrapper > header .flag {
+        background-image: url(images/flag-sign-petition-208x36@2x.png);
+    }
+
+    .wrapper > header .social a.facebook {
+        background-image: url(images/social-icon-FB-42x42@2x.png);
+    }
+
+    .wrapper > header .social a.twitter {
+        background-image: url(images/social-icon-Twitter-42x42@2x.png);
+    }
+
+    .wrapper > header .social a.email {
+        background-image: url(images/social-icon-Email-42x42@2x.png);
+    }
+}
