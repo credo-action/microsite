@@ -11,6 +11,8 @@ input {
     border-radius: 0;
     border: none;
     margin: 0;
+    outline: none;
+    display: block;
 }
 
 * {
@@ -106,15 +108,22 @@ input {
     overflow: hidden;
     position: relative;
 }
-
-.wrapper > .meat section.description {
+.wrapper > .meat .description {
     color: #4d4d4d;
     font-size: 13px;
     line-height: 21px;
+}
+
+.wrapper > .meat section.description-mobile {
+    display: none;
+    padding: 30px;
+}
+
+.wrapper > .meat section.description-desktop {
     padding: 30px 20px 20px 30px;
 }
 
-.wrapper > .meat section.description h2 {
+.wrapper > .meat .description h2 {
     color: #000;
     font-size: 24px;
     font-weight: 400;
@@ -122,7 +131,7 @@ input {
     line-height: 1;
 }
 
-.wrapper > .meat section.description a {
+.wrapper > .meat .description a {
     color: #0051b6;
     font-weight: 700;
     text-decoration: none;
@@ -131,11 +140,11 @@ input {
             transition: color 0.3s;
 }
 
-.wrapper > .meat section.description a:hover {
+.wrapper > .meat .description a:hover {
     color: #1684cc;
 }
 
-.wrapper > .meat section.description .spacer {
+.wrapper > .meat .description .spacer {
     height: 24px;
 }
 
@@ -155,30 +164,69 @@ input {
     font-weight: 400;
     line-height: 1;
     margin: 0;
-    padding: 0 0 20px;
+    padding: 0 0 30px;
     text-align: center;
+}
+
+.wrapper > .meat form .text-fields {
+}
+
+.wrapper > .meat form .text-fields input {
+    font-size: 16px;
+    height: 36px;
+    line-height: 36px;
+    margin: 0 0 22px;
+    padding: 0 20px;
+    width: 100%;
+
+    -webkit-transition: box-shadow 0.3s;
+            transition: box-shadow 0.3s;
+}
+
+.wrapper > .meat form .text-fields input:hover {
+    box-shadow: inset 0 0 2px rgba(0, 155, 255, 0.6);
+}
+
+.wrapper > .meat form .text-fields input:focus {
+    box-shadow: inset 0 0 3px rgba(0, 155, 255, 0.8);
+}
+
+.wrapper > .meat form .disclaimer {
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    margin: 25px 0;
+}
+
+.wrapper > .meat form .disclaimer input {
+    float: left;
+    margin: 2px 8px 8px 2px;
 }
 
 .wrapper > .meat form button {
     background-color: #0051b6;
     border-radius: 6px;
+    box-shadow: 0 0 3px rgba(0, 155, 255, 0);
     color: #fff;
     cursor: pointer;
     font-size: 21px;
     font-weight: bold;
+    line-height: 36px;
+    height: 42px;
     width: 100%;
 
-    -webkit-transition: background-color 0.3s;
-            transition: background-color 0.3s;
+    -webkit-transition: background-color 0.3s, box-shadow 0.3s;
+            transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .wrapper > .meat form button:hover {
     background-color: #005dd0;
+    box-shadow: 0 0 3px rgba(0, 80, 160, 0.4);
 }
 
 .wrapper > .logos {
     background-color: #f2f2f2;
-    height: 176px;
+    min-height: 176px;
     padding: 0 60px 22px 0;
 }
 
@@ -199,6 +247,40 @@ input {
 
 .wrapper > footer a:hover {
     opacity: 0.919;
+}
+
+/* Mobile */
+@media (max-width: 579px) {
+    .wrapper > header h1 {
+        font-size: 45px;
+    }
+
+    .wrapper > header .flag {
+        height: 25px;
+        width: 144px;
+    }
+
+    .wrapper > header .social a {
+        margin: 0 0 0 15px;
+        width: 31px;
+        height: 31px;
+    }
+
+    .wrapper > .meat form {
+        float: none;
+    }
+
+    .wrapper > .meat section.description-mobile {
+        display: block;
+    }
+
+    .wrapper > .meat section.description-desktop {
+        display: none;
+    }
+
+    .wrapper > .meat form {
+        margin: 0 auto 30px;
+    }
 }
 
 /* Retina */
