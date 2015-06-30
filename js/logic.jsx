@@ -1,5 +1,72 @@
 var state = {};
 state.isMobile = /mobile/i.test(navigator.userAgent);
+state.pageShortName = 'Title_X';
+
+
+var signatureGoals = {
+    '450': 500,
+    '900': 1000,
+    '2400': 2500,
+    '4500': 5000,
+    '9500': 10000,
+    '13000': 15000,
+    '22000': 25000,
+    '45000': 50000,
+    '70000': 75000,
+    '90000': 100000,
+    '140000': 150000,
+    '190000': 200000,
+    '240000': 250000,
+    '290000': 300000,
+    '340000': 350000,
+    '390000': 400000,
+    '490000': 500000,
+};
+
+function generateGoal(current) {
+    for (var bar in signatureGoals) {
+        if (current < +bar) {
+            return signatureGoals[bar];
+        }
+    }
+
+    return 750000;
+}
+
+
+function commafy(number) {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+
+// Setup shortcuts for AJAX.
+var ajax = {
+    get: function(url, callback) {
+        callback = callback || function() {};
+
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) {
+                callback(xhr.response);
+            }
+        };
+        xhr.open('get', url, true);
+        xhr.send();
+    },
+
+    post: function(url, formData, callback) {
+        callback = callback || function() {};
+
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) {
+                callback(xhr.response);
+            }
+        };
+        xhr.open('post', url, true);
+        xhr.send(formData);
+    },
+};
 
 
 var events = {
@@ -23,33 +90,103 @@ var events = {
 };
 
 
+var SignatureProgress = React.createClass({
+    componentDidMount: function() {
+        window.onActionKitProgress = this.onActionKitProgress;
+
+        var script = document.createElement('script');
+        script.src = 'https://act.credoaction.com/progress/' + state.pageShortName + '?callback=onActionKitProgress';
+        document.body.appendChild(script);
+    },
+
+    getInitialState: function() {
+        return {
+            current: 0,
+            goal: 0,
+            percent: 0,
+        };
+    },
+
+    onActionKitProgress: function(res) {
+        var current = res.total.actions;
+        var goal = generateGoal(current);
+        var percent = Math.floor(100 * current / goal);
+
+        this.setState({
+            current: current,
+            goal: goal,
+            percent: percent,
+        });
+    },
+
+    render: function(e) {
+        if (!this.state.percent) {
+            return (
+                <div className="progress">
+                    <div className="bar">
+                        <div className="filled" />
+                    </div>
+                </div>
+            );
+        }
+
+        var css = {
+            opacity: 1,
+            width: Math.min(this.state.percent, 100) + '%',
+        };
+
+        return (
+            <div className="progress visible">
+                <div className="bar">
+                    <div className="filled" style={ css } />
+                </div>
+
+                <div className="percent">
+                    { this.state.percent }%
+                </div>
+
+                <div className="summary">
+                    We&apos;ve reached { commafy(this.state.current) } of our goal of { commafy(this.state.goal) }.
+                </div>
+            </div>
+        );
+    },
+});
+
+
 var EmailForm = React.createClass({
     render: function() {
         return (
-            <form onSubmit={ this.onSubmit }>
-                <h2>Add your name</h2>
+            <section className="form">
 
-                <div className="text-fields">
-                    <input placeholder="First and Last Name" name="name" />
-                    <input placeholder="Email" name="email" data-pattern-name="email" type="email" />
-                    <input placeholder="Address" name="address" />
-                    <input placeholder="Zip Code" name="zip" data-pattern-name="zip" type="tel" />
-                </div>
+                <SignatureProgress />
 
-                <div className="disclaimer">
-                    <label>
-                        <input name="consent" type="checkbox" />
+                <form onSubmit={ this.onSubmit }>
+                    <h2>Add your name</h2>
 
-                        I consent to being added to the email
-                        <br />
-                        list of one or more participating orgs.
-                    </label>
-                </div>
+                    <div className="text-fields">
+                        <input placeholder="First and Last Name" name="name" />
+                        <input placeholder="Email" name="email" data-pattern-name="email" type="email" />
+                        <input placeholder="Address" name="address" />
+                        <input placeholder="Zip Code" name="zip" data-pattern-name="zip" type="tel" />
+                    </div>
 
-                <button>
-                    Click to Sign
-                </button>
-            </form>
+                    <div className="disclaimer">
+                        <label>
+                            <input name="consent" type="checkbox" />
+
+                            I consent to being added to the email
+                            <br />
+                            list of one or more participating orgs.
+                        </label>
+                    </div>
+
+                    <button>
+                        Click to Sign
+                    </button>
+                </form>
+
+            </section>
         );
     },
 

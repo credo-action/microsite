@@ -148,17 +148,62 @@ input {
     height: 24px;
 }
 
-.wrapper > .meat form {
+.wrapper > .meat .form {
+    float: right;
+    margin: 35px 20px 20px 40px;
+    width: 291px;
+}
+
+.wrapper > .meat .form .progress {
+    height: 90px;
+    opacity: 0;
+
+    -webkit-transition: opacity 0.3s;
+            transition: opacity 0.3s;
+}
+
+.wrapper > .meat .form .progress.visible {
+    opacity: 1;
+}
+
+.wrapper > .meat .form .progress .bar {
+    background-color: #e6e6e6;
+    height: 11px;
+    margin: 0 0 10px;
+    position: relative;
+}
+
+.wrapper > .meat .form .progress .bar .filled {
+    background-color: #f15a24;
+    height: 100%;
+    opacity: 0;
+    width: 0%;
+
+    -webkit-transition: opacity 0.3s 0.3s, width 0.6s 0.3s;
+            transition: opacity 0.3s 0.3s, width 0.6s 0.3s;
+}
+
+.wrapper > .meat .form .progress .percent {
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.wrapper > .meat .form .progress .summary {
+    color: #000;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.wrapper > .meat .form form {
     background-color: rgba(0, 0, 0, 0.45);
     border-radius: 4px;
-    float: right;
     height: 428px;
-    margin: 20px 20px 20px 40px;
     padding: 20px 12px 20px;
     width: 291px;
 }
 
-.wrapper > .meat form h2 {
+.wrapper > .meat .form form h2 {
     color: #fff;
     font-size: 21px;
     font-weight: 400;
@@ -168,10 +213,10 @@ input {
     text-align: center;
 }
 
-.wrapper > .meat form .text-fields {
+.wrapper > .meat .form form .text-fields {
 }
 
-.wrapper > .meat form .text-fields input {
+.wrapper > .meat .form form .text-fields input {
     font-size: 16px;
     height: 36px;
     line-height: 36px;
@@ -183,28 +228,28 @@ input {
             transition: box-shadow 0.3s;
 }
 
-.wrapper > .meat form .text-fields input:hover {
+.wrapper > .meat .form form .text-fields input:hover {
     box-shadow: inset 0 0 2px rgba(0, 155, 255, 0.6);
 }
 
-.wrapper > .meat form .text-fields input:focus {
+.wrapper > .meat .form form .text-fields input:focus {
     box-shadow: inset 0 0 3px rgba(0, 155, 255, 0.8);
 }
 
-.wrapper > .meat form .disclaimer {
+.wrapper > .meat .form form .disclaimer {
     color: #fff;
     font-size: 14px;
     text-align: center;
     margin: 25px 0;
 }
 
-.wrapper > .meat form .disclaimer input {
+.wrapper > .meat .form form .disclaimer input {
     -webkit-appearance: checkbox;
     float: left;
     margin: 2px 8px 8px 2px;
 }
 
-.wrapper > .meat form button {
+.wrapper > .meat .form form button {
     background-color: #0051b6;
     border-radius: 6px;
     box-shadow: 0 0 3px rgba(0, 155, 255, 0);
@@ -221,7 +266,7 @@ input {
             transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-.wrapper > .meat form button:hover {
+.wrapper > .meat .form form button:hover {
     background-color: #005dd0;
     box-shadow: 0 0 3px rgba(0, 80, 160, 0.4);
 }
@@ -268,8 +313,9 @@ input {
         height: 31px;
     }
 
-    .wrapper > .meat form {
+    .wrapper > .meat .form {
         float: none;
+        margin: 35px auto 20px;
     }
 
     .wrapper > .meat section.description-mobile {
@@ -278,10 +324,6 @@ input {
 
     .wrapper > .meat section.description-desktop {
         display: none;
-    }
-
-    .wrapper > .meat form {
-        margin: 20px auto 20px;
     }
 }
 

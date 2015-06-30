@@ -1,5 +1,72 @@
 var state = {};
 state.isMobile = /mobile/i.test(navigator.userAgent);
+state.pageShortName = 'Title_X';
+
+
+var signatureGoals = {
+    '450': 500,
+    '900': 1000,
+    '2400': 2500,
+    '4500': 5000,
+    '9500': 10000,
+    '13000': 15000,
+    '22000': 25000,
+    '45000': 50000,
+    '70000': 75000,
+    '90000': 100000,
+    '140000': 150000,
+    '190000': 200000,
+    '240000': 250000,
+    '290000': 300000,
+    '340000': 350000,
+    '390000': 400000,
+    '490000': 500000,
+};
+
+function generateGoal(current) {
+    for (var bar in signatureGoals) {
+        if (current < +bar) {
+            return signatureGoals[bar];
+        }
+    }
+
+    return 750000;
+}
+
+
+function commafy(number) {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+
+// Setup shortcuts for AJAX.
+var ajax = {
+    get: function(url, callback) {
+        callback = callback || function() {};
+
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) {
+                callback(xhr.response);
+            }
+        };
+        xhr.open('get', url, true);
+        xhr.send();
+    },
+
+    post: function(url, formData, callback) {
+        callback = callback || function() {};
+
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) {
+                callback(xhr.response);
+            }
+        };
+        xhr.open('post', url, true);
+        xhr.send(formData);
+    },
+};
 
 
 var events = {
@@ -23,32 +90,102 @@ var events = {
 };
 
 
+var SignatureProgress = React.createClass({displayName: "SignatureProgress",
+    componentDidMount: function() {
+        window.onActionKitProgress = this.onActionKitProgress;
+
+        var script = document.createElement('script');
+        script.src = 'https://act.credoaction.com/progress/' + state.pageShortName + '?callback=onActionKitProgress';
+        document.body.appendChild(script);
+    },
+
+    getInitialState: function() {
+        return {
+            current: 0,
+            goal: 0,
+            percent: 0,
+        };
+    },
+
+    onActionKitProgress: function(res) {
+        var current = res.total.actions;
+        var goal = generateGoal(current);
+        var percent = Math.floor(100 * current / goal);
+
+        this.setState({
+            current: current,
+            goal: goal,
+            percent: percent,
+        });
+    },
+
+    render: function(e) {
+        if (!this.state.percent) {
+            return (
+                React.createElement("div", {className: "progress"}, 
+                    React.createElement("div", {className: "bar"}, 
+                        React.createElement("div", {className: "filled"})
+                    )
+                )
+            );
+        }
+
+        var css = {
+            opacity: 1,
+            width: Math.min(this.state.percent, 100) + '%',
+        };
+
+        return (
+            React.createElement("div", {className: "progress visible"}, 
+                React.createElement("div", {className: "bar"}, 
+                    React.createElement("div", {className: "filled", style:  css })
+                ), 
+
+                React.createElement("div", {className: "percent"}, 
+                     this.state.percent, "%"
+                ), 
+
+                React.createElement("div", {className: "summary"}, 
+                    "We've reached ",  commafy(this.state.current), " of our goal of ",  commafy(this.state.goal), "."
+                )
+            )
+        );
+    },
+});
+
+
 var EmailForm = React.createClass({displayName: "EmailForm",
     render: function() {
         return (
-            React.createElement("form", {onSubmit:  this.onSubmit}, 
-                React.createElement("h2", null, "Add your name"), 
+            React.createElement("section", {className: "form"}, 
 
-                React.createElement("div", {className: "text-fields"}, 
-                    React.createElement("input", {placeholder: "First and Last Name", name: "name"}), 
-                    React.createElement("input", {placeholder: "Email", name: "email", "data-pattern-name": "email", type: "email"}), 
-                    React.createElement("input", {placeholder: "Address", name: "address"}), 
-                    React.createElement("input", {placeholder: "Zip Code", name: "zip", "data-pattern-name": "zip", type: "tel"})
-                ), 
+                React.createElement(SignatureProgress, null), 
 
-                React.createElement("div", {className: "disclaimer"}, 
-                    React.createElement("label", null, 
-                        React.createElement("input", {name: "consent", type: "checkbox"}), 
+                React.createElement("form", {onSubmit:  this.onSubmit}, 
+                    React.createElement("h2", null, "Add your name"), 
 
-                        "I consent to being added to the email", 
-                        React.createElement("br", null), 
-                        "list of one or more participating orgs."
+                    React.createElement("div", {className: "text-fields"}, 
+                        React.createElement("input", {placeholder: "First and Last Name", name: "name"}), 
+                        React.createElement("input", {placeholder: "Email", name: "email", "data-pattern-name": "email", type: "email"}), 
+                        React.createElement("input", {placeholder: "Address", name: "address"}), 
+                        React.createElement("input", {placeholder: "Zip Code", name: "zip", "data-pattern-name": "zip", type: "tel"})
+                    ), 
+
+                    React.createElement("div", {className: "disclaimer"}, 
+                        React.createElement("label", null, 
+                            React.createElement("input", {name: "consent", type: "checkbox"}), 
+
+                            "I consent to being added to the email", 
+                            React.createElement("br", null), 
+                            "list of one or more participating orgs."
+                        )
+                    ), 
+
+                    React.createElement("button", null, 
+                        "Click to Sign"
                     )
-                ), 
-
-                React.createElement("button", null, 
-                    "Click to Sign"
                 )
+
             )
         );
     },
