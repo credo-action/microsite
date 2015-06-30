@@ -158,8 +158,8 @@ input {
     height: 90px;
     opacity: 0;
 
-    -webkit-transition: opacity 0.3s;
-            transition: opacity 0.3s;
+    -webkit-transition: opacity 0.6s;
+            transition: opacity 0.6s;
 }
 
 .wrapper > .meat .form .progress.visible {
@@ -170,17 +170,28 @@ input {
     background-color: #e6e6e6;
     height: 11px;
     margin: 0 0 10px;
+    overflow: hidden;
     position: relative;
 }
 
 .wrapper > .meat .form .progress .bar .filled {
     background-color: #f15a24;
+    background-image: -moz-linear-gradient(top, #f96c3a 0%, #f15a24 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f96c3a), color-stop(100%,#f15a24));
+    background-image: -webkit-linear-gradient(top, #f96c3a 0%,#f15a24 100%);
+    background-image: -o-linear-gradient(top, #f96c3a 0%,#f15a24 100%);
+    background-image: -ms-linear-gradient(top, #f96c3a 0%,#f15a24 100%);
+    background-image: linear-gradient(to bottom, #f96c3a 0%,#f15a24 100%);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
     height: 100%;
+    left: 0;
     opacity: 0;
+    position: absolute;
+    top: 0;
     width: 0%;
 
-    -webkit-transition: opacity 0.3s 0.3s, width 0.6s 0.3s;
-            transition: opacity 0.3s 0.3s, width 0.6s 0.3s;
+    -webkit-transition: opacity 0.3s 0.3s, width 0.8s 0.3s;
+            transition: opacity 0.3s 0.3s, width 0.8s 0.3s;
 }
 
 .wrapper > .meat .form .progress .percent {
