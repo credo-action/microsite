@@ -1,6 +1,6 @@
 var state = {};
 state.isMobile = /mobile/i.test(navigator.userAgent);
-state.pageShortName = 'Title_X';
+state.pageShortName = 'stop_war_with_iran';
 
 
 var signatureGoals = {
@@ -103,7 +103,7 @@ var SignatureProgress = React.createClass({displayName: "SignatureProgress",
         return {
             current: 0,
             goal: 0,
-            percent: 0,
+            percent: -1,
         };
     },
 
@@ -120,7 +120,7 @@ var SignatureProgress = React.createClass({displayName: "SignatureProgress",
     },
 
     render: function(e) {
-        if (!this.state.percent) {
+        if (this.state.percent < 0) {
             return (
                 React.createElement("div", {className: "progress"}, 
                     React.createElement("div", {className: "bar"}, 
