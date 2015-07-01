@@ -75,8 +75,14 @@ input {
     z-index: 1;
 }
 
-.wrapper > header .social a {
+.wrapper > header .social div {
+    float: left;
+}
+
+.wrapper > header .social div a {
+    background: transparent;
     background-size: cover;
+    display: block;
     float: left;
     margin: 0 0 0 20px;
     width: 42px;
@@ -86,19 +92,19 @@ input {
             transition: opacity 0.3s;
 }
 
-.wrapper > header .social a.facebook {
+.wrapper > header .social div.facebook a {
     background-image: url(images/social-icon-FB-42x42.png);
 }
 
-.wrapper > header .social a.twitter {
+.wrapper > header .social div.twitter a {
     background-image: url(images/social-icon-Twitter-42x42.png);
 }
 
-.wrapper > header .social a.email {
+.wrapper > header .social div.email a {
     background-image: url(images/social-icon-Email-42x42.png);
 }
 
-.wrapper > header .social a:hover {
+.wrapper > header .social div a:hover {
     opacity: 0.919;
 }
 
@@ -339,7 +345,7 @@ input {
 }
 
 /* Retina */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     .wrapper > header {
         background-image: url(images/hero-image-1200x312@2x.jpg);
     }

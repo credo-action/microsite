@@ -263,9 +263,9 @@ var App = React.createClass({
                     </h1>
 
                     <div className="social">
-                        <a className="facebook" href="#facebook"></a>
-                        <a className="twitter" href="#twitter"></a>
-                        <a className="email" href="#email"></a>
+                        <div className='sp_14462 sp_fb_small facebook'></div>
+                        <div className='sp_14463 sp_tw_small twitter'></div>
+                        <div className='sp_14461 sp_em_small email'></div>
                     </div>
                 </header>
 
@@ -288,6 +288,12 @@ var App = React.createClass({
                 </footer>
             </div>
         );
+    },
+
+    componentDidMount: function() {
+        var script = document.createElement('script');
+        script.src = 'https://c.shpg.org/4/sp.js';
+        document.body.appendChild(script);
     },
 });
 

@@ -263,9 +263,9 @@ var App = React.createClass({displayName: "App",
                     ), 
 
                     React.createElement("div", {className: "social"}, 
-                        React.createElement("a", {className: "facebook", href: "#facebook"}), 
-                        React.createElement("a", {className: "twitter", href: "#twitter"}), 
-                        React.createElement("a", {className: "email", href: "#email"})
+                        React.createElement("div", {className: "sp_14462 sp_fb_small facebook"}), 
+                        React.createElement("div", {className: "sp_14463 sp_tw_small twitter"}), 
+                        React.createElement("div", {className: "sp_14461 sp_em_small email"})
                     )
                 ), 
 
@@ -288,6 +288,12 @@ var App = React.createClass({displayName: "App",
                 )
             )
         );
+    },
+
+    componentDidMount: function() {
+        var script = document.createElement('script');
+        script.src = 'https://c.shpg.org/4/sp.js';
+        document.body.appendChild(script);
     },
 });
 
