@@ -239,13 +239,21 @@ var App = React.createClass({
     renderDescription: function() {
         return (
             <div className="description">
-                <h2>Don&apos;t let Republicans start another Mideast war.</h2>
+                <h2>Sign the petition: Defend the Iran deal and stop Republicans from starting a war with Iran</h2>
 
-                Sed sit amet ipsum mauris. <a href="#petition">Maecenas</a> congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.
-
+                This is the final showdown to stop Republicans from starting a war with Iran.
                 <div className="spacer" />
 
-                Vivamus fermentum semper porta. Nunc diam velit, adipiscing ut tristique vitae, sagittis vel odio. Maecenas convallis ullamcorper ultricies. Curabitur ornare, ligula semper consectetur sagittis, nisi diam iaculis velit, id fringilla sem nunc vel mi. Nam dictum, odio nec pretium volutpat, arcu ante placerat erat, non tristique elit urna et turpis.
+                The United States, Iran and five other world powers announced a historic deal to dramatically curb Iran&apos;s nuclear program in exchange for easing international sanctions on Iran.
+                <div className="spacer" />
+
+                Republicans are trying to sabotage the deal, put us back on the path to confrontation with Iran and start a war – but they can&apos;t do it unless Democrats help them.
+                <div className="spacer" />
+
+                We need to build an impenetrable firewall in Congress to prevent Republicans from passing any legislation to kill the deal and putting us back on the path to confrontation and war. Tell Democrats to go on record in support of the deal.
+                <div className="spacer" />
+
+                We&apos;ll send your message to your senators and member of Congress, as well as to House and Senate Democratic leadership.
             </div>
         );
     },
