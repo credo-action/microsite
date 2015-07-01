@@ -161,19 +161,29 @@ var EmailForm = React.createClass({
 
                 <SignatureProgress />
 
-                <form onSubmit={ this.onSubmit }>
+                <form onSubmit={ this.onSubmit } method="POST" action="http://act.credoaction.com/act/" accept-charset="utf-8">
                     <h2>Add your name</h2>
 
                     <div className="text-fields">
                         <input placeholder="First and Last Name" name="name" />
                         <input placeholder="Email" name="email" data-pattern-name="email" type="email" />
-                        <input placeholder="Address" name="address" />
+                        <input placeholder="Address" name="address1" />
                         <input placeholder="Zip Code" name="zip" data-pattern-name="zip" type="tel" />
+                    </div>
+
+                    <div className="hidden">
+                        <input type="hidden" name="page" value={ state.pageShortName } />
+                        <input type="hidden" name="want_progress" value="1" />
+                        <input type="hidden" name="country" value="United States" />
+                        <input type="hidden" name="js" value="1" />
+                        <input type="hidden" name="action_user_agent" value={ navigator.userAgent } />
+                        <input type="hidden" name="form_name" value="act-petition" />
+                        <input type="hidden" name="url" value={ location.href } />
                     </div>
 
                     <div className="disclaimer">
                         <label>
-                            <input name="consent" type="checkbox" />
+                            <input name="opt_in" type="checkbox" />
 
                             I consent to being added to the email
                             <br />
@@ -196,8 +206,6 @@ var EmailForm = React.createClass({
     },
 
     onSubmit: function(e) {
-        e.preventDefault();
-
         var inputs = this.getDOMNode().querySelectorAll('input');
         for (var i = 0; i < inputs.length; i++) {
             var input = inputs[i];
@@ -206,6 +214,7 @@ var EmailForm = React.createClass({
             if (!value) {
                 alert('Please enter your ' + input.getAttribute('name') + '.');
                 input.focus();
+                e.preventDefault();
                 return;
             }
 
@@ -213,16 +222,15 @@ var EmailForm = React.createClass({
             if (patternName && this.patterns[patternName]) {
                 var pattern = this.patterns[patternName];
                 var regex = new RegExp(pattern);
-                
+
                 if (!regex.test(value)) {
                     alert('Please enter a valid ' + input.getAttribute('name') + '.');
                     input.focus();
+                    e.preventDefault();
                     return;
                 }
             }
         }
-
-        alert('TODO: Integrate with ActionKit.')
     },
 });
 

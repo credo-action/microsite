@@ -161,19 +161,29 @@ var EmailForm = React.createClass({displayName: "EmailForm",
 
                 React.createElement(SignatureProgress, null), 
 
-                React.createElement("form", {onSubmit:  this.onSubmit}, 
+                React.createElement("form", {onSubmit:  this.onSubmit, method: "POST", action: "http://act.credoaction.com/act/", "accept-charset": "utf-8"}, 
                     React.createElement("h2", null, "Add your name"), 
 
                     React.createElement("div", {className: "text-fields"}, 
                         React.createElement("input", {placeholder: "First and Last Name", name: "name"}), 
                         React.createElement("input", {placeholder: "Email", name: "email", "data-pattern-name": "email", type: "email"}), 
-                        React.createElement("input", {placeholder: "Address", name: "address"}), 
+                        React.createElement("input", {placeholder: "Address", name: "address1"}), 
                         React.createElement("input", {placeholder: "Zip Code", name: "zip", "data-pattern-name": "zip", type: "tel"})
+                    ), 
+
+                    React.createElement("div", {className: "hidden"}, 
+                        React.createElement("input", {type: "hidden", name: "page", value:  state.pageShortName}), 
+                        React.createElement("input", {type: "hidden", name: "want_progress", value: "1"}), 
+                        React.createElement("input", {type: "hidden", name: "country", value: "United States"}), 
+                        React.createElement("input", {type: "hidden", name: "js", value: "1"}), 
+                        React.createElement("input", {type: "hidden", name: "action_user_agent", value:  navigator.userAgent}), 
+                        React.createElement("input", {type: "hidden", name: "form_name", value: "act-petition"}), 
+                        React.createElement("input", {type: "hidden", name: "url", value:  location.href})
                     ), 
 
                     React.createElement("div", {className: "disclaimer"}, 
                         React.createElement("label", null, 
-                            React.createElement("input", {name: "consent", type: "checkbox"}), 
+                            React.createElement("input", {name: "opt_in", type: "checkbox"}), 
 
                             "I consent to being added to the email", 
                             React.createElement("br", null), 
@@ -196,8 +206,6 @@ var EmailForm = React.createClass({displayName: "EmailForm",
     },
 
     onSubmit: function(e) {
-        e.preventDefault();
-
         var inputs = this.getDOMNode().querySelectorAll('input');
         for (var i = 0; i < inputs.length; i++) {
             var input = inputs[i];
@@ -206,6 +214,7 @@ var EmailForm = React.createClass({displayName: "EmailForm",
             if (!value) {
                 alert('Please enter your ' + input.getAttribute('name') + '.');
                 input.focus();
+                e.preventDefault();
                 return;
             }
 
@@ -213,16 +222,15 @@ var EmailForm = React.createClass({displayName: "EmailForm",
             if (patternName && this.patterns[patternName]) {
                 var pattern = this.patterns[patternName];
                 var regex = new RegExp(pattern);
-                
+
                 if (!regex.test(value)) {
                     alert('Please enter a valid ' + input.getAttribute('name') + '.');
                     input.focus();
+                    e.preventDefault();
                     return;
                 }
             }
         }
-
-        alert('TODO: Integrate with ActionKit.')
     },
 });
 
