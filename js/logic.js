@@ -178,12 +178,13 @@ var EmailForm = React.createClass({displayName: "EmailForm",
                         React.createElement("input", {type: "hidden", name: "js", value: "1"}), 
                         React.createElement("input", {type: "hidden", name: "action_user_agent", value:  navigator.userAgent}), 
                         React.createElement("input", {type: "hidden", name: "form_name", value: "act-petition"}), 
-                        React.createElement("input", {type: "hidden", name: "url", value:  location.href})
+                        React.createElement("input", {type: "hidden", name: "url", value:  location.href}), 
+                        React.createElement("input", {type: "hidden", name: "opt_in", value: "1"})
                     ), 
 
                     React.createElement("div", {className: "disclaimer"}, 
                         React.createElement("label", null, 
-                            React.createElement("input", {name: "opt_in", type: "checkbox"}), 
+                            React.createElement("input", {name: "action_opt_in", type: "checkbox"}), 
 
                             "I consent to being added to the email", 
                             React.createElement("br", null), 

@@ -179,11 +179,12 @@ var EmailForm = React.createClass({
                         <input type="hidden" name="action_user_agent" value={ navigator.userAgent } />
                         <input type="hidden" name="form_name" value="act-petition" />
                         <input type="hidden" name="url" value={ location.href } />
+                        <input type="hidden" name="opt_in" value="1" />
                     </div>
 
                     <div className="disclaimer">
                         <label>
-                            <input name="opt_in" type="checkbox" />
+                            <input name="action_opt_in" type="checkbox" />
 
                             I consent to being added to the email
                             <br />
