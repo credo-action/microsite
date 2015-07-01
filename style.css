@@ -80,13 +80,17 @@ input {
 }
 
 .wrapper > header .social div a {
-    background: transparent;
     background-size: cover;
+    background: transparent;
     display: block;
     float: left;
-    margin: 0 0 0 20px;
-    width: 42px;
     height: 42px;
+    margin: 0 0 0 20px;
+    opacity: 0;
+    width: 42px;
+
+    -webkit-animation: socialLinkFadeIn 0.3s forwards;
+            animation: socialLinkFadeIn 0.3s forwards;
 
     -webkit-transition: opacity 0.3s;
             transition: opacity 0.3s;
@@ -105,7 +109,7 @@ input {
 }
 
 .wrapper > header .social div a:hover {
-    opacity: 0.919;
+    opacity: 0.919 !important;
 }
 
 .wrapper > .meat {
@@ -364,5 +368,25 @@ input {
 
     .wrapper > header .social a.email {
         background-image: url(images/social-icon-Email-42x42@2x.png);
+    }
+}
+
+@keyframes socialLinkFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes socialLinkFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
     }
 }
