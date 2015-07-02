@@ -352,20 +352,21 @@ var HomePage = React.createClass({displayName: "HomePage",
 
 
 var CallForm = React.createClass({displayName: "CallForm",
-    render: function() {
-        return (
-            React.createElement("form", {className: "call-form"}, 
-                React.createElement("div", {className: "count"}, 
-                    React.createElement("div", {className: "headline"}, "5,123 Calls"), 
-                    React.createElement("div", {className: "label"}, "completed")
-                ), 
-
-                React.createElement("div", {className: "background"}, 
+    renderForm: function() {
+        if (this.state.isCalling) {
+            return (
+                React.createElement("div", {className: "calling"}, 
+                    "We're calling you now."
+                )
+            );
+        } else {
+            return (
+                React.createElement("div", null, 
                     React.createElement("h2", null, 
                         "Make a Call"
                     ), 
 
-                    React.createElement("input", {type: "tel", placeholder: "Your phone number"}), 
+                    React.createElement("input", {type: "tel", placeholder: "Your phone number", ref: "phone"}), 
 
                     React.createElement("button", null, 
                         "Click to Connect"
@@ -374,6 +375,44 @@ var CallForm = React.createClass({displayName: "CallForm",
                     React.createElement("div", {className: "sidenote"}, 
                         "Or call ", React.createElement("a", {href: "tel:415-234-1515"}, "(415) 234-1515"), " to connect."
                     )
+                )
+            );
+        }
+    },
+
+    onSubmit: function(e) {
+        e.preventDefault();
+
+        var phoneField = this.refs.phone.getDOMNode();
+        var phone = phoneField.value.trim().replace(/[^\d]/g, '');
+        if (phone.length < 10) {
+            phoneField.focus();
+            return alert('Please enter your 10 digit phone number.');
+        }
+
+        ajax.get('https://credo-action-call-tool.herokuapp.com/create?campaignId=stop_war_with_iran&userPhone=' + phone);
+
+        this.setState({
+            isCalling: true,
+        });
+    },
+
+    getInitialState: function() {
+        return {
+            isCalling: false,
+        };
+    },
+
+    render: function() {
+        return (
+            React.createElement("form", {className: "call-form", onSubmit:  this.onSubmit}, 
+                React.createElement("div", {className: "count"}, 
+                    React.createElement("div", {className: "headline"}, "5,123 Calls"), 
+                    React.createElement("div", {className: "label"}, "completed")
+                ), 
+
+                React.createElement("div", {className: "background"}, 
+                     this.renderForm() 
                 )
             )
         );

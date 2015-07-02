@@ -352,20 +352,21 @@ var HomePage = React.createClass({
 
 
 var CallForm = React.createClass({
-    render: function() {
-        return (
-            <form className="call-form">
-                <div className="count">
-                    <div className="headline">5,123 Calls</div>
-                    <div className="label">completed</div>
+    renderForm: function() {
+        if (this.state.isCalling) {
+            return (
+                <div className="calling">
+                    We&apos;re calling you now.
                 </div>
-
-                <div className="background">
+            );
+        } else {
+            return (
+                <div>
                     <h2>
                         Make a Call
                     </h2>
 
-                    <input type="tel" placeholder="Your phone number" />
+                    <input type="tel" placeholder="Your phone number" ref="phone" />
 
                     <button>
                         Click to Connect
@@ -374,6 +375,44 @@ var CallForm = React.createClass({
                     <div className="sidenote">
                         Or call <a href="tel:415-234-1515">(415) 234-1515</a> to connect.
                     </div>
+                </div>
+            );
+        }
+    },
+
+    onSubmit: function(e) {
+        e.preventDefault();
+
+        var phoneField = this.refs.phone.getDOMNode();
+        var phone = phoneField.value.trim().replace(/[^\d]/g, '');
+        if (phone.length < 10) {
+            phoneField.focus();
+            return alert('Please enter your 10 digit phone number.');
+        }
+
+        ajax.get('https://credo-action-call-tool.herokuapp.com/create?campaignId=stop_war_with_iran&userPhone=' + phone);
+
+        this.setState({
+            isCalling: true,
+        });
+    },
+
+    getInitialState: function() {
+        return {
+            isCalling: false,
+        };
+    },
+
+    render: function() {
+        return (
+            <form className="call-form" onSubmit={ this.onSubmit }>
+                <div className="count">
+                    <div className="headline">5,123 Calls</div>
+                    <div className="label">completed</div>
+                </div>
+
+                <div className="background">
+                    { this.renderForm() }
                 </div>
             </form>
         );
