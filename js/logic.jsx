@@ -293,51 +293,51 @@ var Logos = React.createClass({
             <div className="logos">
                 <div className="constrainer">
                     <a target="_blank" href="http://credoaction.com/">
-                        <img src="images/logos/credo.jpg" />
+                        <img src="/images/logos/credo.jpg" />
                     </a>
 
                     <a target="_blank" href="http://www.codepink.org/">
-                        <img src="images/logos/codepink.png" />
+                        <img src="/images/logos/codepink.png" />
                     </a>
 
                     <a target="_blank" href="http://www.dailykos.com/">
-                        <img src="images/logos/dailykos.jpg" />
+                        <img src="/images/logos/dailykos.jpg" />
                     </a>
 
                     <a target="_blank" href="http://justforeignpolicy.org/">
-                        <img src="images/logos/justforeignpolicy.png" />
+                        <img src="/images/logos/justforeignpolicy.png" />
                     </a>
 
                     <a target="_blank" href="http://leftaction.com/">
-                        <img src="images/logos/leftaction.png" />
+                        <img src="/images/logos/leftaction.png" />
                     </a>
 
                     <a target="_blank" href="http://moveon.org/">
-                        <img src="images/logos/moveon.png" />
+                        <img src="/images/logos/moveon.png" />
                     </a>
 
                     <a target="_blank" href="http://other98.com/">
-                        <img src="images/logos/other98.png" />
+                        <img src="/images/logos/other98.png" />
                     </a>
 
                     <a target="_blank" href="http://www.pdamerica.org/">
-                        <img src="images/logos/pda.png" />
+                        <img src="/images/logos/pda.png" />
                     </a>
 
                     <a target="_blank" href="http://rootsaction.org/">
-                        <img src="images/logos/rootsaction.png" />
+                        <img src="/images/logos/rootsaction.png" />
                     </a>
 
                     <a target="_blank" href="http://www.thenation.com/">
-                        <img src="images/logos/thenation.jpg" />
+                        <img src="/images/logos/thenation.jpg" />
                     </a>
 
                     <a target="_blank" href="http://usaction.org/">
-                        <img src="images/logos/usaction.png" />
+                        <img src="/images/logos/usaction.png" />
                     </a>
 
                     <a target="_blank" href="http://winwithoutwar.org/">
-                        <img src="images/logos/winwithoutwar.jpg" />
+                        <img src="/images/logos/winwithoutwar.jpg" />
                     </a>
                 </div>
             </div>

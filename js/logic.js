@@ -293,51 +293,51 @@ var Logos = React.createClass({displayName: "Logos",
             React.createElement("div", {className: "logos"}, 
                 React.createElement("div", {className: "constrainer"}, 
                     React.createElement("a", {target: "_blank", href: "http://credoaction.com/"}, 
-                        React.createElement("img", {src: "images/logos/credo.jpg"})
+                        React.createElement("img", {src: "/images/logos/credo.jpg"})
                     ), 
 
                     React.createElement("a", {target: "_blank", href: "http://www.codepink.org/"}, 
-                        React.createElement("img", {src: "images/logos/codepink.png"})
+                        React.createElement("img", {src: "/images/logos/codepink.png"})
                     ), 
 
                     React.createElement("a", {target: "_blank", href: "http://www.dailykos.com/"}, 
-                        React.createElement("img", {src: "images/logos/dailykos.jpg"})
+                        React.createElement("img", {src: "/images/logos/dailykos.jpg"})
                     ), 
 
                     React.createElement("a", {target: "_blank", href: "http://justforeignpolicy.org/"}, 
-                        React.createElement("img", {src: "images/logos/justforeignpolicy.png"})
+                        React.createElement("img", {src: "/images/logos/justforeignpolicy.png"})
                     ), 
 
                     React.createElement("a", {target: "_blank", href: "http://leftaction.com/"}, 
-                        React.createElement("img", {src: "images/logos/leftaction.png"})
+                        React.createElement("img", {src: "/images/logos/leftaction.png"})
                     ), 
 
                     React.createElement("a", {target: "_blank", href: "http://moveon.org/"}, 
-                        React.createElement("img", {src: "images/logos/moveon.png"})
+                        React.createElement("img", {src: "/images/logos/moveon.png"})
                     ), 
 
                     React.createElement("a", {target: "_blank", href: "http://other98.com/"}, 
-                        React.createElement("img", {src: "images/logos/other98.png"})
+                        React.createElement("img", {src: "/images/logos/other98.png"})
                     ), 
 
                     React.createElement("a", {target: "_blank", href: "http://www.pdamerica.org/"}, 
-                        React.createElement("img", {src: "images/logos/pda.png"})
+                        React.createElement("img", {src: "/images/logos/pda.png"})
                     ), 
 
                     React.createElement("a", {target: "_blank", href: "http://rootsaction.org/"}, 
-                        React.createElement("img", {src: "images/logos/rootsaction.png"})
+                        React.createElement("img", {src: "/images/logos/rootsaction.png"})
                     ), 
 
                     React.createElement("a", {target: "_blank", href: "http://www.thenation.com/"}, 
-                        React.createElement("img", {src: "images/logos/thenation.jpg"})
+                        React.createElement("img", {src: "/images/logos/thenation.jpg"})
                     ), 
 
                     React.createElement("a", {target: "_blank", href: "http://usaction.org/"}, 
-                        React.createElement("img", {src: "images/logos/usaction.png"})
+                        React.createElement("img", {src: "/images/logos/usaction.png"})
                     ), 
 
                     React.createElement("a", {target: "_blank", href: "http://winwithoutwar.org/"}, 
-                        React.createElement("img", {src: "images/logos/winwithoutwar.jpg"})
+                        React.createElement("img", {src: "/images/logos/winwithoutwar.jpg"})
                     )
                 )
             )
