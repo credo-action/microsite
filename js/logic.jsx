@@ -1,6 +1,7 @@
 var state = {};
 state.isMobile = /mobile/i.test(navigator.userAgent);
 state.pageShortName = 'stop_war_with_iran';
+state.query = getQueryVariables();
 
 
 var signatureGoals = {
@@ -31,6 +32,21 @@ function generateGoal(current) {
     }
 
     return 750000;
+}
+
+
+function getQueryVariables() {
+    var variables = {};
+
+    var queryString = location.search.substr(1);
+    var pairs = queryString.split('&');
+
+    for (var i = 0; i < pairs.length; i++) {
+        var keyValue = pairs[i].split('=');
+        variables[keyValue[0]] = keyValue[1];
+    }
+
+    return variables;
 }
 
 
@@ -161,7 +177,7 @@ var EmailForm = React.createClass({
 
                 <SignatureProgress />
 
-                <form onSubmit={ this.onSubmit } method="POST" action="http://act.credoaction.com/act/" accept-charset="utf-8">
+                <form onSubmit={ this.onSubmit } method="POST" action="https://act.credoaction.com/act/" accept-charset="utf-8">
                     <h2>Add your name</h2>
 
                     <div className="text-fields">
@@ -180,6 +196,7 @@ var EmailForm = React.createClass({
                         <input type="hidden" name="form_name" value="act-petition" />
                         <input type="hidden" name="url" value={ location.href } />
                         <input type="hidden" name="opt_in" value="1" />
+                        <input type="hidden" name="source" value={ state.query.source || 'CREDO' } />
                     </div>
 
                     <div className="disclaimer">
