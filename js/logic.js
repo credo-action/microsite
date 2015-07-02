@@ -253,7 +253,50 @@ var EmailForm = React.createClass({displayName: "EmailForm",
 });
 
 
-var App = React.createClass({displayName: "App",
+var Header = React.createClass({displayName: "Header",
+    render: function() {
+        return (
+            React.createElement("header", null, 
+                React.createElement("a", {className: "flag", href: "#petition"}), 
+
+                React.createElement("h1", null, 
+                    "Stop War", 
+                    React.createElement("br", null), 
+                    "With Iran"
+                ), 
+
+                React.createElement("div", {className: "social"}, 
+                    React.createElement("div", {className: "sp_14462 sp_fb_small facebook"}), 
+                    React.createElement("div", {className: "sp_14463 sp_tw_small twitter"}), 
+                    React.createElement("div", {className: "sp_14461 sp_em_small email"})
+                )
+            )
+        );
+    },
+});
+
+
+var Footer = React.createClass({displayName: "Footer",
+    render: function() {
+        return (
+            React.createElement("footer", null, 
+                "All content copyright ©2015 ", React.createElement("a", {href: "http://credoaction.com/", target: "_blank"}, "CREDO"), " and partner orgs."
+            )
+        );
+    },
+});
+
+
+var Logos = React.createClass({displayName: "Logos",
+    render: function() {
+        return (
+            React.createElement("div", {className: "logos"})
+        );
+    },
+});
+
+
+var HomePage = React.createClass({displayName: "HomePage",
     renderDescription: function() {
         return (
             React.createElement("div", {className: "description"}, 
@@ -278,22 +321,8 @@ var App = React.createClass({displayName: "App",
 
     render: function() {
         return (
-            React.createElement("div", {className: "wrapper"}, 
-                React.createElement("header", null, 
-                    React.createElement("a", {className: "flag", href: "#petition"}), 
-
-                    React.createElement("h1", null, 
-                        "Stop War", 
-                        React.createElement("br", null), 
-                        "With Iran"
-                    ), 
-
-                    React.createElement("div", {className: "social"}, 
-                        React.createElement("div", {className: "sp_14462 sp_fb_small facebook"}), 
-                        React.createElement("div", {className: "sp_14463 sp_tw_small twitter"}), 
-                        React.createElement("div", {className: "sp_14461 sp_em_small email"})
-                    )
-                ), 
+            React.createElement("div", {className: "wrapper home-page"}, 
+                React.createElement(Header, null), 
 
                 React.createElement("div", {className: "meat"}, 
 
@@ -307,11 +336,9 @@ var App = React.createClass({displayName: "App",
 
                 ), 
 
-                React.createElement("div", {className: "logos"}), 
+                React.createElement(Logos, null), 
 
-                React.createElement("footer", null, 
-                    "All content copyright ©2015 ", React.createElement("a", {href: "http://credoaction.com/", target: "_blank"}, "CREDO"), " and partner orgs."
-                )
+                React.createElement(Footer, null)
             )
         );
     },
@@ -324,4 +351,95 @@ var App = React.createClass({displayName: "App",
 });
 
 
-React.render(React.createElement(App, null), document.getElementById('app'));
+var CallForm = React.createClass({displayName: "CallForm",
+    render: function() {
+        return (
+            React.createElement("form", {className: "call-form"}, 
+                React.createElement("div", {className: "count"}, 
+                    React.createElement("div", {className: "headline"}, "5,123 Calls"), 
+                    React.createElement("div", {className: "label"}, "completed")
+                ), 
+
+                React.createElement("div", {className: "background"}, 
+                    React.createElement("h2", null, 
+                        "Make a Call"
+                    ), 
+
+                    React.createElement("input", {type: "tel", placeholder: "Your phone number"}), 
+
+                    React.createElement("button", null, 
+                        "Click to Connect"
+                    ), 
+
+                    React.createElement("div", {className: "sidenote"}, 
+                        "Or call ", React.createElement("a", {href: "tel:415-234-1515"}, "(415) 234-1515"), " to connect."
+                    )
+                )
+            )
+        );
+    },
+});
+
+
+var CallPage = React.createClass({displayName: "CallPage",
+    render: function() {
+        return (
+            React.createElement("div", {className: "wrapper call-page"}, 
+                React.createElement(Header, null), 
+
+                React.createElement("div", {className: "meat"}, 
+
+                    React.createElement("h2", {className: "thanks"}, 
+                        "Thanks for signing. Please make a call of support."
+                    ), 
+
+                    React.createElement("h2", {className: "request-mobile"}, 
+                        "Please call Democratic leaders in Congress and urge them to rally their caucus to support the Iran nuclear deal."
+                    ), 
+
+                    React.createElement("div", {id: "call-form"}), 
+
+                    React.createElement(CallForm, null), 
+
+                    React.createElement("div", {className: "description description-call"}, 
+                        React.createElement("h2", {className: "request-desktop"}, 
+                            "Please call Democratic leaders in Congress and urge them to rally their caucus to support the Iran nuclear deal."
+                        ), 
+
+                        React.createElement("h3", null, 
+                            "Call script"
+                        ), 
+
+                        "Hello, my name is __________.", 
+                        React.createElement("div", {className: "spacer"}), 
+
+                        "Vivamus fermentum semper porta. Nunc diam velit, adipiscing ut tristique vitae, sagittis vel odio. Maecenas convallis ullamcorper ultricies. Curabitur ornare, ligula semper consectetur sagittis, nisi diam iaculis velit, id fringilla sem nunc vel mi. Nam dictum, odio nec pretium volutpat, arcu ante placerat erat, non tristique elit urna et turpis.", 
+                        React.createElement("div", {className: "spacer"}), 
+
+                        "Vivamus fermentum semper porta. Nunc diam velit, adipiscing ut tristique vitae, sagittis vel odio. Maecenas convallis ullamcorper ultricies. Curabitur ornare, ligula semper consectetur sagittis, nisi diam iaculis velit, id fringilla sem nunc vel mi. Nam dictum, odio nec pretium volutpat, arcu ante placerat erat, non tristique elit urna et turpis."
+                    )
+
+                ), 
+
+                React.createElement(Logos, null), 
+
+                React.createElement(Footer, null)
+            )
+        );
+    },
+
+    componentDidMount: function() {
+        var script = document.createElement('script');
+        script.src = 'https://c.shpg.org/4/sp.js';
+        document.body.appendChild(script);
+    },
+});
+
+
+(function() {
+    if (/^\/call\/?/.test(location.pathname)) {
+        React.render(React.createElement(CallPage, null), document.getElementById('app'));
+    } else {
+        React.render(React.createElement(HomePage, null), document.getElementById('app'));
+    }
+})();

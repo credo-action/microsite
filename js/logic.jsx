@@ -253,7 +253,50 @@ var EmailForm = React.createClass({
 });
 
 
-var App = React.createClass({
+var Header = React.createClass({
+    render: function() {
+        return (
+            <header>
+                <a className="flag" href="#petition"></a>
+
+                <h1>
+                    Stop War
+                    <br />
+                    With Iran
+                </h1>
+
+                <div className="social">
+                    <div className='sp_14462 sp_fb_small facebook'></div>
+                    <div className='sp_14463 sp_tw_small twitter'></div>
+                    <div className='sp_14461 sp_em_small email'></div>
+                </div>
+            </header>
+        );
+    },
+});
+
+
+var Footer = React.createClass({
+    render: function() {
+        return (
+            <footer>
+                All content copyright &copy;2015 <a href="http://credoaction.com/" target="_blank">CREDO</a> and partner orgs.
+            </footer>
+        );
+    },
+});
+
+
+var Logos = React.createClass({
+    render: function() {
+        return (
+            <div className="logos" />
+        );
+    },
+});
+
+
+var HomePage = React.createClass({
     renderDescription: function() {
         return (
             <div className="description">
@@ -278,22 +321,8 @@ var App = React.createClass({
 
     render: function() {
         return (
-            <div className="wrapper">
-                <header>
-                    <a className="flag" href="#petition"></a>
-
-                    <h1>
-                        Stop War
-                        <br />
-                        With Iran
-                    </h1>
-
-                    <div className="social">
-                        <div className='sp_14462 sp_fb_small facebook'></div>
-                        <div className='sp_14463 sp_tw_small twitter'></div>
-                        <div className='sp_14461 sp_em_small email'></div>
-                    </div>
-                </header>
+            <div className="wrapper home-page">
+                <Header />
 
                 <div className="meat">
 
@@ -307,11 +336,9 @@ var App = React.createClass({
 
                 </div>
 
-                <div className="logos"></div>
+                <Logos />
 
-                <footer>
-                    All content copyright &copy;2015 <a href="http://credoaction.com/" target="_blank">CREDO</a> and partner orgs.
-                </footer>
+                <Footer />
             </div>
         );
     },
@@ -324,4 +351,95 @@ var App = React.createClass({
 });
 
 
-React.render(<App />, document.getElementById('app'));
+var CallForm = React.createClass({
+    render: function() {
+        return (
+            <form className="call-form">
+                <div className="count">
+                    <div className="headline">5,123 Calls</div>
+                    <div className="label">completed</div>
+                </div>
+
+                <div className="background">
+                    <h2>
+                        Make a Call
+                    </h2>
+
+                    <input type="tel" placeholder="Your phone number" />
+
+                    <button>
+                        Click to Connect
+                    </button>
+
+                    <div className="sidenote">
+                        Or call <a href="tel:415-234-1515">(415) 234-1515</a> to connect.
+                    </div>
+                </div>
+            </form>
+        );
+    },
+});
+
+
+var CallPage = React.createClass({
+    render: function() {
+        return (
+            <div className="wrapper call-page">
+                <Header />
+
+                <div className="meat">
+
+                    <h2 className="thanks">
+                        Thanks for signing. Please make a call of support.
+                    </h2>
+
+                    <h2 className="request-mobile">
+                        Please call Democratic leaders in Congress and urge them to rally their caucus to support the Iran nuclear deal.
+                    </h2>
+
+                    <div id="call-form" />
+
+                    <CallForm />
+
+                    <div className="description description-call">
+                        <h2 className="request-desktop">
+                            Please call Democratic leaders in Congress and urge them to rally their caucus to support the Iran nuclear deal.
+                        </h2>
+
+                        <h3>
+                            Call script
+                        </h3>
+
+                        Hello, my name is __________.
+                        <div className="spacer" />
+
+                        Vivamus fermentum semper porta. Nunc diam velit, adipiscing ut tristique vitae, sagittis vel odio. Maecenas convallis ullamcorper ultricies. Curabitur ornare, ligula semper consectetur sagittis, nisi diam iaculis velit, id fringilla sem nunc vel mi. Nam dictum, odio nec pretium volutpat, arcu ante placerat erat, non tristique elit urna et turpis.
+                        <div className="spacer" />
+
+                        Vivamus fermentum semper porta. Nunc diam velit, adipiscing ut tristique vitae, sagittis vel odio. Maecenas convallis ullamcorper ultricies. Curabitur ornare, ligula semper consectetur sagittis, nisi diam iaculis velit, id fringilla sem nunc vel mi. Nam dictum, odio nec pretium volutpat, arcu ante placerat erat, non tristique elit urna et turpis.
+                    </div>
+
+                </div>
+
+                <Logos />
+
+                <Footer />
+            </div>
+        );
+    },
+
+    componentDidMount: function() {
+        var script = document.createElement('script');
+        script.src = 'https://c.shpg.org/4/sp.js';
+        document.body.appendChild(script);
+    },
+});
+
+
+(function() {
+    if (/^\/call\/?/.test(location.pathname)) {
+        React.render(<CallPage />, document.getElementById('app'));
+    } else {
+        React.render(<HomePage />, document.getElementById('app'));
+    }
+})();

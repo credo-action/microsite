@@ -118,10 +118,36 @@ input {
     overflow: hidden;
     position: relative;
 }
+
+.wrapper.call-page > .meat {
+    max-width: 1000px;
+}
+
+.wrapper > .meat > h2.thanks {
+    font-size: 24px;
+    font-weight: normal;
+    margin: 30px 20px;
+    line-height: 1;
+}
+
 .wrapper > .meat .description {
     color: #4d4d4d;
     font-size: 13px;
     line-height: 21px;
+}
+
+.wrapper > .meat .description.description-call {
+    float: left;
+    margin: 0 20px 40px 0;
+    width: calc(100% - 371px);
+}
+
+.wrapper > .meat .description.description-call h3 {
+    color: #0051b6;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 30px 0;
+    text-transform: uppercase;
 }
 
 .wrapper > .meat section.description-mobile {
@@ -139,6 +165,20 @@ input {
     font-weight: 400;
     margin: 0 0 30px;
     line-height: 1.3;
+}
+
+.wrapper > .meat .description h2.request-desktop {
+    display: block;
+}
+
+.wrapper > .meat h2.request-mobile {
+    color: #000;
+    display: none;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.3;
+    margin: 0 20px 30px;
+    text-align: center;
 }
 
 .wrapper > .meat .description a {
@@ -292,6 +332,105 @@ input {
     box-shadow: 0 0 3px rgba(0, 80, 160, 0.4);
 }
 
+.wrapper > .meat form.call-form {
+    float: left;
+    margin: 0 40px 40px 20px;
+}
+
+.wrapper > .meat form.call-form .count {
+    background-color: #9eef81;
+    height: 62px;
+    margin: 0 auto;
+    padding: 8px 0;
+    text-align: center;
+    width: 269px;
+}
+
+.wrapper > .meat form.call-form .count .headline {
+    color: #0051b6;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.wrapper > .meat form.call-form .count .label {
+    color: #0051b6;
+    font-size: 16px;
+    line-height: 1;
+    margin: 1px 0 0;
+}
+
+.wrapper > .meat form.call-form .background {
+    background-color: rgba(0, 0, 0, 0.45);
+    border-radius: 4px;
+    padding: 20px 12px 20px;
+    width: 291px;
+}
+
+.wrapper > .meat form.call-form .background h2 {
+    color: #fff;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 1;
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+}
+
+.wrapper > .meat form.call-form input {
+    font-size: 16px;
+    height: 36px;
+    line-height: 36px;
+    margin: 0 0 22px;
+    padding: 0 20px;
+    width: 100%;
+
+    -webkit-transition: box-shadow 0.3s;
+            transition: box-shadow 0.3s;
+}
+
+.wrapper > .meat form.call-form input:hover {
+    box-shadow: inset 0 0 2px rgba(0, 155, 255, 0.6);
+}
+
+.wrapper > .meat form.call-form input:focus {
+    box-shadow: inset 0 0 3px rgba(0, 155, 255, 0.8);
+}
+
+.wrapper > .meat form.call-form button {
+    background-color: #f15a2a;
+    border-radius: 6px;
+    box-shadow: 0 0 3px rgba(255, 155, 60, 0);
+    color: #fff;
+    cursor: pointer;
+    font-size: 21px;
+    font-weight: bold;
+    height: 42px;
+    line-height: 36px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.067);
+    width: 100%;
+
+    -webkit-transition: background-color 0.3s, box-shadow 0.3s;
+            transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.wrapper > .meat form.call-form button:hover {
+    background-color: #FF3E00;
+    box-shadow: 0 0 3px rgba(255, 155, 60, 0.4);
+}
+
+.wrapper > .meat form.call-form .sidenote {
+    color: #fff;
+    font-size: 14px;
+    margin: 20px 0 10px;
+    text-align: center;
+}
+
+.wrapper > .meat form.call-form .sidenote a {
+    color: #fff;
+    text-decoration: none;
+}
+
 .wrapper > .logos {
     background-color: #f2f2f2;
     min-height: 176px;
@@ -328,7 +467,8 @@ input {
         width: 144px;
     }
 
-    .wrapper > header .social a {
+    .wrapper > header .social div a {
+        background-size: cover;
         margin: 0 0 0 15px;
         width: 31px;
         height: 31px;
@@ -339,12 +479,43 @@ input {
         margin: 35px auto 20px;
     }
 
+    .wrapper > .meat form.call-form {
+        float: none;
+        margin: 0px auto 40px;
+    }
+
+    .wrapper > .meat form.call-form .background {
+        margin: 0 auto;
+    }
+
+    .wrapper > .meat .description.description-call {
+        float: none;
+        padding: 0 32px 32px;
+        width: 100%;
+    }
+
+    .wrapper > .meat .description.description-call h3 {
+        text-align: center;
+    }
+
     .wrapper > .meat section.description-mobile {
         display: block;
     }
 
     .wrapper > .meat section.description-desktop {
         display: none;
+    }
+
+    .wrapper > .meat .description h2.request-desktop {
+        display: none;
+    }
+
+    .wrapper > .meat h2.request-mobile {
+        display: block;
+    }
+
+    .wrapper > .meat > h2.thanks {
+        text-align: center;
     }
 }
 
@@ -358,15 +529,15 @@ input {
         background-image: url(images/flag-sign-petition-208x36@2x.png);
     }
 
-    .wrapper > header .social a.facebook {
+    .wrapper > header .social div.facebook a {
         background-image: url(images/social-icon-FB-42x42@2x.png);
     }
 
-    .wrapper > header .social a.twitter {
+    .wrapper > header .social div.twitter a {
         background-image: url(images/social-icon-Twitter-42x42@2x.png);
     }
 
-    .wrapper > header .social a.email {
+    .wrapper > header .social div.email a {
         background-image: url(images/social-icon-Email-42x42@2x.png);
     }
 }
