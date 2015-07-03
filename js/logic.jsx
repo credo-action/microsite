@@ -323,6 +323,10 @@ var Logos = React.createClass({
                         <img src="/images/logos/codepink.png" />
                     </a>
 
+                    <a target="_blank" href="http://livableworld.org/">
+                        <img src="/images/logos/clw.png" />
+                    </a>
+
                     <a target="_blank" href="http://www.dailykos.com/">
                         <img src="/images/logos/dailykos.jpg" />
                     </a>
