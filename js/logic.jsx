@@ -479,11 +479,7 @@ var CallPage = React.createClass({
                 <div className="meat">
 
                     <h2 className="thanks">
-                        Thanks for signing. Please make a call of support.
-                    </h2>
-
-                    <h2 className="request-mobile">
-                        Please call Democratic leaders in Congress and urge them to rally their caucus to support the Iran nuclear deal.
+                        Thank you for signing. Now please call Democratic leaders in Congress and urge them to support the Iran nuclear deal.
                     </h2>
 
                     <div id="call-form" />
@@ -491,21 +487,11 @@ var CallPage = React.createClass({
                     <CallForm />
 
                     <div className="description description-call">
-                        <h2 className="request-desktop">
-                            Please call Democratic leaders in Congress and urge them to rally their caucus to support the Iran nuclear deal.
-                        </h2>
-
                         <h3>
                             Call script
                         </h3>
 
-                        Hello, my name is __________.
-                        <div className="spacer" />
-
-                        Vivamus fermentum semper porta. Nunc diam velit, adipiscing ut tristique vitae, sagittis vel odio. Maecenas convallis ullamcorper ultricies. Curabitur ornare, ligula semper consectetur sagittis, nisi diam iaculis velit, id fringilla sem nunc vel mi. Nam dictum, odio nec pretium volutpat, arcu ante placerat erat, non tristique elit urna et turpis.
-                        <div className="spacer" />
-
-                        Vivamus fermentum semper porta. Nunc diam velit, adipiscing ut tristique vitae, sagittis vel odio. Maecenas convallis ullamcorper ultricies. Curabitur ornare, ligula semper consectetur sagittis, nisi diam iaculis velit, id fringilla sem nunc vel mi. Nam dictum, odio nec pretium volutpat, arcu ante placerat erat, non tristique elit urna et turpis.
+                        Hello, my name is __________ and I&apos;m calling from __________. Republicans are trying to take us to war by sabotaging the Iran nuclear deal. I urge you to support the deal and stop the Republicans from starting another costly war in the Middle East.
                     </div>
 
                 </div>

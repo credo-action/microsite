@@ -479,11 +479,7 @@ var CallPage = React.createClass({displayName: "CallPage",
                 React.createElement("div", {className: "meat"}, 
 
                     React.createElement("h2", {className: "thanks"}, 
-                        "Thanks for signing. Please make a call of support."
-                    ), 
-
-                    React.createElement("h2", {className: "request-mobile"}, 
-                        "Please call Democratic leaders in Congress and urge them to rally their caucus to support the Iran nuclear deal."
+                        "Thank you for signing. Now please call Democratic leaders in Congress and urge them to support the Iran nuclear deal."
                     ), 
 
                     React.createElement("div", {id: "call-form"}), 
@@ -491,21 +487,11 @@ var CallPage = React.createClass({displayName: "CallPage",
                     React.createElement(CallForm, null), 
 
                     React.createElement("div", {className: "description description-call"}, 
-                        React.createElement("h2", {className: "request-desktop"}, 
-                            "Please call Democratic leaders in Congress and urge them to rally their caucus to support the Iran nuclear deal."
-                        ), 
-
                         React.createElement("h3", null, 
                             "Call script"
                         ), 
 
-                        "Hello, my name is __________.", 
-                        React.createElement("div", {className: "spacer"}), 
-
-                        "Vivamus fermentum semper porta. Nunc diam velit, adipiscing ut tristique vitae, sagittis vel odio. Maecenas convallis ullamcorper ultricies. Curabitur ornare, ligula semper consectetur sagittis, nisi diam iaculis velit, id fringilla sem nunc vel mi. Nam dictum, odio nec pretium volutpat, arcu ante placerat erat, non tristique elit urna et turpis.", 
-                        React.createElement("div", {className: "spacer"}), 
-
-                        "Vivamus fermentum semper porta. Nunc diam velit, adipiscing ut tristique vitae, sagittis vel odio. Maecenas convallis ullamcorper ultricies. Curabitur ornare, ligula semper consectetur sagittis, nisi diam iaculis velit, id fringilla sem nunc vel mi. Nam dictum, odio nec pretium volutpat, arcu ante placerat erat, non tristique elit urna et turpis."
+                        "Hello, my name is __________ and I'm calling from __________. Republicans are trying to take us to war by sabotaging the Iran nuclear deal. I urge you to support the deal and stop the Republicans from starting another costly war in the Middle East."
                     )
 
                 ), 
