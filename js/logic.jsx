@@ -316,7 +316,7 @@ var Logos = React.createClass({
             <div className="logos">
                 <div className="constrainer">
                     <a target="_blank" href="http://credoaction.com/">
-                        <img src="/images/logos/credo.jpg" />
+                        <img src="/images/logos/credo.png" />
                     </a>
 
                     <a target="_blank" href="http://www.codepink.org/">

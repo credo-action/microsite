@@ -316,7 +316,7 @@ var Logos = React.createClass({displayName: "Logos",
             React.createElement("div", {className: "logos"}, 
                 React.createElement("div", {className: "constrainer"}, 
                     React.createElement("a", {target: "_blank", href: "http://credoaction.com/"}, 
-                        React.createElement("img", {src: "/images/logos/credo.jpg"})
+                        React.createElement("img", {src: "/images/logos/credo.png"})
                     ), 
 
                     React.createElement("a", {target: "_blank", href: "http://www.codepink.org/"}, 
