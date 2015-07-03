@@ -1,7 +1,25 @@
+// Check for outdated browsers.
+(function() {
+    var isIE = /MSIE (\d+)\./.test(navigator.userAgent);
+    if (isIE) {
+        var version = +isIE[1];
+        if (version < 10) {
+            alert('Unfortunately your browser, Internet Explorer ' + version + ', is not supported.\nPlease visit the site with a modern browser like Firefox or Chrome.\nThanks!');
+        }
+    }
+
+    if (/Android 2\.3/.test(navigator.userAgent)) {
+        alert('Unfortunately your browser, Android 2.3, is not supported.\nPlease visit the site with a modern browser like Firefox or Chrome.\nThanks!');
+    }
+})();
+
+
+
 var state = {};
 state.isMobile = /mobile/i.test(navigator.userAgent);
 state.pageShortName = 'stop_war_with_iran';
 state.query = getQueryVariables();
+
 
 
 var signatureGoals = {
@@ -224,6 +242,7 @@ var EmailForm = React.createClass({displayName: "EmailForm",
     },
 
     onSubmit: function(e) {
+        var values = {};
         var inputs = this.getDOMNode().querySelectorAll('input');
         for (var i = 0; i < inputs.length; i++) {
             var input = inputs[i];
@@ -248,7 +267,11 @@ var EmailForm = React.createClass({displayName: "EmailForm",
                     return;
                 }
             }
+
+            values[input.name] = value;
         }
+
+        sessionStorage.homeFormValues = JSON.stringify(values);
     },
 });
 
@@ -440,7 +463,30 @@ var CallForm = React.createClass({displayName: "CallForm",
             return alert('Please enter your 10 digit phone number.');
         }
 
-        ajax.get('https://credo-action-call-tool.herokuapp.com/create?campaignId=stop_war_with_iran&userPhone=' + phone);
+        var campaignId, url;
+        if (this.props.progressivesCount > 0) {
+            campaignId = 'stop_war_with_iran_dynamic';
+            url =
+                'https://credo-action-call-tool.herokuapp.com/create' +
+                '?campaignId=' + campaignId +
+                '&userPhone=' + phone +
+                '&zipcode=' + this.props.zip;
+
+            alert('TODO: Hook up "dynamic" Call Tool campaign.');
+        } else {
+            campaignId = 'stop_war_with_iran_static';
+            url =
+                'https://credo-action-call-tool.herokuapp.com/create' +
+                '?campaignId=' + campaignId +
+                '&userPhone=' + phone;
+
+            alert('TODO: Hook up "general" Call Tool campaign.');
+        }
+
+        return;
+
+        ajax.get(url);
+
 
         this.setState({
             isCalling: true,
@@ -472,26 +518,31 @@ var CallForm = React.createClass({displayName: "CallForm",
 
 var CallPage = React.createClass({displayName: "CallPage",
     render: function() {
+        var css = {
+            opacity: this.state.visible ? 1 : 0,
+        };
+
         return (
             React.createElement("div", {className: "wrapper call-page"}, 
                 React.createElement(Header, null), 
 
-                React.createElement("div", {className: "meat"}, 
+                React.createElement("div", {className: "meat", style:  css }, 
 
-                    React.createElement("h2", {className: "thanks"}, 
-                        "Thank you for signing. Now please call Democratic leaders in Congress and urge them to support the Iran nuclear deal."
-                    ), 
+                     this.getTitle(), 
 
                     React.createElement("div", {id: "call-form"}), 
 
-                    React.createElement(CallForm, null), 
+                    React.createElement(CallForm, {
+                        progressivesCount:  this.state.progressivesCount, 
+                        zip:  this.state.zip}
+                    ), 
 
                     React.createElement("div", {className: "description description-call"}, 
                         React.createElement("h3", null, 
                             "Call script"
                         ), 
 
-                        "Hello, my name is __________ and I'm calling from __________. Republicans are trying to take us to war by sabotaging the Iran nuclear deal. I urge you to support the deal and stop the Republicans from starting another costly war in the Middle East."
+                        "Hello, my name is ",  this.state.name || '__________', " and I'm calling from ",  this.state.city || '__________', ". Republicans are trying to take us to war by sabotaging the Iran nuclear deal. I urge you to support the deal and stop the Republicans from starting another costly war in the Middle East."
                     )
 
                 ), 
@@ -503,10 +554,73 @@ var CallPage = React.createClass({displayName: "CallPage",
         );
     },
 
+    getTitle: function() {
+        if (this.state.progressivesCount === 1) {
+            return (
+                React.createElement("h2", {className: "thanks"}, 
+                    "Thank you for signing. Now please call the Democrat who represents you in Congress and urge them to support the Iran nuclear deal."
+                )
+            );
+        } else if (this.state.progressivesCount > 1) {
+            return (
+                React.createElement("h2", {className: "thanks"}, 
+                    "Thank you for signing. Now please call the Democrats who represent you in Congress and urge them to support the Iran nuclear deal."
+                )
+            );
+        } else {
+            return (
+                React.createElement("h2", {className: "thanks"}, 
+                    "Thank you for signing. Now please call Democratic leaders in Congress and urge them to support the Iran nuclear deal."
+                )
+            );
+        }
+    },
+
+    onSunlightResponse: function(res) {
+        var progressivesCount = 0;
+        var legislators = JSON.parse(res).results;
+        for (var i = 0; i < legislators.length; i++) {
+            var legislator = legislators[i];
+            if (legislator.party !== 'R') {
+                progressivesCount++;
+            }
+        }
+
+        this.setState({
+            progressivesCount: progressivesCount,
+            visible: true,
+        });
+    },
+
+    getInitialState: function() {
+        return {
+            city: null,
+            name: null,
+            progressivesCount: 0,
+            visible: false,
+        };
+    },
+
     componentDidMount: function() {
         var script = document.createElement('script');
         script.src = 'https://c.shpg.org/4/sp.js';
         document.body.appendChild(script);
+
+        if (sessionStorage.homeFormValues) {
+            var values = JSON.parse(sessionStorage.homeFormValues);
+
+            var url = 'https://congress.api.sunlightfoundation.com/legislators/locate?apikey=3779f52f552743d999b2c5fe1cda70b6&zip=' + values.zip;
+            ajax.get(url, this.onSunlightResponse);
+
+            this.setState({
+                name: values.name,
+                zip: values.zip,
+            });
+        } else {
+            this.setState({
+                visible: true,
+            });
+        }
     },
 });
 

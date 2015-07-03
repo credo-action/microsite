@@ -117,6 +117,9 @@ input {
     max-width: 1200px;
     overflow: hidden;
     position: relative;
+
+    -webkit-transition: opacity 0.3s;
+            transition: opacity 0.3s;
 }
 
 .wrapper.call-page > .meat {
