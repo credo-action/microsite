@@ -219,8 +219,6 @@ var EmailForm = React.createClass({displayName: "EmailForm",
 
                     React.createElement("div", {className: "disclaimer"}, 
                         React.createElement("label", null, 
-                            React.createElement("input", {name: "action_optin_iranswap", type: "checkbox"}), 
-
                             "I consent to being added to the email", 
                             React.createElement("br", null), 
                             "list of one or more participating orgs."

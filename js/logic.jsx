@@ -219,8 +219,6 @@ var EmailForm = React.createClass({
 
                     <div className="disclaimer">
                         <label>
-                            <input name="action_optin_iranswap" type="checkbox" />
-
                             I consent to being added to the email
                             <br />
                             list of one or more participating orgs.
