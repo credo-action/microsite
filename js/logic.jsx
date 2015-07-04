@@ -457,6 +457,19 @@ var CallForm = React.createClass({
         }
     },
 
+    renderCount: function() {
+        if (this.props.callCount > -1) {
+            return (
+                <div class="animation-fade-in">
+                    <div className="headline">{ commafy(this.props.callCount) } Call{this.props.callCount !== 1 ? 's' : ''}</div>
+                    <div className="label">completed</div>
+                </div>
+            );
+        } else {
+            return;
+        }
+    },
+
     onSubmit: function(e) {
         e.preventDefault();
 
@@ -500,8 +513,7 @@ var CallForm = React.createClass({
         return (
             <form className="call-form" onSubmit={ this.onSubmit }>
                 <div className="count">
-                    <div className="headline">5,123 Calls</div>
-                    <div className="label">completed</div>
+                    { this.renderCount() }
                 </div>
 
                 <div className="background">
@@ -530,6 +542,7 @@ var CallPage = React.createClass({
                     <div id="call-form" />
 
                     <CallForm
+                        callCount={ this.state.callCount }
                         progressivesCount={ this.state.progressivesCount }
                         zip={ this.state.zip }
                     />
@@ -589,8 +602,17 @@ var CallPage = React.createClass({
         });
     },
 
+    onCountResponse: function(res) {
+        var count = JSON.parse(res).count;
+
+        this.setState({
+            callCount: count,
+        });
+    },
+
     getInitialState: function() {
         return {
+            callCount: -1,
             city: null,
             name: null,
             progressivesCount: 0,
@@ -618,6 +640,9 @@ var CallPage = React.createClass({
                 visible: true,
             });
         }
+
+        // Get call count.
+        ajax.get('https://credo-action-call-tool-meta.herokuapp.com/api/count/stop_war_with_iran_dynamic,stop_war_with_iran_static', this.onCountResponse);
     },
 });
 

@@ -89,8 +89,8 @@ input {
     opacity: 0;
     width: 42px;
 
-    -webkit-animation: socialLinkFadeIn 0.3s forwards;
-            animation: socialLinkFadeIn 0.3s forwards;
+    -webkit-animation: fadeIn 0.3s forwards;
+            animation: fadeIn 0.3s forwards;
 
     -webkit-transition: opacity 0.3s;
             transition: opacity 0.3s;
@@ -548,7 +548,12 @@ input {
     }
 }
 
-@keyframes socialLinkFadeIn {
+.animation-fade-in {
+    -webkit-animation: fadeIn 0.3s forwards;
+            animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
     from {
         opacity: 0;
     }
@@ -558,7 +563,7 @@ input {
     }
 }
 
-@-webkit-keyframes socialLinkFadeIn {
+@-webkit-keyframes fadeIn {
     from {
         opacity: 0;
     }
