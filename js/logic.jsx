@@ -271,7 +271,11 @@ var EmailForm = React.createClass({
             values[input.name] = value;
         }
 
-        sessionStorage.homeFormValues = JSON.stringify(values);
+        try {
+            sessionStorage.homeFormValues = JSON.stringify(values);
+        } catch (e) {
+            // Cookies disabled
+        }
     },
 });
 
@@ -625,9 +629,14 @@ var CallPage = React.createClass({
         script.src = 'https://c.shpg.org/4/sp.js';
         document.body.appendChild(script);
 
-        if (sessionStorage.homeFormValues) {
-            var values = JSON.parse(sessionStorage.homeFormValues);
+        var values;
+        try {
+            values = JSON.parse(sessionStorage.homeFormValues);
+        } catch (e) {
+            // Let's go with the default.
+        }
 
+        if (values) {
             var url = 'https://congress.api.sunlightfoundation.com/legislators/locate?apikey=3779f52f552743d999b2c5fe1cda70b6&zip=' + values.zip;
             ajax.get(url, this.onSunlightResponse);
 
