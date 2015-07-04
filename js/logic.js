@@ -443,7 +443,7 @@ var CallForm = React.createClass({displayName: "CallForm",
                         "Make a Call"
                     ), 
 
-                    React.createElement("input", {type: "tel", placeholder: "Your phone number", ref: "phone"}), 
+                    React.createElement("input", {type: "tel", name: "phone", placeholder: "Your phone number", ref: "phone"}), 
 
                     React.createElement("button", null, 
                         "Click to Connect"
@@ -475,22 +475,15 @@ var CallForm = React.createClass({displayName: "CallForm",
                 '?campaignId=' + campaignId +
                 '&userPhone=' + phone +
                 '&zipcode=' + this.props.zip;
-
-            alert('TODO: Hook up "dynamic" Call Tool campaign.');
         } else {
             campaignId = 'stop_war_with_iran_static';
             url =
                 'https://credo-action-call-tool.herokuapp.com/create' +
                 '?campaignId=' + campaignId +
                 '&userPhone=' + phone;
-
-            alert('TODO: Hook up "general" Call Tool campaign.');
         }
 
-        return;
-
         ajax.get(url);
-
 
         this.setState({
             isCalling: true,
