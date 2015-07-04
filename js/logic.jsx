@@ -460,7 +460,7 @@ var CallForm = React.createClass({
     renderCount: function() {
         if (this.props.callCount > -1) {
             return (
-                <div class="animation-fade-in">
+                <div className="animation-fade-in">
                     <div className="headline">{ commafy(this.props.callCount) } Call{this.props.callCount !== 1 ? 's' : ''}</div>
                     <div className="label">completed</div>
                 </div>

@@ -460,7 +460,7 @@ var CallForm = React.createClass({displayName: "CallForm",
     renderCount: function() {
         if (this.props.callCount > -1) {
             return (
-                React.createElement("div", {class: "animation-fade-in"}, 
+                React.createElement("div", {className: "animation-fade-in"}, 
                     React.createElement("div", {className: "headline"},  commafy(this.props.callCount), " Call", this.props.callCount !== 1 ? 's' : ''), 
                     React.createElement("div", {className: "label"}, "completed")
                 )
