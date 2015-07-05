@@ -80,8 +80,8 @@ input {
 }
 
 .wrapper > header .social div a {
+    background-color: transparent;
     background-size: cover;
-    background: transparent;
     display: block;
     float: left;
     height: 42px;
