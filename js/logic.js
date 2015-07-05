@@ -282,7 +282,7 @@ var Header = React.createClass({displayName: "Header",
     render: function() {
         return (
             React.createElement("header", null, 
-                React.createElement("a", {className: "flag", href: "#petition"}), 
+                React.createElement("a", {className: "flag", href: "/#petition"}), 
 
                 React.createElement("h1", null, 
                     "Stop War", 
@@ -305,7 +305,7 @@ var Footer = React.createClass({displayName: "Footer",
     render: function() {
         return (
             React.createElement("footer", null, 
-                "All content copyright ©2015 ", React.createElement("a", {href: "http://credoaction.com/", target: "_blank"}, "CREDO"), " and partner orgs."
+                "All content copyright ©2015 ", React.createElement("a", {href: "http://credoaction.com/", target: "_blank"}, "CREDO"), " and partner orgs. ", React.createElement("a", {href: "/terms/"}, "Terms of Use.")
             )
         );
     },
@@ -662,8 +662,65 @@ var CallPage = React.createClass({displayName: "CallPage",
 });
 
 
+var TermsOfService = React.createClass({displayName: "TermsOfService",
+    render: function() {
+        return (
+            React.createElement("div", {className: "wrapper terms-page"}, 
+                React.createElement(Header, null), 
+
+                React.createElement("div", {className: "meat"}, 
+
+                    React.createElement("h2", null, 
+                        "Website Terms of Use"
+                    ), 
+
+                    React.createElement("ul", null, 
+                        React.createElement("li", null, 
+                            React.createElement("strong", null, "Acceptance of Terms"), React.createElement("br", null), 
+                            "This website (“Site”) is provided to you subject to the following Terms of Use (“Terms”). By visiting this site, you accept these Terms."
+                        ), 
+
+                        React.createElement("li", null, 
+                            React.createElement("strong", null, "Information Collection"), React.createElement("br", null), 
+                            "The Site will only collect the personal information you choose to provide. Information about the internet domain and IP address from which you access the Site, the type of browser and operating system used, the date and time of your Site visit, and the Site pages you visit may be collected automatically; this information will not be used to identify you personally."
+                        ), 
+
+                        React.createElement("li", null, 
+                            React.createElement("strong", null, "Information Sharing and Use"), React.createElement("br", null), 
+                            "The name, email address, address, and zip code you enter on the Site will be shared with the partners named on the Site. Your email address and/or Site registration information may be used to offer you special commercial or other benefits and communicate with you in the future. Named partners may use the information you provide subject to each named partner’s own privacy policies."
+                        ), 
+
+                        React.createElement("li", null, 
+                            React.createElement("strong", null, "Permission to Call"), React.createElement("br", null), 
+                            "By entering your phone number on the Site, you give express permission to call that phone number for the purpose of connecting you with legislators."
+                        ), 
+
+                        React.createElement("li", null, 
+                            React.createElement("strong", null, "Website Use"), React.createElement("br", null), 
+                            "You understand and agree that the Web Site is provided \"AS-IS\" and no guarantees are made for the performance of or your use of the site."
+                        )
+
+                    ), 
+
+                    React.createElement("div", {className: "effective-date"}, 
+                        "Effective Date: July 6, 2015"
+                    )
+
+                ), 
+
+                React.createElement(Logos, null), 
+
+                React.createElement(Footer, null)
+            )
+        );
+    }
+});
+
+
 (function() {
-    if (/^\/call\/?/.test(location.pathname)) {
+    if (/^\/terms\/?/.test(location.pathname)) {
+        React.render(React.createElement(TermsOfService, null), document.getElementById('app'));
+    } else if (/^\/call\/?/.test(location.pathname)) {
         React.render(React.createElement(CallPage, null), document.getElementById('app'));
     } else {
         React.render(React.createElement(HomePage, null), document.getElementById('app'));

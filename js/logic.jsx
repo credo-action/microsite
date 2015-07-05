@@ -282,7 +282,7 @@ var Header = React.createClass({
     render: function() {
         return (
             <header>
-                <a className="flag" href="#petition"></a>
+                <a className="flag" href="/#petition"></a>
 
                 <h1>
                     Stop War
@@ -305,7 +305,7 @@ var Footer = React.createClass({
     render: function() {
         return (
             <footer>
-                All content copyright &copy;2015 <a href="http://credoaction.com/" target="_blank">CREDO</a> and partner orgs.
+                All content copyright &copy;2015 <a href="http://credoaction.com/" target="_blank">CREDO</a> and partner orgs. <a href="/terms/">Terms of Use.</a>
             </footer>
         );
     },
@@ -662,8 +662,65 @@ var CallPage = React.createClass({
 });
 
 
+var TermsOfService = React.createClass({
+    render: function() {
+        return (
+            <div className="wrapper terms-page">
+                <Header />
+
+                <div className="meat">
+
+                    <h2>
+                        Website Terms of Use
+                    </h2>
+
+                    <ul>
+                        <li>
+                            <strong>Acceptance of Terms</strong><br />
+                            This website (“Site”) is provided to you subject to the following Terms of Use (“Terms”). By visiting this site, you accept these Terms.
+                        </li>
+
+                        <li>
+                            <strong>Information Collection</strong><br />
+                            The Site will only collect the personal information you choose to provide. Information about the internet domain and IP address from which you access the Site, the type of browser and operating system used, the date and time of your Site visit, and the Site pages you visit may be collected automatically; this information will not be used to identify you personally.
+                        </li>
+
+                        <li>
+                            <strong>Information Sharing and Use</strong><br />
+                            The name, email address, address, and zip code you enter on the Site will be shared with the partners named on the Site. Your email address and/or Site registration information may be used to offer you special commercial or other benefits and communicate with you in the future. Named partners may use the information you provide subject to each named partner’s own privacy policies.
+                        </li>
+
+                        <li>
+                            <strong>Permission to Call</strong><br />
+                            By entering your phone number on the Site, you give express permission to call that phone number for the purpose of connecting you with legislators.
+                        </li>
+
+                        <li>
+                            <strong>Website Use</strong><br />
+                            You understand and agree that the Web Site is provided "AS-IS" and no guarantees are made for the performance of or your use of the site.
+                        </li>
+
+                    </ul>
+
+                    <div className="effective-date">
+                        Effective Date: July 6, 2015
+                    </div>
+
+                </div>
+
+                <Logos />
+
+                <Footer />
+            </div>
+        );
+    }
+});
+
+
 (function() {
-    if (/^\/call\/?/.test(location.pathname)) {
+    if (/^\/terms\/?/.test(location.pathname)) {
+        React.render(<TermsOfService />, document.getElementById('app'));
+    } else if (/^\/call\/?/.test(location.pathname)) {
         React.render(<CallPage />, document.getElementById('app'));
     } else {
         React.render(<HomePage />, document.getElementById('app'));

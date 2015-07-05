@@ -470,6 +470,27 @@ input {
     opacity: 0.919;
 }
 
+/* Terms */
+
+.wrapper.terms-page .meat {
+    padding: 0 20px 30px;
+}
+
+.wrapper.terms-page h2 {
+    font-size: 24px;
+    font-weight: normal;
+    margin: 30px 0;
+    line-height: 1.4;
+}
+
+.wrapper.terms-page ul {
+    padding: 0 40px;
+}
+
+.wrapper.terms-page ul li {
+    padding: 0 0 32px;
+}
+
 /* Mobile */
 @media (max-width: 579px) {
     .wrapper > header h1 {
