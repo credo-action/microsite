@@ -349,8 +349,16 @@ var Logos = React.createClass({
                         <img src="/images/logos/other98.png" />
                     </a>
 
+                    <a target="_blank" href="http://www.peaceactionwest.org/">
+                        <img src="/images/logos/paw.png" />
+                    </a>
+
                     <a target="_blank" href="http://www.pdamerica.org/">
                         <img src="/images/logos/pda.png" />
+                    </a>
+
+                    <a target="_blank" href="http://rhrealitycheck.org/">
+                        <img src="/images/logos/rhrc.png" />
                     </a>
 
                     <a target="_blank" href="http://rootsaction.org/">

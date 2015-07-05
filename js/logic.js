@@ -349,8 +349,16 @@ var Logos = React.createClass({displayName: "Logos",
                         React.createElement("img", {src: "/images/logos/other98.png"})
                     ), 
 
+                    React.createElement("a", {target: "_blank", href: "http://www.peaceactionwest.org/"}, 
+                        React.createElement("img", {src: "/images/logos/paw.png"})
+                    ), 
+
                     React.createElement("a", {target: "_blank", href: "http://www.pdamerica.org/"}, 
                         React.createElement("img", {src: "/images/logos/pda.png"})
+                    ), 
+
+                    React.createElement("a", {target: "_blank", href: "http://rhrealitycheck.org/"}, 
+                        React.createElement("img", {src: "/images/logos/rhrc.png"})
                     ), 
 
                     React.createElement("a", {target: "_blank", href: "http://rootsaction.org/"}, 
