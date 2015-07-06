@@ -363,6 +363,10 @@ var Logos = React.createClass({
                         <img src="/images/logos/credo.png" />
                     </a>
 
+                    <a target="_blank" href="http://ourfuture.org/">
+                        <img src="/images/logos/cfaf.png" />
+                    </a>
+
                     <a target="_blank" href="http://www.codepink.org/">
                         <img src="/images/logos/codepink.png" />
                     </a>

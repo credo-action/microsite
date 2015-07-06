@@ -363,6 +363,10 @@ var Logos = React.createClass({displayName: "Logos",
                         React.createElement("img", {src: "/images/logos/credo.png"})
                     ), 
 
+                    React.createElement("a", {target: "_blank", href: "http://ourfuture.org/"}, 
+                        React.createElement("img", {src: "/images/logos/cfaf.png"})
+                    ), 
+
                     React.createElement("a", {target: "_blank", href: "http://www.codepink.org/"}, 
                         React.createElement("img", {src: "/images/logos/codepink.png"})
                     ), 
