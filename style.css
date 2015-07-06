@@ -139,6 +139,20 @@ input {
     line-height: 21px;
 }
 
+.wrapper > .meat .description .petition {
+    background-color: #fff1cc;
+    margin: 24px 0 0;
+    overflow: hidden;
+    font-style: italic;
+    padding: 16px;
+}
+
+.wrapper > .meat .description .petition h3 {
+    line-height: 1;
+    margin: 0;
+    padding: 0 0 16px;
+}
+
 .wrapper > .meat .description.description-call {
     float: left;
     margin: 0 20px 40px 0;

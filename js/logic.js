@@ -443,7 +443,12 @@ var HomePage = React.createClass({displayName: "HomePage",
                 "We need to build an impenetrable firewall in Congress to prevent Republicans from passing any legislation to kill the deal and putting us back on the path to confrontation and war. Tell Democrats to go on record in support of the deal.", 
                 React.createElement("div", {className: "spacer"}), 
 
-                "We'll send your message to your senators and member of Congress, as well as to House and Senate Democratic leadership."
+                "We'll send your message to your senators and member of Congress, as well as to House and Senate Democratic leadership.", 
+
+                React.createElement("div", {className: "petition"}, 
+                    React.createElement("h3", null, "Petition text:"), 
+                    "Republicans are trying to take us to war by sabotaging the Iran nuclear deal. I urge you to support the deal and stop the Republicans from starting another costly war in the Middle East."
+                )
             )
         );
     },

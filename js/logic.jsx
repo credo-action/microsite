@@ -444,6 +444,11 @@ var HomePage = React.createClass({
                 <div className="spacer" />
 
                 We&apos;ll send your message to your senators and member of Congress, as well as to House and Senate Democratic leadership.
+
+                <div className="petition">
+                    <h3>Petition text:</h3>
+                    Republicans are trying to take us to war by sabotaging the Iran nuclear deal. I urge you to support the deal and stop the Republicans from starting another costly war in the Middle East.
+                </div>
             </div>
         );
     },
