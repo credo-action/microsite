@@ -188,12 +188,54 @@ var SignatureProgress = React.createClass({
 });
 
 
+var SignatureCount = React.createClass({
+    componentDidMount: function() {
+        window.onActionKitCount = this.onActionKitCount;
+
+        var script = document.createElement('script');
+        script.src = 'https://act.credoaction.com/progress/' + state.pageShortName + '?callback=onActionKitCount';
+        document.body.appendChild(script);
+    },
+
+    getInitialState: function() {
+        return {
+            current: -1,
+        };
+    },
+
+    onActionKitCount: function(res) {
+        var current = res.total.actions;
+
+        // // DEBUG!
+        // current = 2500000
+
+        this.setState({
+            current: current,
+        });
+    },
+
+    render: function(e) {
+        if (this.state.current < 0) {
+            return (
+                <div className="count" />
+            );
+        }
+        return (
+            <div className="count visible">
+                <div>{ commafy(this.state.current) }</div>
+                <div className="smaller">signatures</div>
+            </div>
+        );
+    },
+});
+
+
 var EmailForm = React.createClass({
     render: function() {
         return (
             <section className="form">
 
-                <SignatureProgress />
+                <SignatureCount />
 
                 <form onSubmit={ this.onSubmit } method="POST" action="https://act.credoaction.com/act/" accept-charset="utf-8">
                     <h2>Add your name</h2>

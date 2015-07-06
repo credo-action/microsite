@@ -188,12 +188,54 @@ var SignatureProgress = React.createClass({displayName: "SignatureProgress",
 });
 
 
+var SignatureCount = React.createClass({displayName: "SignatureCount",
+    componentDidMount: function() {
+        window.onActionKitCount = this.onActionKitCount;
+
+        var script = document.createElement('script');
+        script.src = 'https://act.credoaction.com/progress/' + state.pageShortName + '?callback=onActionKitCount';
+        document.body.appendChild(script);
+    },
+
+    getInitialState: function() {
+        return {
+            current: -1,
+        };
+    },
+
+    onActionKitCount: function(res) {
+        var current = res.total.actions;
+
+        // // DEBUG!
+        // current = 2500000
+
+        this.setState({
+            current: current,
+        });
+    },
+
+    render: function(e) {
+        if (this.state.current < 0) {
+            return (
+                React.createElement("div", {className: "count"})
+            );
+        }
+        return (
+            React.createElement("div", {className: "count visible"}, 
+                React.createElement("div", null,  commafy(this.state.current) ), 
+                React.createElement("div", {className: "smaller"}, "signatures")
+            )
+        );
+    },
+});
+
+
 var EmailForm = React.createClass({displayName: "EmailForm",
     render: function() {
         return (
             React.createElement("section", {className: "form"}, 
 
-                React.createElement(SignatureProgress, null), 
+                React.createElement(SignatureCount, null), 
 
                 React.createElement("form", {onSubmit:  this.onSubmit, method: "POST", action: "https://act.credoaction.com/act/", "accept-charset": "utf-8"}, 
                     React.createElement("h2", null, "Add your name"), 

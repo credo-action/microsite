@@ -193,6 +193,31 @@ input {
     width: 291px;
 }
 
+.wrapper > .meat .form .count {
+    background-color: #9EEF81;
+    color: rgba(0, 81, 182, 0);
+    font-size: 28px;
+    font-weight: 700;
+    height: 62px;
+    line-height: 1;
+    margin: 0px auto;
+    padding: 8px 0px;
+    text-align: center;
+    width: 269px;
+
+    -webkit-transition: color 0.6s;
+            transition: color 0.6s;
+}
+
+.wrapper > .meat .form .count.visible {
+    color: rgba(0, 81, 182, 1);
+}
+
+.wrapper > .meat .form .count .smaller {
+    font-size: 16px;
+    font-weight: 400;
+}
+
 .wrapper > .meat .form .progress {
     height: 90px;
     opacity: 0;
