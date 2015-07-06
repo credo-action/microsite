@@ -381,7 +381,7 @@ var Footer = React.createClass({
     render: function() {
         return (
             <footer>
-                All content copyright &copy;2015 <a href="http://credoaction.com/" target="_blank">CREDO</a> and partner orgs. <a href="/terms/">Terms of Use.</a>
+                &copy;2015 <a href="http://credoaction.com/" target="_blank">CREDO</a> and partner orgs. <a href="/terms/">Terms of Use.</a>
             </footer>
         );
     },
