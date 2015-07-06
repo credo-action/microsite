@@ -68,6 +68,15 @@ function getQueryVariables() {
 }
 
 
+function getSource() {
+    if (state.query.source) {
+        return state.query.source.trim().toLowerCase();
+    } else {
+        return null;
+    }
+}
+
+
 function commafy(number) {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
@@ -230,8 +239,39 @@ var SignatureCount = React.createClass({
 });
 
 
+var EmailDisclaimer = React.createClass({
+    hiddenFor: [
+        'moveon',
+    ],
+
+    render: function() {
+        var source = getSource();
+
+        if (this.hiddenFor.indexOf(source) > -1) {
+            return null;
+        }
+
+        return (
+            <div className="disclaimer">
+                <label>
+                    I consent to being added to the email
+                    <br />
+                    list of one or more participating orgs.
+                </label>
+            </div>
+        );
+    },
+});
+
+
 var EmailForm = React.createClass({
     render: function() {
+        var source, sourceField;
+        source = getSource();
+        if (source) {
+            sourceField = (<input type="hidden" name="source" value={ getSource() } />);
+        }
+
         return (
             <section className="form">
 
@@ -256,16 +296,10 @@ var EmailForm = React.createClass({
                         <input type="hidden" name="form_name" value="act-petition" />
                         <input type="hidden" name="url" value={ location.href } />
                         <input type="hidden" name="opt_in" value="1" />
-                        <input type="hidden" name="source" value={ state.query.source || 'CREDO' } />
+                        { sourceField }
                     </div>
 
-                    <div className="disclaimer">
-                        <label>
-                            I consent to being added to the email
-                            <br />
-                            list of one or more participating orgs.
-                        </label>
-                    </div>
+                    <EmailDisclaimer />
 
                     <button>
                         Click to Sign

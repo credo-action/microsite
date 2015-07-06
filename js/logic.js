@@ -68,6 +68,15 @@ function getQueryVariables() {
 }
 
 
+function getSource() {
+    if (state.query.source) {
+        return state.query.source.trim().toLowerCase();
+    } else {
+        return null;
+    }
+}
+
+
 function commafy(number) {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
@@ -230,8 +239,39 @@ var SignatureCount = React.createClass({displayName: "SignatureCount",
 });
 
 
+var EmailDisclaimer = React.createClass({displayName: "EmailDisclaimer",
+    hiddenFor: [
+        'moveon',
+    ],
+
+    render: function() {
+        var source = getSource();
+
+        if (this.hiddenFor.indexOf(source) > -1) {
+            return null;
+        }
+
+        return (
+            React.createElement("div", {className: "disclaimer"}, 
+                React.createElement("label", null, 
+                    "I consent to being added to the email", 
+                    React.createElement("br", null), 
+                    "list of one or more participating orgs."
+                )
+            )
+        );
+    },
+});
+
+
 var EmailForm = React.createClass({displayName: "EmailForm",
     render: function() {
+        var source, sourceField;
+        source = getSource();
+        if (source) {
+            sourceField = (React.createElement("input", {type: "hidden", name: "source", value:  getSource() }));
+        }
+
         return (
             React.createElement("section", {className: "form"}, 
 
@@ -256,16 +296,10 @@ var EmailForm = React.createClass({displayName: "EmailForm",
                         React.createElement("input", {type: "hidden", name: "form_name", value: "act-petition"}), 
                         React.createElement("input", {type: "hidden", name: "url", value:  location.href}), 
                         React.createElement("input", {type: "hidden", name: "opt_in", value: "1"}), 
-                        React.createElement("input", {type: "hidden", name: "source", value:  state.query.source || 'CREDO'})
+                         sourceField 
                     ), 
 
-                    React.createElement("div", {className: "disclaimer"}, 
-                        React.createElement("label", null, 
-                            "I consent to being added to the email", 
-                            React.createElement("br", null), 
-                            "list of one or more participating orgs."
-                        )
-                    ), 
+                    React.createElement(EmailDisclaimer, null), 
 
                     React.createElement("button", null, 
                         "Click to Sign"
