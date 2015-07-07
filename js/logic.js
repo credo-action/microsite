@@ -486,9 +486,11 @@ var HomePage = React.createClass({displayName: "HomePage",
                 React.createElement("div", {className: "spacer"}), 
 
                 "We'll send your message to your senators and member of Congress, as well as to House and Senate Democratic leadership.", 
+                React.createElement("div", {className: "spacer"}), 
 
-                React.createElement("div", {className: "petition"}, 
-                    React.createElement("h3", null, "Petition text:"), 
+                "The petition reads:", 
+
+                React.createElement("div", {className: "petition-text"}, 
                     "Republicans are trying to take us to war by sabotaging the Iran nuclear deal. I urge you to support the deal and stop the Republicans from starting another costly war in the Middle East."
                 )
             )
