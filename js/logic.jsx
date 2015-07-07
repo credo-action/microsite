@@ -429,6 +429,10 @@ var Logos = React.createClass({
                         <img src="/images/logos/other98.png" />
                     </a>
 
+                    <a target="_blank" href="http://www.peace-action.org/">
+                        <img src="/images/logos/peaceaction.jpg" />
+                    </a>
+
                     <a target="_blank" href="http://www.peaceactionwest.org/">
                         <img src="/images/logos/paw.png" />
                     </a>
@@ -772,7 +776,7 @@ var TermsOfService = React.createClass({
 
                         <li>
                             <strong>Information Sharing and Use</strong><br />
-                            The name, email address, address, and zip code you enter on the Site will be shared with the partners named on the Site. Your email address and/or Site registration information may be used to offer you special commercial or other benefits and communicate with you in the future. Named partners may use the information you provide subject to each named partner’s own privacy policies.
+                            The name, email address, address, and zip code you enter on the Site will be shared with the participating organizations named on the Site. The participating organizations named on the Site may be updated at any time, including after you enter your information. Your email address and/or Site registration information may be used to offer you special commercial or other benefits and communicate with you in the future. Participating organizations may use the information you provide subject to each participating organization’s own privacy policies.
                         </li>
 
                         <li>
