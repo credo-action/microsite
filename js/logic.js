@@ -254,9 +254,9 @@ var EmailDisclaimer = React.createClass({displayName: "EmailDisclaimer",
         return (
             React.createElement("div", {className: "disclaimer"}, 
                 React.createElement("label", null, 
-                    "I consent to being added to the email", 
+                    "I consent to the information above being provided", 
                     React.createElement("br", null), 
-                    "list of one or more participating orgs."
+                    "to one or more participating organizations."
                 )
             )
         );
