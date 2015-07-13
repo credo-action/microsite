@@ -584,9 +584,9 @@ var CallForm = React.createClass({displayName: "CallForm",
 
         var phoneField = this.refs.phone.getDOMNode();
         var phone = phoneField.value.trim().replace(/[^\d]/g, '');
-        if (phone.length < 10) {
+        if (phone.length !== 10) {
             phoneField.focus();
-            return alert('Please enter your 10 digit phone number.');
+            return alert('Please enter your 10 digit US phone number.');
         }
 
         var campaignId, url;
@@ -596,13 +596,15 @@ var CallForm = React.createClass({displayName: "CallForm",
                 'https://credo-action-call-tool.herokuapp.com/create' +
                 '?campaignId=' + campaignId +
                 '&userPhone=' + phone +
-                '&zipcode=' + this.props.zip;
+                '&zipcode=' + this.props.zip +
+                '&source_id=' + (this.props.source || null);
         } else {
             campaignId = 'stop_war_with_iran_static';
             url =
                 'https://credo-action-call-tool.herokuapp.com/create' +
                 '?campaignId=' + campaignId +
-                '&userPhone=' + phone;
+                '&userPhone=' + phone +
+                '&source_id=' + (this.props.source || null);
         }
 
         ajax.get(url);
@@ -653,6 +655,7 @@ var CallPage = React.createClass({displayName: "CallPage",
                     React.createElement(CallForm, {
                         callCount:  this.state.callCount, 
                         progressivesCount:  this.state.progressivesCount, 
+                        source:  this.state.source, 
                         zip:  this.state.zip}
                     ), 
 
@@ -747,6 +750,7 @@ var CallPage = React.createClass({displayName: "CallPage",
 
             this.setState({
                 name: values.name,
+                source: values.source,
                 zip: values.zip,
             });
         } else {
