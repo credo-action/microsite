@@ -413,6 +413,10 @@ var Logos = React.createClass({displayName: "Logos",
                         React.createElement("img", {src: "/images/logos/dailykos.jpg"})
                     ), 
 
+                    React.createElement("a", {target: "_blank", href: "https://demandprogress.org/"}, 
+                        React.createElement("img", {src: "/images/logos/dp.png"})
+                    ), 
+
                     React.createElement("a", {target: "_blank", href: "http://justforeignpolicy.org/"}, 
                         React.createElement("img", {src: "/images/logos/justforeignpolicy.png"})
                     ), 
@@ -457,6 +461,10 @@ var Logos = React.createClass({displayName: "Logos",
                         React.createElement("img", {src: "/images/logos/usaction.png"})
                     ), 
 
+                    React.createElement("a", {target: "_blank", href: "http://watchdog.net/"}, 
+                        React.createElement("img", {src: "/images/logos/watchdog.png"})
+                    ), 
+
                     React.createElement("a", {target: "_blank", href: "http://winwithoutwar.org/"}, 
                         React.createElement("img", {src: "/images/logos/winwithoutwar.jpg"})
                     )
@@ -491,7 +499,7 @@ var HomePage = React.createClass({displayName: "HomePage",
                 "The petition reads:", 
 
                 React.createElement("div", {className: "petition-text"}, 
-                    "Republicans are trying to take us to war by sabotaging the Iran nuclear deal. I urge you to support the deal and stop the Republicans from starting another costly war in the Middle East."
+                    "Republicans are trying to take us to war by sabotaging the Iran nuclear deal. I urge you to support the deal and stop the Republicans from starting another war of choice in the Middle East."
                 )
             )
         );

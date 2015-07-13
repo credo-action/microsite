@@ -413,6 +413,10 @@ var Logos = React.createClass({
                         <img src="/images/logos/dailykos.jpg" />
                     </a>
 
+                    <a target="_blank" href="https://demandprogress.org/">
+                        <img src="/images/logos/dp.png" />
+                    </a>
+
                     <a target="_blank" href="http://justforeignpolicy.org/">
                         <img src="/images/logos/justforeignpolicy.png" />
                     </a>
@@ -457,6 +461,10 @@ var Logos = React.createClass({
                         <img src="/images/logos/usaction.png" />
                     </a>
 
+                    <a target="_blank" href="http://watchdog.net/">
+                        <img src="/images/logos/watchdog.png" />
+                    </a>
+
                     <a target="_blank" href="http://winwithoutwar.org/">
                         <img src="/images/logos/winwithoutwar.jpg" />
                     </a>
@@ -491,7 +499,7 @@ var HomePage = React.createClass({
                 The petition reads:
 
                 <div className="petition-text">
-                    Republicans are trying to take us to war by sabotaging the Iran nuclear deal. I urge you to support the deal and stop the Republicans from starting another costly war in the Middle East.
+                    Republicans are trying to take us to war by sabotaging the Iran nuclear deal. I urge you to support the deal and stop the Republicans from starting another war of choice in the Middle East.
                 </div>
             </div>
         );
