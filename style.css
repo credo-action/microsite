@@ -54,6 +54,10 @@ input {
     opacity: 0.919;
 }
 
+.wrapper.call-page > header .flag {
+    display: none;
+}
+
 .wrapper > header h1 {
     color: #fdfbe1;
     font-size: 64px;
