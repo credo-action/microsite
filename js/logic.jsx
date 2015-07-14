@@ -820,7 +820,13 @@ var TermsOfService = React.createClass({
                 <Footer />
             </div>
         );
-    }
+    },
+
+    componentDidMount: function() {
+        var script = document.createElement('script');
+        script.src = 'https://c.shpg.org/4/sp.js';
+        document.body.appendChild(script);
+    },
 });
 
 

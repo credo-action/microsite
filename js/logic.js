@@ -820,7 +820,13 @@ var TermsOfService = React.createClass({displayName: "TermsOfService",
                 React.createElement(Footer, null)
             )
         );
-    }
+    },
+
+    componentDidMount: function() {
+        var script = document.createElement('script');
+        script.src = 'https://c.shpg.org/4/sp.js';
+        document.body.appendChild(script);
+    },
 });
 
 
