@@ -684,19 +684,19 @@ var CallPage = React.createClass({displayName: "CallPage",
         if (this.state.progressivesCount === 1) {
             return (
                 React.createElement("h2", {className: "thanks"}, 
-                    "Thank you for signing. Now please call the Democrat who represents you in Congress and urge them to support the Iran nuclear deal."
+                    "Thank you for signing. Now please call the Democrat who represents you in Congress and urge them to support the Iran nuclear deal. Press ", React.createElement("strong", null, "*"), " after you finish each call to move on to the next one."
                 )
             );
         } else if (this.state.progressivesCount > 1) {
             return (
                 React.createElement("h2", {className: "thanks"}, 
-                    "Thank you for signing. Now please call the Democrats who represent you in Congress and urge them to support the Iran nuclear deal."
+                    "Thank you for signing. Now please call the Democrats who represent you in Congress and urge them to support the Iran nuclear deal. Press ", React.createElement("strong", null, "*"), " after you finish each call to move on to the next one."
                 )
             );
         } else {
             return (
                 React.createElement("h2", {className: "thanks"}, 
-                    "Thank you for signing. Now please call Democratic leaders in Congress and urge them to support the Iran nuclear deal."
+                    "Thank you for signing. Now please call Democratic leaders in Congress and urge them to support the Iran nuclear deal. Press ", React.createElement("strong", null, "*"), " after you finish each call to move on to the next one."
                 )
             );
         }
