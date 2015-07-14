@@ -417,6 +417,10 @@ var Logos = React.createClass({displayName: "Logos",
                         React.createElement("img", {src: "/images/logos/dp.png"})
                     ), 
 
+                    React.createElement("a", {target: "_blank", href: "http://democracyforamerica.com/"}, 
+                        React.createElement("img", {src: "/images/logos/dfa.png"})
+                    ), 
+
                     React.createElement("a", {target: "_blank", href: "http://justforeignpolicy.org/"}, 
                         React.createElement("img", {src: "/images/logos/justforeignpolicy.png"})
                     ), 
