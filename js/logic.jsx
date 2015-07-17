@@ -4,39 +4,14 @@
     if (isIE) {
         var version = +isIE[1];
         if (version < 10) {
-            alert('Unfortunately your browser, Internet Explorer ' + version + ', is not supported.\nPlease visit the site with a modern browser like Firefox or Chrome.\nThanks!');
+            alert('Unfortunately your browser, Internet Explorer ' + version + ', is not supported. Please visit the site with a modern browser like Firefox or Chrome. Thanks!');
         }
-    }
-
-    if (/Android 2\.3/.test(navigator.userAgent)) {
-        alert('Unfortunately your browser, Android 2.3, is not supported.\nPlease visit the site with a modern browser like Firefox or Chrome.\nThanks!');
+    } else if (/Android 2\.3/.test(navigator.userAgent)) {
+        alert('Unfortunately your browser, Android 2.3, is not supported. Please visit the site with a modern browser like Firefox or Chrome. Thanks!');
+    } else if (typeof React === 'undefined') {
+        alert('Unfortunately your browser is not supported. Please visit the site with a modern browser like Firefox or Chrome. Thanks!');
     }
 })();
-
-
-// Polyfill Function.prototype.bind()
-if (!Function.prototype.bind) {
-    Function.prototype.bind = function(oThis) {
-        if (typeof this !== 'function') {
-            // closest thing possible to the ECMAScript 5
-            // internal IsCallable function
-            throw new TypeError('Function.prototype.bind - what is trying to be bound is not callable');
-        }
-
-        var aArgs = Array.prototype.slice.call(arguments, 1),
-            fToBind = this,
-            fNOP = function() {},
-            fBound = function() {
-                return fToBind.apply(this instanceof fNOP ? this : oThis,
-                    aArgs.concat(Array.prototype.slice.call(arguments)));
-            };
-
-        fNOP.prototype = this.prototype;
-        fBound.prototype = new fNOP();
-
-        return fBound;
-    };
-}
 
 
 
