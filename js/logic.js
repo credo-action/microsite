@@ -740,6 +740,7 @@ var CallPage = React.createClass({displayName: "CallPage",
             city: null,
             name: null,
             progressivesCount: 0,
+            source: getSource(),
             visible: false,
         };
     },
