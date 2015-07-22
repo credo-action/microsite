@@ -433,6 +433,10 @@ var Logos = React.createClass({displayName: "Logos",
                         React.createElement("img", {src: "/images/logos/moveon.png"})
                     ), 
 
+                    React.createElement("a", {target: "_blank", href: "http://www.niacaction.org/"}, 
+                        React.createElement("img", {src: "/images/logos/niacaction.png"})
+                    ), 
+
                     React.createElement("a", {target: "_blank", href: "http://other98.com/"}, 
                         React.createElement("img", {src: "/images/logos/other98.png"})
                     ), 
