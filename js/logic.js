@@ -571,7 +571,7 @@ var CallForm = React.createClass({displayName: "CallForm",
                     ), 
 
                     React.createElement("div", {className: "sidenote"}, 
-                        "Or call ", React.createElement("a", {href: "tel:415-234-1515"}, "(415) 234-1515"), " to connect."
+                        "Or call ", React.createElement("a", {href: "tel:202-759-0464"}, "(202) 759-0464"), " to connect."
                     )
                 )
             );
@@ -778,6 +778,90 @@ var CallPage = React.createClass({displayName: "CallPage",
 });
 
 
+var CallPagePlus = React.createClass({displayName: "CallPagePlus",
+    render: function() {
+        return (
+            React.createElement("div", {className: "wrapper call-page"}, 
+                React.createElement(Header, null), 
+
+                React.createElement("div", {className: "meat"}, 
+
+                    React.createElement("h2", {className: "thanks"}, 
+                        "Please call the Democrats who represent you in Congress and urge them to support the Iran nuclear deal. Press ", React.createElement("strong", null, "*"), " after you finish each call to move on to the next one."
+                    ), 
+
+                    React.createElement("div", {id: "call-form"}), 
+
+                    React.createElement(CallForm, {
+                        callCount:  this.state.callCount, 
+                        progressivesCount:  this.state.progressivesCount, 
+                        source:  this.state.source, 
+                        zip:  this.state.zip}
+                    ), 
+
+                    React.createElement("div", {className: "description description-call"}, 
+                        React.createElement("h3", null, 
+                            "Call script"
+                        ), 
+
+                        "Hello, my name is ",  this.state.name || '__________', " and I'm calling from ",  this.state.city || '__________', ". Republicans are trying to take us to war by sabotaging the Iran nuclear deal. I urge you to support the deal and stop the Republicans from starting another costly war in the Middle East."
+                    )
+
+                ), 
+
+                React.createElement(Logos, null), 
+
+                React.createElement(Footer, null)
+            )
+        );
+    },
+
+    onSunlightResponse: function(res) {
+        var progressivesCount = 0;
+        var legislators = JSON.parse(res).results;
+        for (var i = 0; i < legislators.length; i++) {
+            var legislator = legislators[i];
+            if (legislator.party !== 'R') {
+                progressivesCount++;
+            }
+        }
+
+        this.setState({
+            progressivesCount: progressivesCount,
+            visible: true,
+        });
+    },
+
+    onCountResponse: function(res) {
+        var count = JSON.parse(res).count;
+
+        this.setState({
+            callCount: count,
+        });
+    },
+
+    getInitialState: function() {
+        return {
+            callCount: -1,
+            city: null,
+            name: null,
+            progressivesCount: 1,
+            source: getSource(),
+            visible: true,
+        };
+    },
+
+    componentDidMount: function() {
+        var script = document.createElement('script');
+        script.src = 'https://c.shpg.org/4/sp.js';
+        document.body.appendChild(script);
+
+        // Get call count.
+        ajax.get('https://credo-action-call-tool-meta.herokuapp.com/api/count/stop_war_with_iran_dynamic,stop_war_with_iran_static', this.onCountResponse);
+    },
+});
+
+
 var TermsOfService = React.createClass({displayName: "TermsOfService",
     render: function() {
         return (
@@ -842,6 +926,8 @@ var TermsOfService = React.createClass({displayName: "TermsOfService",
 (function() {
     if (/^\/terms\/?/.test(location.pathname)) {
         React.render(React.createElement(TermsOfService, null), document.getElementById('app'));
+    } else if (/^\/calls\/?/.test(location.pathname)) {
+        React.render(React.createElement(CallPagePlus, null), document.getElementById('app'));
     } else if (/^\/call\/?/.test(location.pathname)) {
         React.render(React.createElement(CallPage, null), document.getElementById('app'));
     } else {

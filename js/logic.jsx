@@ -571,7 +571,7 @@ var CallForm = React.createClass({
                     </button>
 
                     <div className="sidenote">
-                        Or call <a href="tel:415-234-1515">(415) 234-1515</a> to connect.
+                        Or call <a href="tel:202-759-0464">(202) 759-0464</a> to connect.
                     </div>
                 </div>
             );
@@ -778,6 +778,90 @@ var CallPage = React.createClass({
 });
 
 
+var CallPagePlus = React.createClass({
+    render: function() {
+        return (
+            <div className="wrapper call-page">
+                <Header />
+
+                <div className="meat">
+
+                    <h2 className="thanks">
+                        Please call the Democrats who represent you in Congress and urge them to support the Iran nuclear deal. Press <strong>*</strong> after you finish each call to move on to the next one.
+                    </h2>
+
+                    <div id="call-form" />
+
+                    <CallForm
+                        callCount={ this.state.callCount }
+                        progressivesCount={ this.state.progressivesCount }
+                        source={ this.state.source }
+                        zip={ this.state.zip }
+                    />
+
+                    <div className="description description-call">
+                        <h3>
+                            Call script
+                        </h3>
+
+                        Hello, my name is { this.state.name || '__________' } and I&apos;m calling from { this.state.city || '__________' }. Republicans are trying to take us to war by sabotaging the Iran nuclear deal. I urge you to support the deal and stop the Republicans from starting another costly war in the Middle East.
+                    </div>
+
+                </div>
+
+                <Logos />
+
+                <Footer />
+            </div>
+        );
+    },
+
+    onSunlightResponse: function(res) {
+        var progressivesCount = 0;
+        var legislators = JSON.parse(res).results;
+        for (var i = 0; i < legislators.length; i++) {
+            var legislator = legislators[i];
+            if (legislator.party !== 'R') {
+                progressivesCount++;
+            }
+        }
+
+        this.setState({
+            progressivesCount: progressivesCount,
+            visible: true,
+        });
+    },
+
+    onCountResponse: function(res) {
+        var count = JSON.parse(res).count;
+
+        this.setState({
+            callCount: count,
+        });
+    },
+
+    getInitialState: function() {
+        return {
+            callCount: -1,
+            city: null,
+            name: null,
+            progressivesCount: 1,
+            source: getSource(),
+            visible: true,
+        };
+    },
+
+    componentDidMount: function() {
+        var script = document.createElement('script');
+        script.src = 'https://c.shpg.org/4/sp.js';
+        document.body.appendChild(script);
+
+        // Get call count.
+        ajax.get('https://credo-action-call-tool-meta.herokuapp.com/api/count/stop_war_with_iran_dynamic,stop_war_with_iran_static', this.onCountResponse);
+    },
+});
+
+
 var TermsOfService = React.createClass({
     render: function() {
         return (
@@ -842,6 +926,8 @@ var TermsOfService = React.createClass({
 (function() {
     if (/^\/terms\/?/.test(location.pathname)) {
         React.render(<TermsOfService />, document.getElementById('app'));
+    } else if (/^\/calls\/?/.test(location.pathname)) {
+        React.render(<CallPagePlus />, document.getElementById('app'));
     } else if (/^\/call\/?/.test(location.pathname)) {
         React.render(<CallPage />, document.getElementById('app'));
     } else {
