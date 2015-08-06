@@ -232,7 +232,7 @@ var SignatureCount = React.createClass({
         return (
             <div className="count visible">
                 <div>{ commafy(this.state.current) }</div>
-                <div className="smaller">signatures</div>
+                <div className="smaller">signatures to stop war with Iran</div>
             </div>
         );
     },

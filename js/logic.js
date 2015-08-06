@@ -232,7 +232,7 @@ var SignatureCount = React.createClass({displayName: "SignatureCount",
         return (
             React.createElement("div", {className: "count visible"}, 
                 React.createElement("div", null,  commafy(this.state.current) ), 
-                React.createElement("div", {className: "smaller"}, "signatures")
+                React.createElement("div", {className: "smaller"}, "signatures to stop war with Iran")
             )
         );
     },
