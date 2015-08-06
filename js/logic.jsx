@@ -213,7 +213,7 @@ var SignatureCount = React.createClass({
     },
 
     onActionKitCount: function(res) {
-        var current = res.total.actions;
+        var current = res.total.actions + 207173; // adding MoveOn signature totals
 
         // // DEBUG!
         // current = 2500000
