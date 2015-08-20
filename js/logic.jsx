@@ -446,6 +446,10 @@ var Logos = React.createClass({
                         <img src="/images/logos/paw.png" />
                     </a>
 
+                    <a target="_blank" href="http://peacealliance.org/">
+                        <img src="/images/logos/thepeacealliance.jpg" />
+                    </a>
+
                     <a target="_blank" href="http://www.pdamerica.org/">
                         <img src="/images/logos/pda.png" />
                     </a>
