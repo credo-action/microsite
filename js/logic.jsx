@@ -17,7 +17,7 @@
 
 var state = {};
 state.isMobile = /mobile/i.test(navigator.userAgent);
-state.pageShortName = 'stop_war_with_iran';
+state.pageShortName = 'obama-mission-not-accomplished';
 state.query = getQueryVariables();
 
 
@@ -213,7 +213,7 @@ var SignatureCount = React.createClass({
     },
 
     onActionKitCount: function(res) {
-        var current = res.total.actions + 207173; // adding MoveOn signature totals
+        var current = res.total.actions;
 
         this.setState({
             current: current,
@@ -229,7 +229,7 @@ var SignatureCount = React.createClass({
         return (
             <div className="count visible">
                 <div>{ commafy(this.state.current) }</div>
-                <div className="smaller">signatures to stop war with Iran</div>
+                <div className="smaller">signatures</div>
             </div>
         );
     },
@@ -251,9 +251,7 @@ var EmailDisclaimer = React.createClass({
         return (
             <div className="disclaimer">
                 <label>
-                    I consent to the information above being provided
-                    <br />
-                    to one or more participating organizations.
+                    You&#39;ll receive periodic updates on offers<br/>and activism opportunities.
                 </label>
             </div>
         );
@@ -280,7 +278,6 @@ var EmailForm = React.createClass({
                     <div className="text-fields">
                         <input placeholder="First and Last Name" name="name" />
                         <input placeholder="Email" name="email" data-pattern-name="email" type="email" />
-                        <input placeholder="Address" name="address1" />
                         <input placeholder="Zip Code" name="zip" data-pattern-name="zip" type="tel" />
                     </div>
 
@@ -292,7 +289,6 @@ var EmailForm = React.createClass({
                         <input type="hidden" name="action_user_agent" value={ navigator.userAgent } />
                         <input type="hidden" name="form_name" value="act-petition" />
                         <input type="hidden" name="url" value={ location.href } />
-                        <input type="hidden" name="opt_in" value="1" />
                         { sourceField }
                     </div>
 
@@ -358,15 +354,15 @@ var Header = React.createClass({
                 <a className="flag" href="/#petition"></a>
 
                 <h1>
-                    Stop War
+                    President Obama
                     <br />
-                    With Iran
+                    Mission Not Accomplished
                 </h1>
 
                 <div className="social">
-                    <div className='sp_14462 sp_fb_small facebook'></div>
-                    <div className='sp_14463 sp_tw_small twitter'></div>
-                    <div className='sp_14461 sp_em_small email'></div>
+                    <div className='sp_15355 sp_fb_small facebook'></div>
+                    <div className='sp_15356 sp_tw_small twitter'></div>
+                    <div className='sp_15354 sp_em_small email'></div>
                 </div>
             </header>
         );
@@ -378,7 +374,7 @@ var Footer = React.createClass({
     render: function() {
         return (
             <footer>
-                &copy;2015 <a href="http://credoaction.com/" target="_blank">CREDO</a> and partner orgs. <a href="/terms/">Terms of Use.</a>
+                &copy;2015 <a href="http://credoaction.com/" target="_blank">CREDO</a>. <a href="/terms/">Terms of Use.</a>
             </footer>
         );
     },
@@ -393,98 +389,6 @@ var Logos = React.createClass({
                     <a target="_blank" href="http://credoaction.com/">
                         <img src="/images/logos/credo.png" />
                     </a>
-
-                    <a target="_blank" href="http://ourfuture.org/">
-                        <img src="/images/logos/cfaf.png" />
-                    </a>
-
-                    <a target="_blank" href="http://www.codepink.org/">
-                        <img src="/images/logos/codepink.png" />
-                    </a>
-
-                    <a target="_blank" href="http://livableworld.org/">
-                        <img src="/images/logos/clw.png" />
-                    </a>
-
-                    <a target="_blank" href="http://www.dailykos.com/">
-                        <img src="/images/logos/dailykos.jpg" />
-                    </a>
-
-                    <a target="_blank" href="https://demandprogress.org/">
-                        <img src="/images/logos/dp.png" />
-                    </a>
-
-                    <a target="_blank" href="http://democracyforamerica.com/">
-                        <img src="/images/logos/dfa.png" />
-                    </a>
-
-                    <a target="_blank" href="http://justforeignpolicy.org/">
-                        <img src="/images/logos/justforeignpolicy.png" />
-                    </a>
-
-                    <a target="_blank" href="http://leftaction.com/">
-                        <img src="/images/logos/leftaction.png" />
-                    </a>
-
-                    <a target="_blank" href="http://moveon.org/">
-                        <img src="/images/logos/moveon.png" />
-                    </a>
-
-                    <a target="_blank" href="http://www.niacaction.org/">
-                        <img src="/images/logos/niacaction.png" />
-                    </a>
-
-                    <a target="_blank" href="http://other98.com/">
-                        <img src="/images/logos/other98.png" />
-                    </a>
-
-                    <a target="_blank" href="http://www.peace-action.org/">
-                        <img src="/images/logos/peaceaction.jpg" />
-                    </a>
-
-                    <a target="_blank" href="http://www.peaceactionwest.org/">
-                        <img src="/images/logos/paw.png" />
-                    </a>
-
-                    <a target="_blank" href="http://peacealliance.org/">
-                        <img src="/images/logos/thepeacealliance.jpg" />
-                    </a>
-
-                    <a target="_blank" href="http://www.pdamerica.org/">
-                        <img src="/images/logos/pda.png" />
-                    </a>
-
-                    <a target="_blank" href="http://rhrealitycheck.org/">
-                        <img src="/images/logos/rhrc.png" />
-                    </a>
-
-                    <a target="_blank" href="http://rootsaction.org/">
-                        <img src="/images/logos/rootsaction.png" />
-                    </a>
-
-                    <a target="_blank" href="http://www.thenation.com/">
-                        <img src="/images/logos/thenation.jpg" />
-                    </a>
-
-                    <a target="_blank" href="http://www.unitedforpeace.org/">
-                        <img src="/images/logos/unitedforpeaceandjustice.jpg" />
-                    </a>
-
-                    <a target="_blank" href="http://usaction.org/">
-                        <img src="/images/logos/usaction.png" />
-                    </a>
-
-                    <a target="_blank" href="http://www.wand.org/">
-                        <img src="/images/logos/wand.png" />
-                    </a>
-
-                    <a target="_blank" href="http://watchdog.net/">
-                        <img src="/images/logos/watchdog.png" />
-                    </a>
-
-                    <a target="_blank" href="http://winwithoutwar.org/">
-                        <img src="/images/logos/winwithoutwar.jpg" />
-                    </a>
                 </div>
             </div>
         );
@@ -496,7 +400,7 @@ var HomePage = React.createClass({
     renderDescription: function() {
         return (
             <div className="description">
-                <h2>Sign the petition: Defend the Iran deal and stop Republicans from starting a war with Iran</h2>
+                <h2>Sign the petition: Tell President Obama to Stop Nuking the Environment</h2>
 
                 This is the final showdown to stop Republicans from starting a war with Iran.
                 <div className="spacer" />
@@ -882,92 +786,6 @@ var CallPagePlus = React.createClass({
 });
 
 
-var CallPageTres = React.createClass({
-    render: function() {
-        return (
-            <div className="wrapper call-page">
-                <Header />
-
-                <div className="meat">
-
-                    <h2 className="thanks">
-                        We have less than 60 days to stop a war. Call key Democrats in Congress and urge them to support the Iran nuclear deal. Press <strong>*</strong> after you finish each call to move on to the next one. Make as many calls as you can – the more calls you make, the bigger an impact you&apos;ll have.
-                    </h2>
-
-                    <div id="call-form" />
-
-                    <CallForm
-                        callCampaign={ this.state.callCampaign }
-                        callCount={ this.state.callCount }
-                        callNumber={ this.state.callNumber }
-                        source={ this.state.source }
-                        zip={ this.state.zip }
-                    />
-
-                    <div className="description description-call">
-                        <h3>
-                            Call script
-                        </h3>
-
-                        Hello, my name is { this.state.name || '__________' } and I&apos;m calling from { this.state.city || '__________' }. Republicans are trying to take us to war by sabotaging the Iran nuclear deal. I urge you to support the deal and stop the Republicans from starting another costly war in the Middle East.
-                    </div>
-
-                </div>
-
-                <Logos />
-
-                <Footer />
-            </div>
-        );
-    },
-
-    onSunlightResponse: function(res) {
-        var progressivesCount = 0;
-        var legislators = JSON.parse(res).results;
-        for (var i = 0; i < legislators.length; i++) {
-            var legislator = legislators[i];
-            if (legislator.party !== 'R') {
-                progressivesCount++;
-            }
-        }
-
-        this.setState({
-            progressivesCount: progressivesCount,
-            visible: true,
-        });
-    },
-
-    onCountResponse: function(res) {
-        var count = JSON.parse(res).count;
-
-        this.setState({
-            callCount: count,
-        });
-    },
-
-    getInitialState: function() {
-        return {
-            callCount: -1,
-            callCampaign: 'stop_war_with_iran_60_days_left',
-            callNumber: '202-759-0554',
-            city: null,
-            name: null,
-            source: getSource(),
-            visible: true,
-        };
-    },
-
-    componentDidMount: function() {
-        var script = document.createElement('script');
-        script.src = 'https://c.shpg.org/4/sp.js';
-        document.body.appendChild(script);
-
-        // Get call count.
-        ajax.get('https://credo-action-call-tool-meta.herokuapp.com/api/count/stop_war_with_iran_dynamic,stop_war_with_iran_static', this.onCountResponse);
-    },
-});
-
-
 var TermsOfService = React.createClass({
     render: function() {
         return (
@@ -1034,8 +852,6 @@ var TermsOfService = React.createClass({
         React.render(<TermsOfService />, document.getElementById('app'));
     } else if (/^\/calls\/?/.test(location.pathname)) {
         React.render(<CallPagePlus />, document.getElementById('app'));
-    } else if (/^\/60-days-left\/?/.test(location.pathname)) {
-        React.render(<CallPageTres />, document.getElementById('app'));
     } else if (/^\/call\/?/.test(location.pathname)) {
         React.render(<CallPage />, document.getElementById('app'));
     } else {
