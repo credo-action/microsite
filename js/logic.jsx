@@ -749,7 +749,8 @@ var TermsOfService = React.createClass({
 (function() {
     if (/^\/terms\/?/.test(location.pathname)) {
         React.render(<TermsOfService />, document.getElementById('app'));
-    } else if (/^\/call\/?/.test(location.pathname)) {
+//    } else if (/^\/call\/?/.test(location.pathname)) {   // matches only to '/call/' pathname
+    } else if (/\/call\/?/.test(location.pathname)) {
         React.render(<CallPage />, document.getElementById('app'));
     } else {
         React.render(<HomePage />, document.getElementById('app'));
