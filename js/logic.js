@@ -354,13 +354,13 @@ var Header = React.createClass({displayName: "Header",
         return (
             React.createElement("header", null, 
                 React.createElement("a", {className: "flag", href: "/#petition"}), 
-
+/*
                 React.createElement("h1", null, 
                     "Tell Obama", 
                     React.createElement("br", null), 
                     "Keep It In The Ground"
                 ), 
-
+*/
                 React.createElement("div", {className: "social"}, 
                     React.createElement("div", {className: "sp_15355 sp_fb_small facebook"}), 
                     React.createElement("div", {className: "sp_15356 sp_tw_small twitter"}), 

@@ -352,13 +352,13 @@ var Header = React.createClass({
         return (
             <header>
                 <a className="flag" href="/#petition"></a>
-
+/*
                 <h1>
                     President Obama
                     <br />
                     Mission Not Accomplished
                 </h1>
-
+*/
                 <div className="social">
                     <div className='sp_15355 sp_fb_small facebook'></div>
                     <div className='sp_15356 sp_tw_small twitter'></div>
