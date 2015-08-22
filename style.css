@@ -30,7 +30,7 @@ input {
 }
 
 .wrapper > header {
-    background-image: url(images/hero-image-1200x627.png);
+    background-image: url(images/hero-image-1200x627.jpg);
     background-position: center;
     background-size: cover;
     height: 312px;
