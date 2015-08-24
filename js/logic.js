@@ -294,11 +294,12 @@ var EmailForm = React.createClass({displayName: "EmailForm",
                         sourceField 
                     ), 
 
-                    React.createElement(EmailDisclaimer, null), 
-
                     React.createElement("button", null, 
                         "Click to Sign"
-                    )
+                    ),
+
+                    React.createElement(EmailDisclaimer, null)
+
                 )
 
             )

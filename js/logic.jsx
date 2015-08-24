@@ -292,11 +292,12 @@ var EmailForm = React.createClass({
                         { sourceField }
                     </div>
 
-                    <EmailDisclaimer />
-
                     <button>
                         Click to Sign
                     </button>
+
+                    <EmailDisclaimer />
+
                 </form>
 
             </section>
