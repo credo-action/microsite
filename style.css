@@ -470,7 +470,7 @@ input {
 .wrapper > .logos {
     background-color: #f2f2f2;
     margin: 0 auto;
-    min-height: 176px;
+/*    min-height: 176px; */
     overflow: hidden;
     padding: 0 60px 22px 0;
     text-align: center;
