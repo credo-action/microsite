@@ -251,9 +251,7 @@ var EmailDisclaimer = React.createClass({displayName: "EmailDisclaimer",
         return (
             React.createElement("div", {className: "disclaimer"}, 
                 React.createElement("label", null, 
-                    "You'll receive periodic updates on offers", 
-                    React.createElement("br", null), 
-                    "and activism opportunities."
+                    "You'll receive periodic updates on offers", React.createElement("br", null), "and activism opportunities."
                 )
             )
         );
@@ -291,12 +289,12 @@ var EmailForm = React.createClass({displayName: "EmailForm",
                         React.createElement("input", {type: "hidden", name: "action_user_agent", value:  navigator.userAgent}), 
                         React.createElement("input", {type: "hidden", name: "form_name", value: "act-petition"}), 
                         React.createElement("input", {type: "hidden", name: "url", value:  location.href}), 
-                        sourceField 
+                         sourceField 
                     ), 
 
                     React.createElement("button", null, 
                         "Click to Sign"
-                    ),
+                    ), 
 
                     React.createElement(EmailDisclaimer, null)
 
@@ -355,13 +353,6 @@ var Header = React.createClass({displayName: "Header",
         return (
             React.createElement("header", null, 
                 React.createElement("a", {className: "flag", href: "/#petition"}), 
-/*
-                React.createElement("h1", null, 
-                    "Tell Obama", 
-                    React.createElement("br", null), 
-                    "Keep It In The Ground"
-                ), 
-*/
                 React.createElement("div", {className: "social"}, 
                     React.createElement("div", {className: "sp_15355 sp_fb_small facebook"}), 
                     React.createElement("div", {className: "sp_15356 sp_tw_small twitter"}), 
@@ -403,27 +394,27 @@ var HomePage = React.createClass({displayName: "HomePage",
     renderDescription: function() {
         return (
             React.createElement("div", {className: "description"}, 
-                React.createElement("h2", null, "Sign the petition: Tell President Obama to Stop Nuking the Environment"), 
+                React.createElement("h2", null, "Sign the petition to President Obama: Climate leaders don’t drill the Arctic. It’s time to Keep It In The Ground."), 
 
-                "This is the final showdown to stop Republicans from starting a war with Iran.", 
+                "There is no clearer symbol of the failure of President Obama’s policies on energy and climate than his upcoming trip to talk about climate change in Alaska.", 
                 React.createElement("div", {className: "spacer"}), 
 
-                "The United States, Iran and five other world powers announced a historic deal to dramatically curb Iran's nuclear program in exchange for easing international sanctions on Iran.", 
+                "In Alaska, President Obama’s words about the urgency of climate change, against the backdrop of the Shell oil rig he approved to drill, brings to mind the tragic irony of President George W. Bush declaring “Mission Accomplished” six weeks into his decade-long invasion of Iraq.", 
                 React.createElement("div", {className: "spacer"}), 
 
-                "Republicans are trying to sabotage the deal, put us back on the path to confrontation with Iran and start a war – but they can't do it unless Democrats help them.", 
+                "Science is clear: 80% of fossil fuel reserves, ", React.createElement("strong", null, "and 100% of Arctic oil"), ", must stay in the ground to keep us off a global warming collision course. ", React.createElement("strong", null, "That means real climate leaders don’t drill the Arctic."), 
                 React.createElement("div", {className: "spacer"}), 
 
-                "We need to build an impenetrable firewall in Congress to prevent Republicans from passing any legislation to kill the deal and putting us back on the path to confrontation and war. Tell Democrats to go on record in support of the deal.", 
+                "But under the president’s “All of the Above” energy policy, the president has approved massive extraction of coal, oil and fracked gas – now including drilling in the Arctic.", 
                 React.createElement("div", {className: "spacer"}), 
 
-                "We'll send your message to your senators and member of Congress, as well as to House and Senate Democratic leadership.", 
+                React.createElement("strong", null, "President Obama can’t be a climate leader unless he makes a major shift to recognize that he must start keeping carbon in the ground."), " Please send him a message as he heads to Alaska.", 
                 React.createElement("div", {className: "spacer"}), 
 
                 "The petition reads:", 
 
                 React.createElement("div", {className: "petition-text"}, 
-                    "Republicans are trying to take us to war by sabotaging the Iran nuclear deal. I urge you to support the deal and stop the Republicans from starting another war of choice in the Middle East."
+                    "Climate Leaders Don’t Drill the Arctic. Talking about the urgency of climate change while allowing massive fossil fuel extraction isn’t leadership, it’s hypocrisy. Science says we must not burn 80% of known fossil fuel reserves, including all Arctic oil. President Obama, to lead on climate, you must Keep It In The Ground."
                 )
             )
         );
@@ -587,7 +578,12 @@ var CallPage = React.createClass({displayName: "CallPage",
                             "Call script"
                         ), 
 
-                        "Hello, my name is ",  this.state.name || '__________', " and I'm calling from ",  this.state.city || '__________', ". Republicans are trying to take us to war by sabotaging the Iran nuclear deal. I urge you to support the deal and stop the Republicans from starting another costly war in the Middle East."
+                        "Hello, my name is ",  this.state.name || '__________', " and I'm calling from ",  this.state.city || '__________', "." + ' ' + 
+                        "I’m calling to say that climate leaders don’t drill the Arctic." + ' ' + 
+                        "It is hypocritical to talk about the urgency of climate change while allowing massive fossil fuel extraction." + ' ' + 
+                        "Science tells us we have to ", React.createElement("strong", null, "leave 80% of known fossil fuel reserves ", React.createElement("em", null, "in the ground")), " to stop the worst effects of climate change –  including ", React.createElement("strong", null, "all Arctic oil"), "." + ' ' + 
+                        "If President Obama and his administration want to fight climate change, it’s time to ", React.createElement("u", null, "Keep It In The Ground"), "." + ' ' +
+                        "Thank You."
                     )
 
                 ), 
@@ -599,10 +595,10 @@ var CallPage = React.createClass({displayName: "CallPage",
         );
     },
 
-    getTitle: function() {
+    getTitle: function() {        
         return (
             React.createElement("h2", {className: "thanks"}, 
-                "Thank you for signing. Now please call Democratic leaders in Congress and urge them to support the Iran nuclear deal. Press ", React.createElement("strong", null, "*"), " after you finish each call to move on to the next one."
+                "Thanks for signing!  Now please call President Obama to deliver your message directly. The White House counts each call, so this is a really important way to make your voice heard. Press * after your each call to be connected to another office in the Obama administration."
             )
         );
     },
