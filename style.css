@@ -112,8 +112,8 @@ input {
     background-image: url(images/social-icon-Email-42x42.png);
 }
 
-.wrapper > header .social div a:hover {
-    opacity: 0.919 !important;
+.wrapper > header .social div:hover {
+    opacity: 0.8 !important;
 }
 
 .wrapper > .meat {
