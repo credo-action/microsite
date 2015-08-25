@@ -603,7 +603,8 @@ var CallPage = React.createClass({
     getTitle: function() {        
         return (
             <h2 className="thanks">
-                Thanks for signing!  Now please call President Obama to deliver your message directly. The White House counts each call, so this is a really important way to make your voice heard. Press * after your each call to be connected to another office in the Obama administration.
+                Thanks for signing!  Now please call President Obama to deliver your message directly. 
+                The White House counts each call, so this is a really important way to make your voice heard. 
             </h2>
         );
     },
