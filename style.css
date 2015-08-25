@@ -562,6 +562,11 @@ input {
         margin: 0 auto;
     }
 
+    .wrapper > .meat .description iframe {
+        width: 400px;
+        height: 225px;
+    }
+
     .wrapper > .meat .description.description-call {
         float: none;
         padding: 0 32px 32px;
