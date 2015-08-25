@@ -396,6 +396,11 @@ var HomePage = React.createClass({
             <div className="description">
                 <h2>Sign the petition to President Obama: Climate leaders don’t drill the Arctic. It’s time to Keep It In The Ground.</h2>
 
+                <center>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/bIyPXpAHZH8" frameborder="0" allowfullscreen></iframe>
+                </center>
+                <div className="spacer" />
+
                 There is no clearer symbol of the failure of President Obama’s policies on energy and climate than his upcoming trip to talk about climate change in Alaska.
                 <div className="spacer" />
 
