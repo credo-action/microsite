@@ -394,14 +394,16 @@ var HomePage = React.createClass({
     renderDescription: function() {
         return (
             <div className="description">
-                <h2>Sign the petition to President Obama: Climate leaders don’t drill the Arctic. It’s time to Keep It In The Ground.</h2>
+                <h2>President Obama's 'Mission Accomplished' Moment</h2>
+
+                <h3>Sign the petition to President Obama: Climate leaders don’t drill the Arctic.</h3>
 
                 <center>
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/bIyPXpAHZH8?rel=0&amp;controls=0" frameborder="0" allowfullscreen></iframe>
                 </center>
                 <div className="spacer" />
 
-                There is no clearer symbol of the failure of President Obama’s policies on energy and climate than his upcoming trip to talk about climate change in Alaska.
+                President Obama is heading on a trip to Alaska to talk about climate change. There is no clearer symbol of the self-defeating hypocrisy of his policies on energy and climate.
                 <div className="spacer" />
 
                 In Alaska, President Obama’s words about the urgency of climate change, against the backdrop of the Shell oil rig he approved to drill, brings to mind the tragic irony of President George W. Bush declaring “Mission Accomplished” six weeks into his decade-long invasion of Iraq.

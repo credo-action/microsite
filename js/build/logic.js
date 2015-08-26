@@ -394,14 +394,16 @@ var HomePage = React.createClass({displayName: "HomePage",
     renderDescription: function() {
         return (
             React.createElement("div", {className: "description"}, 
-                React.createElement("h2", null, "Sign the petition to President Obama: Climate leaders don’t drill the Arctic. It’s time to Keep It In The Ground."), 
+                React.createElement("h2", null, "President Obama's 'Mission Accomplished' Moment"), 
+
+                React.createElement("h3", null, "Sign the petition to President Obama: Climate leaders don’t drill the Arctic."), 
 
                 React.createElement("center", null, 
                 React.createElement("iframe", {width: "560", height: "315", src: "https://www.youtube.com/embed/bIyPXpAHZH8?rel=0&controls=0", frameborder: "0", allowfullscreen: true})
                 ), 
                 React.createElement("div", {className: "spacer"}), 
 
-                "There is no clearer symbol of the failure of President Obama’s policies on energy and climate than his upcoming trip to talk about climate change in Alaska.", 
+                "President Obama is heading on a trip to Alaska to talk about climate change. There is no clearer symbol of the self-defeating hypocrisy of his policies on energy and climate.", 
                 React.createElement("div", {className: "spacer"}), 
 
                 "In Alaska, President Obama’s words about the urgency of climate change, against the backdrop of the Shell oil rig he approved to drill, brings to mind the tragic irony of President George W. Bush declaring “Mission Accomplished” six weeks into his decade-long invasion of Iraq.", 
