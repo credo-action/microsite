@@ -399,7 +399,7 @@ var HomePage = React.createClass({
                 <h3>Sign the petition to President Obama: Climate leaders don’t drill the Arctic.</h3>
 
                 <center>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/5pcF5uPQdPU?rel=0" frameborder="0" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/Ipx2wypPXJw?rel=0" frameborder="0" allowfullscreen></iframe>
                 </center>
                 <div className="spacer" />
 
