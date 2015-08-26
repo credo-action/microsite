@@ -133,7 +133,7 @@ var events = {
 };
 
 
-var SignatureProgress = React.createClass({displayName: "SignatureProgress",
+var SignatureProgress = React.createClass({
     componentDidMount: function() {
         window.onActionKitProgress = this.onActionKitProgress;
 
@@ -165,11 +165,11 @@ var SignatureProgress = React.createClass({displayName: "SignatureProgress",
     render: function(e) {
         if (this.state.percent < 0) {
             return (
-                React.createElement("div", {className: "progress"}, 
-                    React.createElement("div", {className: "bar"}, 
-                        React.createElement("div", {className: "filled"})
-                    )
-                )
+                <div className="progress">
+                    <div className="bar">
+                        <div className="filled" />
+                    </div>
+                </div>
             );
         }
 
@@ -179,25 +179,25 @@ var SignatureProgress = React.createClass({displayName: "SignatureProgress",
         };
 
         return (
-            React.createElement("div", {className: "progress visible"}, 
-                React.createElement("div", {className: "bar"}, 
-                    React.createElement("div", {className: "filled", style:  css })
-                ), 
+            <div className="progress visible">
+                <div className="bar">
+                    <div className="filled" style={ css } />
+                </div>
 
-                React.createElement("div", {className: "percent"}, 
-                     this.state.percent, "%"
-                ), 
+                <div className="percent">
+                    { this.state.percent }%
+                </div>
 
-                React.createElement("div", {className: "summary"}, 
-                    "We've reached ",  commafy(this.state.current), " of our goal of ",  commafy(this.state.goal), "."
-                )
-            )
+                <div className="summary">
+                    We&apos;ve reached { commafy(this.state.current) } of our goal of { commafy(this.state.goal) }.
+                </div>
+            </div>
         );
     },
 });
 
 
-var SignatureCount = React.createClass({displayName: "SignatureCount",
+var SignatureCount = React.createClass({
     componentDidMount: function() {
         window.onActionKitCount = this.onActionKitCount;
 
@@ -223,20 +223,20 @@ var SignatureCount = React.createClass({displayName: "SignatureCount",
     render: function(e) {
         if (this.state.current < 0) {
             return (
-                React.createElement("div", {className: "count"})
+                <div className="count" />
             );
         }
         return (
-            React.createElement("div", {className: "count visible"}, 
-                React.createElement("div", null,  commafy(this.state.current) ), 
-                React.createElement("div", {className: "smaller"}, "signatures")
-            )
+            <div className="count visible">
+                <div>{ commafy(this.state.current) }</div>
+                <div className="smaller">signatures</div>
+            </div>
         );
     },
 });
 
 
-var EmailDisclaimer = React.createClass({displayName: "EmailDisclaimer",
+var EmailDisclaimer = React.createClass({
     hiddenFor: [
         'moveon',
     ],
@@ -249,58 +249,58 @@ var EmailDisclaimer = React.createClass({displayName: "EmailDisclaimer",
         }
 
         return (
-            React.createElement("div", {className: "disclaimer"}, 
-                React.createElement("label", null, 
-                    "You'll receive periodic updates on offers", React.createElement("br", null), "and activism opportunities."
-                )
-            )
+            <div className="disclaimer">
+                <label>
+                    You&#39;ll receive periodic updates on offers<br/>and activism opportunities.
+                </label>
+            </div>
         );
     },
 });
 
 
-var EmailForm = React.createClass({displayName: "EmailForm",
+var EmailForm = React.createClass({
     render: function() {
         var source, sourceField;
         source = getSource();
         if (source) {
-            sourceField = (React.createElement("input", {type: "hidden", name: "source", value:  getSource() }));
+            sourceField = (<input type="hidden" name="source" value={ getSource() } />);
         }
 
         return (
-            React.createElement("section", {className: "form"}, 
+            <section className="form">
 
-                React.createElement(SignatureCount, null), 
+                <SignatureCount />
 
-                React.createElement("form", {onSubmit:  this.onSubmit, method: "POST", action: "https://act.credoaction.com/act/", "accept-charset": "utf-8"}, 
-                    React.createElement("h2", null, "Add your name"), 
+                <form onSubmit={ this.onSubmit } method="POST" action="https://act.credoaction.com/act/" accept-charset="utf-8">
+                    <h2>Add your name</h2>
 
-                    React.createElement("div", {className: "text-fields"}, 
-                        React.createElement("input", {placeholder: "First and Last Name", name: "name"}), 
-                        React.createElement("input", {placeholder: "Email", name: "email", "data-pattern-name": "email", type: "email"}), 
-                        React.createElement("input", {placeholder: "Zip Code", name: "zip", "data-pattern-name": "zip", type: "tel"})
-                    ), 
+                    <div className="text-fields">
+                        <input placeholder="First and Last Name" name="name" />
+                        <input placeholder="Email" name="email" data-pattern-name="email" type="email" />
+                        <input placeholder="Zip Code" name="zip" data-pattern-name="zip" type="tel" />
+                    </div>
 
-                    React.createElement("div", {className: "hidden"}, 
-                        React.createElement("input", {type: "hidden", name: "page", value:  state.pageShortName}), 
-                        React.createElement("input", {type: "hidden", name: "want_progress", value: "1"}), 
-                        React.createElement("input", {type: "hidden", name: "country", value: "United States"}), 
-                        React.createElement("input", {type: "hidden", name: "js", value: "1"}), 
-                        React.createElement("input", {type: "hidden", name: "action_user_agent", value:  navigator.userAgent}), 
-                        React.createElement("input", {type: "hidden", name: "form_name", value: "act-petition"}), 
-                        React.createElement("input", {type: "hidden", name: "url", value:  location.href}), 
-                         sourceField 
-                    ), 
+                    <div className="hidden">
+                        <input type="hidden" name="page" value={ state.pageShortName } />
+                        <input type="hidden" name="want_progress" value="1" />
+                        <input type="hidden" name="country" value="United States" />
+                        <input type="hidden" name="js" value="1" />
+                        <input type="hidden" name="action_user_agent" value={ navigator.userAgent } />
+                        <input type="hidden" name="form_name" value="act-petition" />
+                        <input type="hidden" name="url" value={ location.href } />
+                        { sourceField }
+                    </div>
 
-                    React.createElement("button", null, 
-                        "Click to Sign"
-                    ), 
+                    <button>
+                        Click to Sign
+                    </button>
 
-                    React.createElement(EmailDisclaimer, null)
+                    <EmailDisclaimer />
 
-                )
+                </form>
 
-            )
+            </section>
         );
     },
 
@@ -348,106 +348,104 @@ var EmailForm = React.createClass({displayName: "EmailForm",
 });
 
 
-var Header = React.createClass({displayName: "Header",
+var Header = React.createClass({
     render: function() {
         return (
-            React.createElement("header", null, 
-                React.createElement("a", {className: "flag", href: "/#petition"}), 
-                React.createElement("div", {className: "social"}, 
-                    React.createElement("div", {className: "sp_15355 sp_fb_small facebook"}), 
-                    React.createElement("div", {className: "sp_15356 sp_tw_small twitter"}), 
-                    React.createElement("div", {className: "sp_15354 sp_em_small email"})
-                )
-            )
+            <header>
+                <a className="flag" href="/#petition"></a>
+                <div className="social">
+                    <div className='sp_15355 sp_fb_small facebook'></div>
+                    <div className='sp_15356 sp_tw_small twitter'></div>
+                    <div className='sp_15354 sp_em_small email'></div>
+                </div>
+            </header>
         );
     },
 });
 
 
-var Footer = React.createClass({displayName: "Footer",
+var Footer = React.createClass({
     render: function() {
         return (
-            React.createElement("footer", null, 
-                "©2015 ", React.createElement("a", {href: "http://credoaction.com/", target: "_blank"}, "CREDO"), ". ", React.createElement("a", {href: "/terms/"}, "Terms of Use.")
-            )
+            <footer>
+                &copy;2015 <a href="http://credoaction.com/" target="_blank">CREDO</a>. <a href="/terms/">Terms of Use.</a>
+            </footer>
         );
     },
 });
 
 
-var Logos = React.createClass({displayName: "Logos",
+var Logos = React.createClass({
     render: function() {
         return (
-            React.createElement("div", {className: "logos"}, 
-                React.createElement("div", {className: "constrainer"}, 
-                    React.createElement("a", {target: "_blank", href: "http://credoaction.com/"}, 
-                        React.createElement("img", {src: "/images/logos/credo.png"})
-                    )
-                )
-            )
+            <div className="logos">
+                <div className="constrainer">
+                    <a target="_blank" href="http://credoaction.com/">
+                        <img src="/images/logos/credo.png" />
+                    </a>
+                </div>
+            </div>
         );
     },
 });
 
 
-var HomePage = React.createClass({displayName: "HomePage",
+var HomePage = React.createClass({
     renderDescription: function() {
         return (
-            React.createElement("div", {className: "description"}, 
-                React.createElement("h2", null, "President Obama's 'Mission Accomplished' Moment."),
+            <div className="description">
+                <h2>Sign the petition to President Obama: Climate leaders don’t drill the Arctic. It’s time to Keep It In The Ground.</h2>
 
-                React.createElement("h3", null, "Sign the petition to President Obama: Climate leaders don’t drill the Arctic."), 
+                <center>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/bIyPXpAHZH8?rel=0&amp;controls=0" frameborder="0" allowfullscreen></iframe>
+                </center>
+                <div className="spacer" />
 
-                React.createElement("center", null, 
-                React.createElement("iframe", {width: "560", height: "315", src: "https://www.youtube.com/embed/bIyPXpAHZH8?rel=0&controls=0", frameborder: "0", allowfullscreen: true})
-                ), 
-                React.createElement("div", {className: "spacer"}), 
+                There is no clearer symbol of the failure of President Obama’s policies on energy and climate than his upcoming trip to talk about climate change in Alaska.
+                <div className="spacer" />
 
-                "There is no clearer symbol of the self-defeating hypocrisy of President Obama's policies on energy and climate than his upcoming trip to talk about climate change in Alaska.", 
-                React.createElement("div", {className: "spacer"}), 
+                In Alaska, President Obama’s words about the urgency of climate change, against the backdrop of the Shell oil rig he approved to drill, brings to mind the tragic irony of President George W. Bush declaring “Mission Accomplished” six weeks into his decade-long invasion of Iraq.
+                <div className="spacer" />
 
-                "In Alaska, President Obama’s words about the urgency of climate change, against the backdrop of the Shell oil rig he approved to drill, brings to mind the tragic irony of President George W. Bush declaring “Mission Accomplished” six weeks into his decade-long invasion of Iraq.", 
-                React.createElement("div", {className: "spacer"}), 
+                Science is clear: 80% of fossil fuel reserves, <strong>and 100% of Arctic oil</strong>, must stay in the ground to keep us off a global warming collision course. <strong>That means real climate leaders don’t drill the Arctic.</strong>
+                <div className="spacer" />
 
-                "Science is clear: 80% of fossil fuel reserves, ", React.createElement("strong", null, "and 100% of Arctic oil"), ", must stay in the ground to keep us off a global warming collision course. ", React.createElement("strong", null, "That means real climate leaders don’t drill the Arctic."), 
-                React.createElement("div", {className: "spacer"}), 
+                But under the president’s “All of the Above” energy policy, the president has approved massive extraction of coal, oil and fracked gas – now including drilling in the Arctic.
+                <div className="spacer" />
 
-                "But under the president’s “All of the Above” energy policy, the president has approved massive extraction of coal, oil and fracked gas – now including drilling in the Arctic.", 
-                React.createElement("div", {className: "spacer"}), 
+                <strong>President Obama can’t be a climate leader unless he makes a major shift to recognize that he must start keeping carbon in the ground.</strong> Please send him a message as he heads to Alaska.
+                <div className="spacer" />
 
-                React.createElement("strong", null, "President Obama can’t be a climate leader unless he makes a major shift to recognize that he must start keeping carbon in the ground."), " Please send him a message as he heads to Alaska.", 
-                React.createElement("div", {className: "spacer"}), 
+                The petition reads:
 
-                "The petition reads:", 
-
-                React.createElement("div", {className: "petition-text"}, 
-                    "Climate Leaders Don’t Drill the Arctic. Talking about the urgency of climate change while allowing massive fossil fuel extraction isn’t leadership, it’s hypocrisy. Science says we must not burn 80% of known fossil fuel reserves, including all Arctic oil. President Obama, to lead on climate, you must Keep It In The Ground."
-                )
-            )
+                <div className="petition-text">
+                    Climate Leaders Don’t Drill the Arctic. Talking about the urgency of climate change while allowing massive fossil fuel extraction isn’t leadership, it’s hypocrisy. Science says we must not burn 80% of known fossil fuel reserves, including all Arctic oil. President Obama, to lead on climate, you must Keep It In The Ground.
+                </div>
+            </div>
         );
     },
 
     render: function() {
         return (
-            React.createElement("div", {className: "wrapper home-page"}, 
-                React.createElement(Header, null), 
+            <div className="wrapper home-page">
+                <Header />
 
-                React.createElement("div", {className: "meat"}, 
+                <div className="meat">
 
-                    React.createElement("section", {className: "description-mobile"},  this.renderDescription() ), 
+                    <section className="description-mobile">{ this.renderDescription() }</section>
 
-                    React.createElement("div", {id: "petition"}), 
+                    <div id="petition" />
 
-                    React.createElement(EmailForm, null), 
+                    <EmailForm />
 
-                    React.createElement("section", {className: "description-desktop"},  this.renderDescription() )
+                    <section className="description-desktop">{ this.renderDescription() }</section>
 
-                ), 
+                </div>
 
-                React.createElement(Logos, null), 
+                <Logos />
 
-                React.createElement(Footer, null)
-            )
+                <Footer />
+            </div>
         );
     },
 
@@ -459,31 +457,31 @@ var HomePage = React.createClass({displayName: "HomePage",
 });
 
 
-var CallForm = React.createClass({displayName: "CallForm",
+var CallForm = React.createClass({
     renderForm: function() {
         if (this.state.isCalling) {
             return (
-                React.createElement("div", {className: "calling"}, 
-                    "We're calling you now."
-                )
+                <div className="calling">
+                    We&apos;re calling you now.
+                </div>
             );
         } else {
             return (
-                React.createElement("div", null, 
-                    React.createElement("h2", null, 
-                        "Make a Call"
-                    ), 
+                <div>
+                    <h2>
+                        Make a Call
+                    </h2>
 
-                    React.createElement("input", {type: "tel", name: "phone", placeholder: "Your phone number", ref: "phone"}), 
+                    <input type="tel" name="phone" placeholder="Your phone number" ref="phone" />
 
-                    React.createElement("button", null, 
-                        "Click to Connect"
-                    ), 
+                    <button>
+                        Click to Connect
+                    </button>
 
-                    React.createElement("div", {className: "sidenote"}, 
-                        "Or call ", React.createElement("a", {href:  "tel:" + this.getPhoneNumber('dashed')},  this.getPhoneNumber('pretty') ), " to connect."
-                    )
-                )
+                    <div className="sidenote">
+                        Or call <a href={ "tel:" + this.getPhoneNumber('dashed') }>{ this.getPhoneNumber('pretty') }</a> to connect.
+                    </div>
+                </div>
             );
         }
     },
@@ -491,10 +489,10 @@ var CallForm = React.createClass({displayName: "CallForm",
     renderCount: function() {
         if (this.props.callCount > -1) {
             return (
-                React.createElement("div", {className: "animation-fade-in"}, 
-                    React.createElement("div", {className: "headline"},  commafy(this.props.callCount), " Call", this.props.callCount !== 1 ? 's' : ''), 
-                    React.createElement("div", {className: "label"}, "completed")
-                )
+                <div className="animation-fade-in">
+                    <div className="headline">{ commafy(this.props.callCount) } Call{this.props.callCount !== 1 ? 's' : ''}</div>
+                    <div className="label">completed</div>
+                </div>
             );
         } else {
             return;
@@ -543,71 +541,71 @@ var CallForm = React.createClass({displayName: "CallForm",
 
     render: function() {
         return (
-            React.createElement("form", {className: "call-form", onSubmit:  this.onSubmit}, 
-                React.createElement("div", {className: "count"}, 
-                     this.renderCount() 
-                ), 
+            <form className="call-form" onSubmit={ this.onSubmit }>
+                <div className="count">
+                    { this.renderCount() }
+                </div>
 
-                React.createElement("div", {className: "background"}, 
-                     this.renderForm() 
-                )
-            )
+                <div className="background">
+                    { this.renderForm() }
+                </div>
+            </form>
         );
     },
 });
 
 
-var CallPage = React.createClass({displayName: "CallPage",
+var CallPage = React.createClass({
     render: function() {
         var css = {
             opacity: this.state.visible ? 1 : 0,
         };
 
         return (
-            React.createElement("div", {className: "wrapper call-page"}, 
-                React.createElement(Header, null), 
+            <div className="wrapper call-page">
+                <Header />
 
-                React.createElement("div", {className: "meat", style:  css }, 
+                <div className="meat" style={ css }>
 
-                     this.getTitle(), 
+                    { this.getTitle() }
 
-                    React.createElement("div", {id: "call-form"}), 
+                    <div id="call-form" />
 
-                    React.createElement(CallForm, {
-                        callCount:  this.state.callCount, 
-                        progressivesCount:  this.state.progressivesCount, 
-                        source:  this.state.source, 
-                        zip:  this.state.zip}
-                    ), 
+                    <CallForm
+                        callCount={ this.state.callCount }
+                        progressivesCount={ this.state.progressivesCount }
+                        source={ this.state.source }
+                        zip={ this.state.zip }
+                    />
 
-                    React.createElement("div", {className: "description description-call"}, 
-                        React.createElement("h3", null, 
-                            "Call script"
-                        ), 
+                    <div className="description description-call">
+                        <h3>
+                            Call script
+                        </h3>
 
-                        "Hello, my name is ",  this.state.name || '__________', " and I'm calling from ",  this.state.city || '__________', "." + ' ' + 
-                        "I’m calling to say that climate leaders don’t drill the Arctic." + ' ' + 
-                        "It is hypocritical to talk about the urgency of climate change while allowing massive fossil fuel extraction." + ' ' + 
-                        "Science tells us we have to ", React.createElement("strong", null, "leave 80% of known fossil fuel reserves ", React.createElement("em", null, "in the ground")), " to stop the worst effects of climate change –  including ", React.createElement("strong", null, "all Arctic oil"), "." + ' ' + 
-                        "If President Obama and his administration want to fight climate change, it’s time to ", React.createElement("u", null, "Keep It In The Ground"), "." + ' ' +
-                        "Thank You."
-                    )
+                        Hello, my name is { this.state.name || '__________' } and I&apos;m calling from { this.state.city || '__________' }. 
+                        I’m calling to say that climate leaders don’t drill the Arctic. 
+                        It is hypocritical to talk about the urgency of climate change while allowing massive fossil fuel extraction. 
+                        Science tells us we have to <strong>leave 80% of known fossil fuel reserves <em>in the ground</em></strong> to stop the worst effects of climate change –  including <strong>all Arctic oil</strong>. 
+                        If President Obama and his administration want to fight climate change, it’s time to <u>Keep It In The Ground</u>.
+                        Thank You.
+                    </div>
 
-                ), 
+                </div>
 
-                React.createElement(Logos, null), 
+                <Logos />
 
-                React.createElement(Footer, null)
-            )
+                <Footer />
+            </div>
         );
     },
 
     getTitle: function() {        
         return (
-            React.createElement("h2", {className: "thanks"}, 
-                "Thanks for signing!  Now please call President Obama to deliver your message directly." + ' ' + 
-                "The White House counts each call, so this is a really important way to make your voice heard." 
-            )
+            <h2 className="thanks">
+                Thanks for signing!  Now please call President Obama to deliver your message directly. 
+                The White House counts each call, so this is a really important way to make your voice heard. 
+            </h2>
         );
     },
 
@@ -678,56 +676,56 @@ var CallPage = React.createClass({displayName: "CallPage",
     },
 });
 
-var TermsOfService = React.createClass({displayName: "TermsOfService",
+var TermsOfService = React.createClass({
     render: function() {
         return (
-            React.createElement("div", {className: "wrapper terms-page"}, 
-                React.createElement(Header, null), 
+            <div className="wrapper terms-page">
+                <Header />
 
-                React.createElement("div", {className: "meat"}, 
+                <div className="meat">
 
-                    React.createElement("h2", null, 
-                        "Website Terms of Use"
-                    ), 
+                    <h2>
+                        Website Terms of Use
+                    </h2>
 
-                    React.createElement("ul", null, 
-                        React.createElement("li", null, 
-                            React.createElement("strong", null, "Acceptance of Terms"), React.createElement("br", null), 
-                            "This website (“Site”) is provided to you subject to the following Terms of Use (“Terms”). By visiting this site, you accept these Terms."
-                        ), 
+                    <ul>
+                        <li>
+                            <strong>Acceptance of Terms</strong><br />
+                            This website (“Site”) is provided to you subject to the following Terms of Use (“Terms”). By visiting this site, you accept these Terms.
+                        </li>
 
-                        React.createElement("li", null, 
-                            React.createElement("strong", null, "Information Collection"), React.createElement("br", null), 
-                            "The Site will only collect the personal information you choose to provide. Information about the internet domain and IP address from which you access the Site, the type of browser and operating system used, the date and time of your Site visit, and the Site pages you visit may be collected automatically; this information will not be used to identify you personally."
-                        ), 
+                        <li>
+                            <strong>Information Collection</strong><br />
+                            The Site will only collect the personal information you choose to provide. Information about the internet domain and IP address from which you access the Site, the type of browser and operating system used, the date and time of your Site visit, and the Site pages you visit may be collected automatically; this information will not be used to identify you personally.
+                        </li>
 
-                        React.createElement("li", null, 
-                            React.createElement("strong", null, "Information Sharing and Use"), React.createElement("br", null), 
-                            "The name, email address, address, and zip code you enter on the Site will be shared with the participating organizations named on the Site. The participating organizations named on the Site may be updated at any time, including after you enter your information. Your email address and/or Site registration information may be used to offer you special commercial or other benefits and communicate with you in the future. Participating organizations may use the information you provide subject to each participating organization’s own privacy policies."
-                        ), 
+                        <li>
+                            <strong>Information Sharing and Use</strong><br />
+                            The name, email address, address, and zip code you enter on the Site will be shared with the participating organizations named on the Site. The participating organizations named on the Site may be updated at any time, including after you enter your information. Your email address and/or Site registration information may be used to offer you special commercial or other benefits and communicate with you in the future. Participating organizations may use the information you provide subject to each participating organization’s own privacy policies.
+                        </li>
 
-                        React.createElement("li", null, 
-                            React.createElement("strong", null, "Permission to Call"), React.createElement("br", null), 
-                            "By entering your phone number on the Site, you give express permission to call that phone number for the purpose of connecting you with legislators."
-                        ), 
+                        <li>
+                            <strong>Permission to Call</strong><br />
+                            By entering your phone number on the Site, you give express permission to call that phone number for the purpose of connecting you with legislators.
+                        </li>
 
-                        React.createElement("li", null, 
-                            React.createElement("strong", null, "Website Use"), React.createElement("br", null), 
-                            "You understand and agree that the Web Site is provided \"AS-IS\" and no guarantees are made for the performance of or your use of the site."
-                        )
+                        <li>
+                            <strong>Website Use</strong><br />
+                            You understand and agree that the Web Site is provided "AS-IS" and no guarantees are made for the performance of or your use of the site.
+                        </li>
 
-                    ), 
+                    </ul>
 
-                    React.createElement("div", {className: "effective-date"}, 
-                        "Effective Date: July 6, 2015"
-                    )
+                    <div className="effective-date">
+                        Effective Date: July 6, 2015
+                    </div>
 
-                ), 
+                </div>
 
-                React.createElement(Logos, null), 
+                <Logos />
 
-                React.createElement(Footer, null)
-            )
+                <Footer />
+            </div>
         );
     },
 
@@ -741,11 +739,11 @@ var TermsOfService = React.createClass({displayName: "TermsOfService",
 
 (function() {
     if (/^\/terms\/?/.test(location.pathname)) {
-        React.render(React.createElement(TermsOfService, null), document.getElementById('app'));
+        React.render(<TermsOfService />, document.getElementById('app'));
 //    } else if (/^\/call\/?/.test(location.pathname)) {   // matches only to '/call/' pathname
     } else if (/\/call\/?/.test(location.pathname)) {
-        React.render(React.createElement(CallPage, null), document.getElementById('app'));
+        React.render(<CallPage />, document.getElementById('app'));
     } else {
-        React.render(React.createElement(HomePage, null), document.getElementById('app'));
+        React.render(<HomePage />, document.getElementById('app'));
     }
 })();
