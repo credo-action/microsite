@@ -166,6 +166,32 @@ input {
     text-transform: uppercase;
 }
 
+.wrapper > .meat .description.description-call .sp_em_small, .sp_fb_small, .sp_tw_small {
+    display: inline-block;
+    padding: 0 10px;
+}
+
+.wrapper > .meat .description.description-call .sp_em_small a {
+    display: inline-block;
+    width: 33px;
+    height: 33px;
+    background: #14AC2B url(http://shpg.org/images/icon-email.gif) no-repeat top left;
+}
+
+.wrapper > .meat .description.description-call .sp_fb_small a {
+    display: inline-block;
+    width: 33px;
+    height: 33px;
+    background: #39579A url(http://shpg.org/images/icon-fb.gif) no-repeat top left;
+}
+
+.wrapper > .meat .description.description-call .sp_tw_small a {
+    display: inline-block;
+    width: 33px;
+    height: 33px;
+    background: #02ACED url(http://shpg.org/images/icon-twitter.gif) no-repeat top left;
+}
+
 .wrapper > .meat section.description-mobile {
     display: none;
     padding: 27px 30px 10px;

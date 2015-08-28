@@ -590,9 +590,21 @@ var CallPage = React.createClass({displayName: "CallPage",
                         "It is hypocritical to talk about the urgency of climate change while allowing massive fossil fuel extraction." + ' ' + 
                         "Science tells us we have to ", React.createElement("strong", null, "leave 80% of known fossil fuel reserves ", React.createElement("em", null, "in the ground")), " to stop the worst effects of climate change –  including ", React.createElement("strong", null, "all Arctic oil"), "." + ' ' + 
                         "If President Obama and his administration want to fight climate change, it’s time to ", React.createElement("u", null, "Keep It In The Ground"), "." + ' ' +
-                        "Thank You."
-                    )
+                        "Thank You.", 
 
+                        React.createElement("div", {className: "spacer"}), 
+
+                        React.createElement("h3", null, 
+                            "After you call, please share this campaign."
+                        ), 
+
+                        React.createElement("center", null, 
+                            React.createElement("div", {className: "sp_15355 sp_fb_small"}), 
+                            React.createElement("div", {className: "sp_15356 sp_tw_small"}), 
+                            React.createElement("div", {className: "sp_15354 sp_em_small"})
+                        )
+                        
+                    )
                 ), 
 
                 React.createElement(Logos, null), 

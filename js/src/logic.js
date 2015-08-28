@@ -591,8 +591,20 @@ var CallPage = React.createClass({
                         Science tells us we have to <strong>leave 80% of known fossil fuel reserves <em>in the ground</em></strong> to stop the worst effects of climate change –  including <strong>all Arctic oil</strong>. 
                         If President Obama and his administration want to fight climate change, it’s time to <u>Keep It In The Ground</u>.
                         Thank You.
-                    </div>
 
+                        <div className="spacer" />
+
+                        <h3>
+                            After you call, please share this campaign.
+                        </h3>
+
+                        <center>
+                            <div className='sp_15355 sp_fb_small' ></div>
+                            <div className='sp_15356 sp_tw_small' ></div>
+                            <div className='sp_15354 sp_em_small' ></div>
+                        </center>
+                        
+                    </div>
                 </div>
 
                 <Logos />
