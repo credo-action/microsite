@@ -539,9 +539,10 @@ var CallForm = React.createClass({
             'https://credo-action-call-tool.herokuapp.com/create' +
             '?campaignId=' + campaignId +
             '&userPhone=' + phone +
-            '&ak_id=' + (getAKID() || null) +
+            '&ak_id=' + (this.props.akid  || null) +
             '&source_id=' + (this.props.source || null);
 
+        console.log(url);
         ajax.get(url);
 
         this.setState({
@@ -591,6 +592,7 @@ var CallPage = React.createClass({
                         callCount={ this.state.callCount }
                         progressivesCount={ this.state.progressivesCount }
                         source={ this.state.source }
+                        akid={ this.state.akid }
                         zip={ this.state.zip }
                     />
 
