@@ -81,6 +81,19 @@ function commafy(number) {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
+function getAKID() {
+    if (state.query.akid) {
+        var parts = state.query.akid.split('.');
+
+        if (parts.length < 2) {
+            return null;
+        }
+
+        return parts[1];
+    } else {
+        return null;
+    }
+}
 
 // Setup shortcuts for AJAX.
 var ajax = {
@@ -526,6 +539,7 @@ var CallForm = React.createClass({
             'https://credo-action-call-tool.herokuapp.com/create' +
             '?campaignId=' + campaignId +
             '&userPhone=' + phone +
+            '&ak_id=' + (getAKID() || null) +
             '&source_id=' + (this.props.source || null);
 
         ajax.get(url);
@@ -653,6 +667,7 @@ var CallPage = React.createClass({
             city: null,
             name: null,
             progressivesCount: 0,
+            akid: getAKID(),
             source: getSource(),
             visible: false,
         };
