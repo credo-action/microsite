@@ -381,6 +381,7 @@ var Footer = React.createClass({
     render: function() {
         return (
             <footer>
+                Contact <a href="mailto:press@credoaction.com">press@credoaction.com</a> for press inquries.<br/>
                 &copy;2015 <a href="http://credoaction.com/" target="_blank">CREDO</a>. <a href="/terms/">Terms of Use.</a>
             </footer>
         );

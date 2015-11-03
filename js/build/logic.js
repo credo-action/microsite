@@ -381,6 +381,7 @@ var Footer = React.createClass({displayName: "Footer",
     render: function() {
         return (
             React.createElement("footer", null, 
+                "Contact ", React.createElement("a", {href: "mailto:press@credoaction.com"}, "press@credoaction.com"), " for press inquries.", React.createElement("br", null), 
                 "©2015 ", React.createElement("a", {href: "http://credoaction.com/", target: "_blank"}, "CREDO"), ". ", React.createElement("a", {href: "/terms/"}, "Terms of Use.")
             )
         );
