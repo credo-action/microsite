@@ -567,6 +567,10 @@ input {
 
 /* Mobile */
 @media (max-width: 579px) {
+    .wrapper > header {
+        background-image: url(images/hero-image-320x312.jpg);
+    }
+
     .wrapper > header h1 {
         font-size: 45px;
     }
