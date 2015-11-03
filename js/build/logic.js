@@ -17,7 +17,7 @@
 
 var state = {};
 state.isMobile = /mobile/i.test(navigator.userAgent);
-state.pageShortName = 'obama_keep_it_in_the_ground';
+state.pageShortName = 'obamas_wars';
 state.query = getQueryVariables();
 
 
@@ -407,7 +407,7 @@ var HomePage = React.createClass({displayName: "HomePage",
     renderDescription: function() {
         return (
             React.createElement("div", {className: "description"}, 
-                React.createElement("h2", null, "President Obama's 'Mission Accomplished' Moment"), 
+                React.createElement("h2", null, "President Obama's Broken Promises and Endless Wars"), 
 
                 React.createElement("h3", null, "Sign the petition to President Obama: Climate leaders don’t drill the Arctic."), 
 
@@ -534,7 +534,7 @@ var CallForm = React.createClass({displayName: "CallForm",
         }
 
         var campaignId, url;
-        campaignId = 'obama_keep_it_in_the_ground';
+        campaignId = 'obamas_wars';
         url =
             'https://credo-action-call-tool.herokuapp.com/create' +
             '?campaignId=' + campaignId +
@@ -703,7 +703,7 @@ var CallPage = React.createClass({displayName: "CallPage",
         }
 
         // Get call count.
-        ajax.get('https://credo-action-call-tool-meta.herokuapp.com/api/count/obama_keep_it_in_the_ground', this.onCountResponse);
+        ajax.get('https://credo-action-call-tool-meta.herokuapp.com/api/count/obamas_wars', this.onCountResponse);
     },
 });
 
