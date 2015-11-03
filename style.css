@@ -37,13 +37,13 @@ input {
 }
 
 .wrapper > header .flag {
-    background-image: url(images/flag-sign-petition-208x36.png);
+    background-image: url(images/credo-logo-240x100.png);
     background-size: cover;
-    height: 36px;
-    width: 208px;
+    height: 50px;
+    width: 120px;
     position: absolute;
-    top: 20px;
-    left: 0;
+    top: 10px;
+    left: 20px;
     z-index: 1;
 
     -webkit-transition: opacity 0.3s;
@@ -573,7 +573,7 @@ input {
 
     .wrapper > header .flag {
         height: 25px;
-        width: 144px;
+        width: 60px;
     }
 
     .wrapper > header .social div a {
@@ -632,7 +632,9 @@ input {
     }
 
     .wrapper > header .flag {
-        background-image: url(images/flag-sign-petition-208x36@2x.png);
+        background-image: url(images/credo-logo-240x100.png);
+        height: 25px;
+        width: 60px;
     }
 
     .wrapper > header .social div.facebook a {
