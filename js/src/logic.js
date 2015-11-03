@@ -458,8 +458,6 @@ var HomePage = React.createClass({
 
                 </div>
 
-                <Logos />
-
                 <Footer />
             </div>
         );
