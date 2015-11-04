@@ -365,12 +365,12 @@ var Header = React.createClass({displayName: "Header",
     render: function() {
         return (
             React.createElement("header", null, 
-                React.createElement("a", {className: "flag", href: "/#petition"}), 
+                React.createElement("a", {className: "flag", href: "http://credoaction.com"}), 
                 React.createElement("div", {className: "social"}, 
                     React.createElement("div", {className: "sp_15355 sp_fb_small facebook"}), 
                     React.createElement("div", {className: "sp_15356 sp_tw_small twitter"}), 
                     React.createElement("div", {className: "sp_15354 sp_em_small email"})
-                )
+                ), "`"
             )
         );
     },
@@ -621,8 +621,6 @@ var CallPage = React.createClass({displayName: "CallPage",
                         
                     )
                 ), 
-
-                React.createElement(Logos, null), 
 
                 React.createElement(Footer, null)
             )

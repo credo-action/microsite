@@ -365,12 +365,12 @@ var Header = React.createClass({
     render: function() {
         return (
             <header>
-                <a className="flag" href="/#petition"></a>
+                <a className="flag" href="http://credoaction.com"></a>
                 <div className="social">
                     <div className='sp_15355 sp_fb_small facebook'></div>
                     <div className='sp_15356 sp_tw_small twitter'></div>
                     <div className='sp_15354 sp_em_small email'></div>
-                </div>
+                </div>`
             </header>
         );
     },
@@ -621,8 +621,6 @@ var CallPage = React.createClass({
                         
                     </div>
                 </div>
-
-                <Logos />
 
                 <Footer />
             </div>
