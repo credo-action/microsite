@@ -408,35 +408,44 @@ var HomePage = React.createClass({displayName: "HomePage",
     renderDescription: function() {
         return (
             React.createElement("div", {className: "description"}, 
-                React.createElement("h2", null, "President Obama's Broken Promises and Endless Wars"), 
-
-                React.createElement("h3", null, "Sign the petition to President Obama: Climate leaders don’t drill the Arctic."), 
+                React.createElement("h2", null, "Tell President Obama: Keep your promises. End the wars in Iraq, Afghanistan and Syria."), 
 
                 React.createElement("center", null, 
-                React.createElement("iframe", {width: "560", height: "315", src: "https://www.youtube.com/embed/Ipx2wypPXJw?rel=0", frameborder: "0", allowfullscreen: true})
+                React.createElement("iframe", {width: "560", height: "315", src: "https://www.youtube.com/embed/lUlBM6X_C5Y?rel=0", frameborder: "0", allowfullscreen: true})
                 ), 
                 React.createElement("div", {className: "spacer"}), 
 
-                "President Obama is heading on a trip to Alaska to talk about climate change. There is no clearer symbol of the self-defeating hypocrisy of his policies on energy and climate.", 
+                "Last week, President Obama announced that the United States will send special operations forces to Syria, where they will assist some rebel factions in Syria’s brutal civil war.", React.createElement("sup", null, "1"), 
                 React.createElement("div", {className: "spacer"}), 
 
-                "In Alaska, President Obama’s words about the urgency of climate change, against the backdrop of the Shell oil rig he approved to drill, brings to mind the tragic irony of President George W. Bush declaring “Mission Accomplished” six weeks into his decade-long invasion of Iraq.", 
+                "But in 2013, President Obama promised unequivocally,   “I will not put American boots on the ground in Syria.”", 
                 React.createElement("div", {className: "spacer"}), 
 
-                "Science is clear: 80% of fossil fuel reserves, ", React.createElement("strong", null, "and 100% of Arctic oil"), ", must stay in the ground to keep us off a global warming collision course. ", React.createElement("strong", null, "That means real climate leaders don’t drill the Arctic."), 
+                "This escalation is the latest in a series of broken promises on war and peace.", React.createElement("sup", null, "2"), 
                 React.createElement("div", {className: "spacer"}), 
 
-                "But under the president’s “All of the Above” energy policy, the president has approved massive extraction of coal, oil and fracked gas – now including drilling in the Arctic.", 
+                "President Obama also recently broke his campaign promise to end the war in Afghanistan, announcing instead that troops will remain there through the end of his time in office.", React.createElement("sup", null, "3"), " And, despite President Obama’s pledge that “American forces will not be returning to combat in Iraq,” a Pentagon spokesman recently admitted that “we’re in combat” after Master Sgt. Joshua L. Wheeler was killed last week in a raid to free hostages held by ISIS.", React.createElement("sup", null, "4"), 
                 React.createElement("div", {className: "spacer"}), 
 
-                React.createElement("strong", null, "President Obama can’t be a climate leader unless he makes a major shift to recognize that he must start keeping carbon in the ground."), " Please send him a message as he heads to Alaska.", 
+                React.createElement("strong", null, "President Obama was elected and re-elected on promises to end George W. Bush’s failed wars, but now he’s poised to leave a legacy of broken promises and endless war. We need to speak out now against these dangerous military escalations."), 
                 React.createElement("div", {className: "spacer"}), 
 
-                "The petition reads:", 
+                "The petition to President Obama reads:", 
 
                 React.createElement("div", {className: "petition-text"}, 
-                    "Climate Leaders Don’t Drill the Arctic. Talking about the urgency of climate change while allowing massive fossil fuel extraction isn’t leadership, it’s hypocrisy. Science says we must not burn 80% of known fossil fuel reserves, including all Arctic oil. President Obama, to lead on climate, you must Keep It In The Ground."
+                    "Keep your promises. End the wars in Iraq, Afghanistan and Syria."
+                ), 
+
+                React.createElement("div", {className: "footnotes"}, 
+                    "Footnotes:", 
+                    React.createElement("ol", null, 
+                        React.createElement("li", null, "Nick Turse, \"", React.createElement("a", {href: "https://theintercept.com/2015/10/30/us-to-send-special-operations-forces-to-syria/"}, "U.S to Send Special Operations Forces to Syria"), ",\" The Intercept, October 30, 2015."), 
+                        React.createElement("li", null, "ibid."), 
+                        React.createElement("li", null, "Matthew Rosenberg and Michael D. Shear, \"", React.createElement("a", {href: "http://www.nytimes.com/2015/10/16/world/asia/obama-troop-withdrawal-afghanistan.html?_r=0"}, "In Reversal, Obama Says U.S. Soldiers Will Stay in Afghanistan to 2017"), ",\" New York Times, October 15, 2015."), 
+                        React.createElement("li", null, "Jeremy Diamond, \"", React.createElement("a", {href: "http://www.cnn.com/2015/10/29/politics/iraq-isis-military-combat/"}, "Pentagon: 'We're in combat' in Iraq"), ",\" CNN, October 30, 2015.")
+                    )
                 )
+
             )
         );
     },
