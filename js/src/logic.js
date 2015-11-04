@@ -609,13 +609,15 @@ var CallPage = React.createClass({
                             Call script
                         </h3>
 
-                        Hello, my name is { this.state.name || '__________' } and I&apos;m calling from { this.state.city || '__________' }. 
-                        I’m calling to say that climate leaders don’t drill the Arctic. 
-                        It is hypocritical to talk about the urgency of climate change while allowing massive fossil fuel extraction. 
-                        Science tells us we have to <strong>leave 80% of known fossil fuel reserves <em>in the ground</em></strong> to stop the worst effects of climate change –  including <strong>all Arctic oil</strong>. 
-                        If President Obama and his administration want to fight climate change, it’s time to <u>Keep It In The Ground</u>.
-                        Thank You.
+                        Hi, my name is { this.state.name || '[YOUR NAME]' } and I’m calling from { this.state.city || '[YOUR CITY]' }, [YOUR STATE]. 
+                        President Obama recently broke his promises to end the wars in Iraq and Afghanistan, and not to put boots on the ground in Syria.
+                        <div className="spacer" />
 
+                        The president was elected and re-elected on promises to end George W. Bush’s failed wars. 
+                        Now he’s poised to leave a legacy of broken promises and endless war.
+                        <div className="spacer" />
+
+                        President Obama must keep his promises by ending the wars in Iraq, Afghanistan, and Syria. Thank you.
                         <div className="spacer" />
 
                         <h3>
