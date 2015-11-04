@@ -567,6 +567,31 @@ input {
     padding: 0 0 32px;
 }
 
+/* Retina */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .wrapper > header {
+        background-image: url(images/hero-image-1200x312@2x.jpg);
+    }
+
+    .wrapper > header .flag {
+        background-image: url(images/credo-logo-240x100.png);
+        height: 50px;
+        width: 120px;
+    }
+
+    .wrapper > header .social div.facebook a {
+        background-image: url(images/social-icon-FB-42x42@2x.png);
+    }
+
+    .wrapper > header .social div.twitter a {
+        background-image: url(images/social-icon-Twitter-42x42@2x.png);
+    }
+
+    .wrapper > header .social div.email a {
+        background-image: url(images/social-icon-Email-42x42@2x.png);
+    }
+}
+
 /* Mobile */
 @media (max-width: 579px) {
     .wrapper > header {
@@ -629,31 +654,6 @@ input {
 
     .wrapper > .meat > h2.thanks {
         text-align: center;
-    }
-}
-
-/* Retina */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    .wrapper > header {
-        background-image: url(images/hero-image-1200x312@2x.jpg);
-    }
-
-    .wrapper > header .flag {
-        background-image: url(images/credo-logo-240x100.png);
-        height: 50px;
-        width: 120px;
-    }
-
-    .wrapper > header .social div.facebook a {
-        background-image: url(images/social-icon-FB-42x42@2x.png);
-    }
-
-    .wrapper > header .social div.twitter a {
-        background-image: url(images/social-icon-Twitter-42x42@2x.png);
-    }
-
-    .wrapper > header .social div.email a {
-        background-image: url(images/social-icon-Email-42x42@2x.png);
     }
 }
 
