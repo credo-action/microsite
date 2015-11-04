@@ -166,7 +166,9 @@ input {
     text-transform: uppercase;
 }
 
-.wrapper > .meat .description.description-call .sp_em_small, .sp_fb_small, .sp_tw_small {
+.wrapper > .meat .description.description-call .sp_fb_small, 
+.wrapper > .meat .description.description-call .sp_tw_small, 
+.wrapper > .meat .description.description-call .sp_em_small {
     display: inline-block;
     padding: 0 10px;
 }
