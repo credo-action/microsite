@@ -424,7 +424,7 @@ var HomePage = React.createClass({
                 This escalation is the latest in a series of broken promises on war and peace.<sup>2</sup>
                 <div className="spacer" />
 
-                President Obama also recently broke his campaign promise to end the war in Afghanistan, announcing instead that troops will remain there through the end of his time in office.<sup>3</sup> And, despite President Obama’s pledge that “American forces will not be returning to combat in Iraq,” a Pentagon spokesman recently admitted that “we’re in combat” after Master Sgt. Joshua L. Wheeler was killed last week in a raid to free hostages held by ISIS.<sup>4</sup>
+                President Obama also recently broke his campaign promise to end the war in Afghanistan, announcing instead that troops will remain there through the end of his time in office.<sup>3</sup> And, despite President Obama’s pledge that “American forces will not be returning to combat in Iraq,” a Pentagon spokesman recently admitted that “we’re in combat” after Master Sgt. Joshua L. Wheeler was killed in a raid to free hostages held by ISIS.<sup>4</sup>
                 <div className="spacer" />
 
                 <strong>President Obama was elected and re-elected on promises to end George W. Bush’s failed wars, but now he’s poised to leave a legacy of broken promises and endless war. We need to speak out now against these dangerous military escalations.</strong>
