@@ -421,10 +421,7 @@ var HomePage = React.createClass({displayName: "HomePage",
                 "But in 2013, President Obama promised unequivocally,   “I will not put American boots on the ground in Syria.”", 
                 React.createElement("div", {className: "spacer"}), 
 
-                "This escalation is the latest in a series of broken promises on war and peace.", React.createElement("sup", null, "2"), 
-                React.createElement("div", {className: "spacer"}), 
-
-                "President Obama also recently broke his campaign promise to end the war in Afghanistan, announcing instead that troops will remain there through the end of his time in office.", React.createElement("sup", null, "3"), " And, despite President Obama’s pledge that “American forces will not be returning to combat in Iraq,” a Pentagon spokesman recently admitted that “we’re in combat” after Master Sgt. Joshua L. Wheeler was killed in a raid to free hostages held by ISIS.", React.createElement("sup", null, "4"), 
+                "This escalation is the latest in a series of broken promises on war and peace — in Iraq, Afghanistan, and now Syria.", React.createElement("sup", null, "2 3 4"), 
                 React.createElement("div", {className: "spacer"}), 
 
                 React.createElement("strong", null, "President Obama was elected and re-elected on promises to end George W. Bush’s failed wars, but now he’s poised to leave a legacy of broken promises and endless war. We need to speak out now against these dangerous military escalations."), 
