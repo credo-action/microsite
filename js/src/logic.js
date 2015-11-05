@@ -367,9 +367,9 @@ var Header = React.createClass({
             <header>
                 <a className="flag" href="http://credoaction.com"></a>
                 <div className="social">
-                    <div className='sp_15355 sp_fb_small facebook'></div>
-                    <div className='sp_15356 sp_tw_small twitter'></div>
-                    <div className='sp_15354 sp_em_small email'></div>
+                    <div className='sp_16670 sp_fb_small facebook'></div>
+                    <div className='sp_16671 sp_tw_small twitter'></div>
+                    <div className='sp_16669 sp_em_small email'></div>
                 </div>`
             </header>
         );
@@ -625,9 +625,9 @@ var CallPage = React.createClass({
                         </h3>
 
                         <center>
-                            <div className='sp_15355 sp_fb_small' ></div>
-                            <div className='sp_15356 sp_tw_small' ></div>
-                            <div className='sp_15354 sp_em_small' ></div>
+                            <div className='sp_16670 sp_fb_small facebook'></div>
+                            <div className='sp_16671 sp_tw_small twitter'></div>
+                            <div className='sp_16669 sp_em_small email'></div>
                         </center>
                         
                     </div>

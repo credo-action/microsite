@@ -367,9 +367,9 @@ var Header = React.createClass({displayName: "Header",
             React.createElement("header", null, 
                 React.createElement("a", {className: "flag", href: "http://credoaction.com"}), 
                 React.createElement("div", {className: "social"}, 
-                    React.createElement("div", {className: "sp_15355 sp_fb_small facebook"}), 
-                    React.createElement("div", {className: "sp_15356 sp_tw_small twitter"}), 
-                    React.createElement("div", {className: "sp_15354 sp_em_small email"})
+                    React.createElement("div", {className: "sp_16670 sp_fb_small facebook"}), 
+                    React.createElement("div", {className: "sp_16671 sp_tw_small twitter"}), 
+                    React.createElement("div", {className: "sp_16669 sp_em_small email"})
                 ), "`"
             )
         );
@@ -625,9 +625,9 @@ var CallPage = React.createClass({displayName: "CallPage",
                         ), 
 
                         React.createElement("center", null, 
-                            React.createElement("div", {className: "sp_15355 sp_fb_small"}), 
-                            React.createElement("div", {className: "sp_15356 sp_tw_small"}), 
-                            React.createElement("div", {className: "sp_15354 sp_em_small"})
+                            React.createElement("div", {className: "sp_16670 sp_fb_small facebook"}), 
+                            React.createElement("div", {className: "sp_16671 sp_tw_small twitter"}), 
+                            React.createElement("div", {className: "sp_16669 sp_em_small email"})
                         )
                         
                     )
