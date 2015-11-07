@@ -96,16 +96,25 @@ input {
             transition: opacity 0.3s;
 }
 
-.wrapper > header .social div.facebook a {
+.wrapper > header .social div.facebook {
     background-image: url(images/social-icon-FB-42x42.png);
+    width: 42px;
+    height: 42px;
+    margin-left: 20px;
 }
 
-.wrapper > header .social div.twitter a {
+.wrapper > header .social div.twitter {
     background-image: url(images/social-icon-Twitter-42x42.png);
+    width: 42px;
+    height: 42px;
+    margin-left: 20px;
 }
 
-.wrapper > header .social div.email a {
+.wrapper > header .social div.email {
     background-image: url(images/social-icon-Email-42x42.png);
+    width: 42px;
+    height: 42px;
+    margin-left: 20px;
 }
 
 .wrapper > header .social div:hover {
