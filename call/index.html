@@ -31,12 +31,85 @@
 </head>
 <body>
 
-<div id="app">
-    <div class="please-wait">Please wait...</div>
-</div>
+   <div class="wrapper call-page">
+        <header>
+            <a class="flag" href="http://credoaction.com"></a>
+            <div class="social">
+                <div class="sp_16670 sp_fb_small facebook"></div>
+                <div class="sp_16671 sp_tw_small twitter"></div>
+                <div class="sp_16669 sp_em_small email"></div>
+            </div>
+        </header>
 
-<script src="../js/vendor/react.min.js"></script>
-<script src="../js/build/logic.js"></script>
+        <div class="meat">
 
+            <h2 class="thanks">
+                Thanks for signing!  Now please call President Obama to deliver your message directly. 
+                The White House counts each call, so this is a really important way to make your voice heard. 
+            </h2>
+
+            <form class="call-form">
+                <div class="count">
+                    <div class="animation-fade-in">
+                        <div class="headline"></div>
+                        <div class="label">completed</div>
+                    </div>
+                </div>
+                <div class="background">
+                    <h2>
+                        Make a Call
+                    </h2>
+
+                    <input type="tel" name="phone" placeholder="Your phone number" ref="phone" />
+
+                    <button>
+                        Click to Connect
+                    </button>
+
+                    <div class="sidenote">
+                        Or call <a href="tel:415-200-1223">(415) 200-1223</a> to connect.
+                    </div>
+                </div>
+            </form>
+
+            <CallForm
+                callCount={ this.state.callCount }
+                progressivesCount={ this.state.progressivesCount }
+                source={ this.state.source }
+                akid={ this.state.akid }
+                zip={ this.state.zip }
+            />
+
+            <div class="description description-call">
+                <h3>
+                    Call script
+                </h3>
+
+                <p>Hi, my name is { this.state.name || '[YOUR NAME]' } and I’m calling from { this.state.city || '[YOUR CITY]' }, [YOUR STATE]. 
+                President Obama recently broke his promises to end the wars in Iraq and Afghanistan, and not to put boots on the ground in Syria.</p>
+
+                <p>The president was elected and re-elected on promises to end George W. Bush’s failed wars. 
+                Now he’s poised to leave a legacy of broken promises and endless war.</p>
+
+                <p>President Obama must keep his promises by ending the wars in Iraq, Afghanistan, and Syria. Thank you.</p>
+
+                <h3>
+                    After you call, please share this campaign.
+                </h3>
+
+                <center>
+                    <div class='sp_16670 sp_fb_small facebook'></div>
+                    <div class='sp_16671 sp_tw_small twitter'></div>
+                    <div class='sp_16669 sp_em_small email'></div>
+                </center>
+                
+            </div>
+        </div> <!-- .meat -->
+
+        <footer>
+            Contact <a href="mailto:press@credoaction.com">press@credoaction.com</a> for press inquries.<br/>
+            &copy;2015 <a href="http://credoaction.com/" target="_blank">CREDO</a>. <a href="terms/">Terms of Use.</a>
+        </footer>
+    </div>
 </body>
 </html>
