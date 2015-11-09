@@ -51,10 +51,16 @@
             <form class="call-form">
                 <div class="count">
                     <div class="animation-fade-in">
-                        <div class="headline"></div>
+                        <div class="headline"><div id="progress"></div></div>
                         <div class="label">completed</div>
                     </div>
                 </div>
+
+                <script type="text/javascript">
+                $.get("https://credo-action-call-tool-meta.herokuapp.com/api/count/obamas_wars",
+                function(data){ $('#progress').text(data.count + " Calls"); });
+                </script>
+
                 <div class="background">
                     <h2>
                         Make a Call
