@@ -114,7 +114,7 @@
                     <div class="smaller">signatures</div>
                 </div>
 
-                <form onSubmit={ this.onSubmit } name="act" method="POST" action="https://act.credoaction.com/act/" accept-charset="utf-8">
+                <form onSubmit="saveZip()" name="act" method="POST" action="https://act.credoaction.com/act/" accept-charset="utf-8">
                     <h2>Add your name</h2>
 
                     <ul class="compact" id="ak-errors"></ul>
@@ -135,7 +135,7 @@
                     <input type="hidden" name="page" value="obamas_wars" />
                     <input type="hidden" name="js" value="1" />
                     <input type="hidden" name="form_name" value="act-petition" />
-                    <input type="hidden" name="url" value={ location.href } />
+                    <input type="hidden" name="redirect_url" value="https://credo-action.github.io/microsite/call/" />
 
                     <button>
                         Click to Sign
