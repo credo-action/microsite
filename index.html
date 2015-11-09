@@ -26,13 +26,15 @@
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script type="text/javascript" src="http://act.credoaction.com/resources/actionkit.js"></script>
+
     <script src="http://c.shpg.org/4/sp.js"></script>
 
 </head>
 <body>
     <!-- actionkit form initialization -->
     <script type="text/javascript">
-        actionkit.forms.initPage()
+        actionkit.forms.contextRoot = 'http://yourgroup.actionkit.com/context/';
+        actionkit.forms.initPage(); actionkit.forms.initForm('act')
     </script>
 
     <div class="wrapper home-page">
@@ -89,10 +91,27 @@
 
             </section> <!-- .description-mobile -->
 
+
+
             <section class="form">
 
                 <div class="count visible">
-                    <div>{ commafy(this.state.current) }</div>
+                    <div id="progress" class="progress-box"></div>
+                    <script type="text/ak-template" for="progress">
+                        [%
+                        with (progress) {
+                            if ( goal_type && total ) {
+                                progress.current = goal_type == 'dollars' ? total.dollars : total.actions;
+                                progress.current += 0;
+                        %]
+
+                        <div id="therm" class="therm-signers">
+                        <div class="therm-text-box">
+                        <div class="therm-text">[%= add_commas(progress.current) %]</div>
+                        </div> <!-- .therm-text-box -->
+                        </div> <!-- #therm -->
+                        [% } } %]
+                    </script>
                     <div class="smaller">signatures</div>
                 </div>
 
@@ -114,7 +133,7 @@
                   
                     <input type="hidden" name="country" value="United States">
                     <input type="hidden" name="want_progress" value="1" />
-                    <input type="hidden" name="page" value="PAGE SHORT NAME" />
+                    <input type="hidden" name="page" value="obamas_wars" />
                     <input type="hidden" name="js" value="1" />
                     <input type="hidden" name="form_name" value="act-petition" />
                     <input type="hidden" name="url" value={ location.href } />
