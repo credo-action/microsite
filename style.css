@@ -96,21 +96,21 @@ input {
             transition: opacity 0.3s;
 }
 
-.wrapper > header .social div.facebook {
+.wrapper > header .social div.facebook a {
     background-image: url(images/social-icon-FB-42x42.png);
     width: 42px;
     height: 42px;
     margin-left: 20px;
 }
 
-.wrapper > header .social div.twitter {
+.wrapper > header .social div.twitter a {
     background-image: url(images/social-icon-Twitter-42x42.png);
     width: 42px;
     height: 42px;
     margin-left: 20px;
 }
 
-.wrapper > header .social div.email {
+.wrapper > header .social div.email a {
     background-image: url(images/social-icon-Email-42x42.png);
     width: 42px;
     height: 42px;
