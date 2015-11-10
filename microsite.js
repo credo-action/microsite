@@ -67,13 +67,6 @@ var ajax = {
     },
 };
 
-var zip='';
-
-var saveZip = function() {
-    zip = $('#id_zip').val();
-    console.log(zip);
-}
-
 /* call form submit button handler */
 $('.call-form').submit(function (e) {
         e.preventDefault();
@@ -96,7 +89,6 @@ $('.call-form').submit(function (e) {
             '?campaignId=' + campaignId +
             '&userPhone=' + phone +
             '&ak_id=' + (akid  || null) +
-            '&zipcode=' + (zip || null) +
             '&source_id=' + (source || null);
 
         console.log(url);
